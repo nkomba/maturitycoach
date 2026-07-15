@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maturity Coach — Lead Wisely. Live Fully.</title>
+  <meta name="description" content="Eugene Nkomba — Executive coach at the intersection of ancient wisdom and modern technology, helping leaders build successful businesses while living an enjoyable, sustainable life." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── HOMEPAGE SPECIFIC ── */
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      background: var(--charcoal);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: var(--nav-height) 0 0;
+      z-index: 1;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 50%, rgba(184,151,90,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 80% at 20% 80%, rgba(184,151,90,0.04) 0%, transparent 50%);
+    }
+
+    .hero-grid-pattern {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 80px 32px 100px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+    }
+
+    .hero-label::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero h1 {
+      color: var(--white);
+      margin-bottom: 28px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-subtitle {
+      color: rgba(255,255,255,0.6);
+      max-width: 480px;
+      margin-bottom: 44px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-right {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-portrait-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .hero-portrait {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: linear-gradient(160deg, rgba(184,151,90,0.15) 0%, rgba(184,151,90,0.03) 100%);
+      border-radius: 24px;
+      border: 1px solid rgba(184,151,90,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .hero-portrait-initials {
+      font-family: var(--font-serif);
+      font-size: 80px;
+      color: rgba(184,151,90,0.3);
+      letter-spacing: -0.03em;
+      user-select: none;
+      display: none;
+    }
+
+    .hero-portrait-badge {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      right: 24px;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(16px);
+      border-radius: 12px;
+      padding: 16px 20px;
+      border: 1px solid rgba(184,151,90,0.2);
+    }
+
+    .hero-portrait-badge .name {
+      font-family: var(--font-serif);
+      color: var(--white);
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .hero-portrait-badge .role {
+      font-size: 12px;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .hero-deco-ring {
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border: 1px solid rgba(184,151,90,0.15);
+      border-radius: 50%;
+      top: -30px;
+      right: -30px;
+    }
+
+    .hero-deco-ring-2 {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border: 1px solid rgba(184,151,90,0.1);
+      border-radius: 50%;
+      bottom: -20px;
+      left: -20px;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.35);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      z-index: 2;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.4; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(0.7); }
+    }
+
+    /* Wisdom Bar */
+    .wisdom-bar {
+      background: var(--gold);
+      padding: 20px 0;
+      overflow: hidden;
+    }
+
+    .wisdom-bar-inner {
+      display: flex;
+      gap: 60px;
+      white-space: nowrap;
+      animation: marquee 28s linear infinite;
+    }
+
+    .wisdom-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.9);
+      font-family: var(--font-serif);
+      font-style: italic;
+      flex-shrink: 0;
+    }
+
+    .wisdom-item::before {
+      content: '✦';
+      color: rgba(255,255,255,0.6);
+      font-size: 10px;
+      font-style: normal;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Philosophy Section */
+    .philosophy-section {
+      background: var(--cream);
+      padding: 120px 0;
+    }
+
+    .philosophy-pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 64px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .pillar {
+      background: var(--white);
+      padding: 48px 40px;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .pillar:hover { background: var(--charcoal); }
+    .pillar:hover .pillar-icon { background: rgba(184,151,90,0.2); }
+    .pillar:hover .pillar-title { color: var(--white); }
+    .pillar:hover .pillar-text { color: rgba(255,255,255,0.6); }
+
+    .pillar-icon {
+      width: 54px;
+      height: 54px;
+      background: rgba(184,151,90,0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 28px;
+      transition: var(--transition);
+    }
+
+    .pillar-title {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      color: var(--text-primary);
+      margin-bottom: 14px;
+      transition: var(--transition);
+    }
+
+    .pillar-text {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      transition: var(--transition);
+    }
+
+    /* Services Preview */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold-dark), var(--gold));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: var(--transition);
+    }
+
+    .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); border-color: rgba(184,151,90,0.2); }
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-tag { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .service-title { font-family: var(--font-serif); font-size: 22px; color: var(--text-primary); margin-bottom: 14px; }
+    .service-text { font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 28px; }
+    .service-link { font-size: 14px; font-weight: 500; color: var(--gold); display: inline-flex; align-items: center; gap: 6px; transition: var(--transition); }
+    .service-link:hover { gap: 10px; }
+
+    /* Wisdom Quote Band */
+    .quote-band {
+      background: var(--charcoal);
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quote-band::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(184,151,90,0.06) 0%, transparent 70%);
+    }
+
+    .quote-band .big-quote {
+      font-family: var(--font-serif);
+      font-size: clamp(28px, 4vw, 52px);
+      color: var(--white);
+      line-height: 1.35;
+      font-style: italic;
+      max-width: 880px;
+      margin: 0 auto 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .quote-band .quote-attr {
+      font-size: 13px;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Get The App band */
+    .app-band {
+      background: var(--charcoal);
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .app-band::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(184,151,90,0.07) 0%, transparent 70%);
+    }
+
+    .app-band .container-sm { position: relative; z-index: 1; }
+
+    .app-hint {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      margin-top: 22px;
+    }
+
+    /* Stats */
+    .stats-section {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      text-align: center;
+    }
+
+    .stat-divider {
+      width: 1px;
+      background: var(--border);
+      margin: 0;
+    }
+
+    /* Testimonials */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .cta-section h2 { color: var(--white); position: relative; z-index: 1; margin-bottom: 20px; }
+    .cta-section p { color: rgba(255,255,255,0.8); max-width: 560px; margin: 0 auto 44px; position: relative; z-index: 1; }
+
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 48px; padding: 60px 20px 80px; }
+      .hero-right { display: none; }
+      .philosophy-pillars { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .wisdom-bar-inner { gap: 40px; }
+    }
+    /* Override for pages with dark heroes */
+@media (max-width: 768px) {
+  .nav {
+    background: rgba(28,28,30,0.98) !important;
+  }
+  .nav.scrolled {
+    background: rgba(28,28,30,0.98) !important;
+  }
+  .nav-logo, .nav-logo .logo-text, .nav-links a, .nav-hamburger span {
+    color: var(--white) !important;
+  }
+}
+
+/* Desktop: keep white nav always */
+@media (min-width: 769px) {
+  .nav {
+    background: var(--white) !important;
+  }
+  .nav-logo, .nav-logo .logo-text {
+    color: var(--charcoal) !important;
+  }
+}
+  </style>
+<style id="unified-nav-styles">
+  /* Full-width submenu bar: opens ACROSS THE TOP, under the nav */
+  .nav-links .nav-group { position: static; align-self: stretch; display: flex; align-items: center; }
+  .nav-links .nav-group > .nav-group-trigger { display: inline-flex; align-items: center; gap: 6px; height: 100%; position: relative; }
+  .nav-links .nav-group > .nav-group-trigger::after { display: none; }
+  .nav-caret { width: 9px; height: 9px; opacity: .65; transition: transform .3s cubic-bezier(.4,0,.2,1); }
+  .nav-group:hover .nav-caret { transform: rotate(180deg); }
+  .nav-dropdown {
+    position: absolute; top: 100%; left: 0; right: 0; box-sizing: border-box;
+    display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch; gap: 6px;
+    padding: 16px 32px;
+    background: var(--white, #fff);
+    border-top: 1px solid var(--border, rgba(0,0,0,.08));
+    border-bottom: 1px solid var(--border, rgba(0,0,0,.08));
+    box-shadow: 0 24px 50px rgba(28,28,30,.10);
+    opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(-8px);
+    transition: opacity .24s ease, transform .24s cubic-bezier(.4,0,.2,1), visibility .24s; z-index: 9998;
+  }
+  .nav-dropdown::before { content: ''; position: absolute; left: 0; right: 0; top: -26px; height: 26px; }
+  .nav-group:hover .nav-dropdown, .nav-group:focus-within .nav-dropdown {
+    opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0);
+  }
+  .nav-dropdown a {
+    display: block; padding: 12px 18px; border-radius: var(--radius-sm, 8px);
+    font-size: 14px; line-height: 1.35; color: var(--text-primary, #1a1a1a);
+    min-width: 180px; white-space: nowrap;
+  }
+  .nav-dropdown a::after { display: none; }
+  .nav-dropdown a:hover { background: var(--cream, #f7f3ec); color: var(--gold-dark, #8b6e3a); }
+  .nav-dropdown .dropdown-desc {
+    display: block; margin-top: 3px; font-size: 12px; font-weight: 400;
+    color: var(--text-secondary, #6b6b76); white-space: nowrap;
+  }
+  .nav-dropdown .tag {
+    display: inline-block; margin-left: 8px; font-size: 10px; letter-spacing: .06em;
+    text-transform: uppercase; color: var(--gold-dark, #8b6e3a);
+    background: rgba(184,151,90,.14); padding: 2px 8px; border-radius: 100px; vertical-align: middle;
+  }
+  /* Featured "quick value" group */
+  .nav-links .nav-group.featured > .nav-group-trigger { color: var(--gold-dark, #8b6e3a); font-weight: 600; }
+  .nav-links .nav-group.featured > .nav-group-trigger .nav-caret { opacity: .9; }
+  /* Active page state (set automatically by the injected script) */
+  .nav-links > a.active { color: var(--text-primary, #1a1a1a); }
+  .nav-links > a.active::after { transform: scaleX(1); }
+  .nav-links > a.nav-cta.active { background: var(--gold, #b8975a); }
+  .nav-links .nav-group.active > .nav-group-trigger { color: var(--gold-dark, #8b6e3a); font-weight: 600; }
+  .nav-links .nav-group.active > .nav-group-trigger::before {
+    content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 3px;
+    background: var(--gold, #b8975a); border-radius: 3px 3px 0 0;
+  }
+  .nav-dropdown a.active { background: var(--cream, #f7f3ec); color: var(--gold-dark, #8b6e3a); font-weight: 600; }
+  .mobile-menu a.active { color: var(--gold-dark, #8b6e3a); font-weight: 600; }
+  /* Mobile grouped menu */
+  .mobile-menu .m-label {
+    display: block; padding: 20px 32px 2px; text-align: center;
+    font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--gold, #b8975a); border: none;
+    font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
+  }
+  .mobile-menu .m-label:first-child { padding-top: 10px; }
+  .mobile-menu a.m-assess { color: var(--gold-dark, #8b6e3a); }
+  .mobile-menu a.m-cta { color: var(--white, #fff); background: var(--charcoal, #1c1c1e); }
+  @media (max-width: 1040px) { .nav-links { gap: 20px; } }
+</style>
+<script id="unified-nav-script">
+document.addEventListener('DOMContentLoaded', function () {
+  function seg(url) {
+    try {
+      var a = document.createElement('a'); a.href = url;
+      var s = a.pathname.split('/').filter(Boolean).pop();
+      return (s || 'index.html').toLowerCase();
+    } catch (e) { return ''; }
+  }
+  var here = seg(window.location.href) || 'index.html';
+  var links = document.querySelectorAll('#mainNav .nav-links a, #mobileMenu a');
+  Array.prototype.forEach.call(links, function (link) {
+    var href = link.getAttribute('href');
+    if (!href || href.charAt(0) === '#' || href.indexOf('mailto:') === 0) return;
+    if (seg(href) === here) {
+      link.classList.add('active');
+      var g = link.closest && link.closest('.nav-group');
+      if (g) g.classList.add('active');
+    }
+  });
+});
+</script>
+</head>
+<body>
+
+<!-- ═══════════════ NAVIGATION ═══════════════ -->
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">M</div>
+      <span class="logo-text">Maturity<span>Coach</span></span>
+    </a>
+
+    <div class="nav-links">
+      <!-- APPROACH: the why + the framework -->
+      <div class="nav-group">
+        <a href="philosophy.html" class="nav-group-trigger">Approach
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="philosophy.html">Philosophy<span class="dropdown-desc">The Maturity Method &mdash; wisdom, neuroscience &amp; AI</span></a>
+          <a href="framework.html">Ubuntu Roots Coaching&trade;<span class="dropdown-desc">The proprietary coaching framework</span></a>
+        </div>
+      </div>
+
+      <!-- SERVICES: overview + specialised track -->
+      <div class="nav-group">
+        <a href="services.html" class="nav-group-trigger">Services
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="services.html">All Services<span class="dropdown-desc">1:1, cohorts, teams &amp; keynotes</span></a>
+          <a href="coaching-for-technical-leaders.html">Coaching for Technical Leaders<span class="dropdown-desc">CISOs, CIOs, CTOs &amp; federal tech leaders</span></a>
+        </div>
+      </div>
+
+      <!-- INSIGHTS: thought leadership hub + featured essays + blog -->
+      <div class="nav-group">
+        <a href="perspectives.html" class="nav-group-trigger">Insights
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="perspectives.html">Perspectives<span class="dropdown-desc">Essays on leadership &amp; maturity</span></a>
+          <a href="perspectives-human-maturity.html">Why AI Raises the Premium on Human Maturity</a>
+          <a href="perspectives-sacrificial-leader.html">The Myth of the Sacrificial Leader</a>
+          <a href="blog.html">From the Blog<span class="dropdown-desc">Latest notes &amp; articles</span></a>
+        </div>
+      </div>
+
+      <a href="about.html">About Eugene</a>
+
+      <!-- FREE RESOURCES: every no-cost, quick-value entry point in one place. -->
+      <div class="nav-group featured">
+        <a href="assessment-teaser.html" class="nav-group-trigger">Free Resources
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="assessment-teaser.html">Quick Leadership Check<span class="tag">2 min</span><span class="dropdown-desc">Instant snapshot of where you lead from</span></a>
+          <a href="assessment.html">Full Maturity Assessment<span class="dropdown-desc">The complete self-assessment</span></a>
+          <a href="/workshop/">Free Leadership Workshop<span class="dropdown-desc">Live, 90 minutes, for senior leaders</span></a>
+          <a href="/ai-ready-leader/">AI-Ready Leader Guide<span class="dropdown-desc">Free download</span></a>
+          <a href="/app/">Get the App<span class="dropdown-desc">Daily practice on iPhone &amp; Android</span></a>
+        </div>
+      </div>
+
+      <!-- PRIMARY CONVERSION -->
+      <a href="contact.html" class="nav-cta">Request a Consultation</a>
+    </div>
+
+    <div class="nav-hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <span class="m-label">Approach</span>
+  <a href="philosophy.html" onclick="toggleMenu()">Philosophy</a>
+  <a href="framework.html" onclick="toggleMenu()">Ubuntu Roots Coaching&trade;</a>
+
+  <span class="m-label">Services</span>
+  <a href="services.html" onclick="toggleMenu()">All Services</a>
+  <a href="coaching-for-technical-leaders.html" onclick="toggleMenu()">For Technical Leaders</a>
+
+  <span class="m-label">Insights</span>
+  <a href="perspectives.html" onclick="toggleMenu()">Perspectives</a>
+  <a href="blog.html" onclick="toggleMenu()">From the Blog</a>
+
+  <span class="m-label">Free Resources</span>
+  <a href="assessment-teaser.html" class="m-assess" onclick="toggleMenu()">Quick Leadership Check &middot; 2 min</a>
+  <a href="assessment.html" onclick="toggleMenu()">Full Maturity Assessment</a>
+  <a href="/workshop/" onclick="toggleMenu()">Free Leadership Workshop</a>
+  <a href="/ai-ready-leader/" onclick="toggleMenu()">AI-Ready Leader Guide</a>
+  <a href="/app/" onclick="toggleMenu()">Get the App</a>
+
+  <span class="m-label">More</span>
+  <a href="about.html" onclick="toggleMenu()">About Eugene</a>
+  <a href="contact.html" class="m-cta" onclick="toggleMenu()">Request a Consultation</a>
+</div>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid-pattern"></div>
+
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-label">Executive Coaching</div>
+      <h1 class="display-1">
+        Lead<br>
+        Wisely.<br>
+        <em>Live</em> Fully.
+      </h1>
+      <p class="body-lg hero-subtitle">
+        Ancient wisdom and modern intelligence, united to help leaders build extraordinary businesses — without sacrificing the life they most want to live.
+      </p>
+      <div class="hero-actions">
+        <a href="contact.html" class="btn btn-gold btn-lg">
+          Begin the Journey
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+        <a href="philosophy.html" class="btn btn-outline" style="color:rgba(255,255,255,0.7); border-color:rgba(255,255,255,0.2);">
+          Our Philosophy
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-portrait-wrap">
+        <div class="hero-deco-ring"></div>
+        <div class="hero-portrait">
+          <img src="eugene-nkomba.jpg" alt="Eugene Nkomba — Executive Coach" loading="lazy" />
+          <div class="hero-portrait-badge">
+            <div class="name">Eugene Nkomba</div>
+            <div class="role">MBA · PCC · CPCC · CTCC · Managing Partner</div>
+          </div>
+        </div>
+        <div class="hero-deco-ring-2"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ═══════════════ WISDOM MARQUEE ═══════════════ -->
+<div class="wisdom-bar">
+  <div class="wisdom-bar-inner">
+    <div class="wisdom-item">Know thyself — Socrates</div>
+    <div class="wisdom-item">The journey of a thousand miles begins with a single step — Laozi</div>
+    <div class="wisdom-item">As a man thinketh in his heart, so is he — Proverbs 23:7</div>
+    <div class="wisdom-item">Ubuntu: I am because we are</div>
+    <div class="wisdom-item">Waste no more time arguing about what a good man should be — Marcus Aurelius</div>
+    <div class="wisdom-item">Know thyself — Socrates</div>
+    <div class="wisdom-item">The journey of a thousand miles begins with a single step — Laozi</div>
+    <div class="wisdom-item">As a man thinketh in his heart, so is he — Proverbs 23:7</div>
+    <div class="wisdom-item">Ubuntu: I am because we are</div>
+    <div class="wisdom-item">Waste no more time arguing about what a good man should be — Marcus Aurelius</div>
+  </div>
+</div>
+
+<!-- ═══════════════ STATS ═══════════════ -->
+<section class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="text-center fade-up">
+        <div class="stat-number">15+</div>
+        <div class="stat-label">Years of Leadership Experience</div>
+      </div>
+      <div class="text-center fade-up">
+        <div class="stat-number">300+</div>
+        <div class="stat-label">Leaders Coached</div>
+      </div>
+      <div class="text-center fade-up">
+        <div class="stat-number">6</div>
+        <div class="stat-label">Continents Served</div>
+      </div>
+      <div class="text-center fade-up">
+        <div class="stat-number">∞</div>
+        <div class="stat-label">Wisdom Traditions Integrated</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PHILOSOPHY ═══════════════ -->
+<section class="philosophy-section">
+  <div class="container">
+    <div class="text-center fade-up">
+      <div class="section-label" style="justify-content:center;">The Maturity Method</div>
+      <h2 class="display-3" style="max-width:720px; margin:0 auto 20px;">
+        Three forces. One life well led.
+      </h2>
+      <p class="body-lg text-muted" style="max-width:600px; margin:0 auto;">
+        Maturity coaching integrates the timeless intelligence of human civilizations with the precision of modern neuroscience and the leverage of AI-era tools.
+      </p>
+    </div>
+
+    <div class="philosophy-pillars">
+      <div class="pillar fade-up">
+        <div class="pillar-icon">🌿</div>
+        <div class="pillar-title">Ancient Wisdom</div>
+        <p class="pillar-text">Stoicism, Ubuntu philosophy, Eastern contemplative traditions, and Proverbs — tested across millennia to reveal what it truly means to flourish as a human being.</p>
+      </div>
+      <div class="pillar fade-up">
+        <div class="pillar-icon">🧠</div>
+        <div class="pillar-title">Neuro-Science</div>
+        <p class="pillar-text">Activating the prefrontal cortex for agency, clarity, and intentional action. Your biology is not your barrier — it's your greatest leadership instrument.</p>
+      </div>
+      <div class="pillar fade-up">
+        <div class="pillar-icon">⚡</div>
+        <div class="pillar-title">Modern Technology</div>
+        <p class="pillar-text">AI is making answers faster — but not organizations smarter. We bridge that gap, helping leaders use technology as a tool for human flourishing, not a replacement for it.</p>
+      </div>
+    </div>
+
+    <div class="text-center" style="margin-top:48px; fade-up">
+      <a href="philosophy.html" class="btn btn-outline">Explore the Philosophy →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SERVICES ═══════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="grid-2">
+      <div class="fade-up">
+        <div class="section-label">How We Work Together</div>
+        <h2 class="display-3" style="margin-bottom:20px;">
+          Coaching shaped around your whole life
+        </h2>
+        <p class="body-md text-muted" style="margin-bottom:32px; max-width:440px;">
+          You didn't build a successful business just to feel trapped by it. Every engagement begins with a single question: what does the life you want to live actually look like?
+        </p>
+        <a href="services.html" class="btn btn-primary">View All Services</a>
+      </div>
+      <div>
+        <div class="services-grid">
+          <div class="service-card fade-up">
+            <div class="service-tag">1:1 Coaching</div>
+            <div class="service-title">Executive Mastery Program</div>
+            <p class="service-text">Twelve months of deep, bespoke coaching for senior leaders ready to step into the fullest expression of who they are.</p>
+            <a href="services.html" class="service-link">Learn more →</a>
+          </div>
+          <div class="service-card fade-up">
+            <div class="service-tag">Group Cohort</div>
+            <div class="service-title">The Maturity Circle</div>
+            <p class="service-text">An intimate cohort of peers navigating the intersection of business excellence and a life they love — together.</p>
+            <a href="services.html" class="service-link">Learn more →</a>
+          </div>
+          <div class="service-card fade-up">
+            <div class="service-tag">Team & Org</div>
+            <div class="service-title">Leadership Culture Design</div>
+            <p class="service-text">Transform the invisible culture of your organization to one where people want to bring their best — and go home fulfilled.</p>
+            <a href="services.html" class="service-link">Learn more →</a>
+          </div>
+          <div class="service-card fade-up">
+            <div class="service-tag">Keynote & Workshop</div>
+            <div class="service-title">Wisdom in the AI Era</div>
+            <p class="service-text">A provocative and inspiring keynote on why human maturity is the single greatest competitive advantage in an AI-driven world.</p>
+            <a href="services.html" class="service-link">Learn more →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ QUOTE BAND ═══════════════ -->
+<div class="quote-band">
+  <div class="container-sm">
+    <p class="big-quote">
+      "AI is making answers faster — but not organizations smarter. That gap is where human maturity lives."
+    </p>
+    <div class="quote-attr">— Eugene Nkomba</div>
+  </div>
+</div>
+
+<!-- ═══════════════ TESTIMONIALS ═══════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom:56px;">
+      <div class="section-label" style="justify-content:center;">Voices of Transformation</div>
+      <h2 class="display-3">What leaders are saying</h2>
+    </div>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-up">
+        <div class="testimonial-quote">
+          "Eugene helped me see that my restlessness wasn't a problem to fix — it was intelligence pointing me toward a more honest way of leading. My business has never been better, and for the first time, I actually enjoy running it."
+        </div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">S</div>
+          <div>
+            <div class="testimonial-name">Sarah Okonkwo</div>
+            <div class="testimonial-title">CEO, Horizon Capital Group</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-up">
+        <div class="testimonial-quote">
+          "The blend of ancient philosophy with modern leadership science is unlike anything else. Eugene doesn't coach you to perform better — he coaches you to become more of who you already are."
+        </div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">M</div>
+          <div>
+            <div class="testimonial-name">Marcus DeLeon</div>
+            <div class="testimonial-title">Managing Director, Vantage Partners</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-up">
+        <div class="testimonial-quote">
+          "Within three sessions I had the clarity I'd been searching for across two years of therapy and two strategy retreats. Eugene holds a rare kind of space — wise, direct, and deeply humane."
+        </div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">A</div>
+          <div>
+            <div class="testimonial-name">Amara Johansson</div>
+            <div class="testimonial-title">Founder, Luma Ventures</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ GET THE APP ═══════════════ -->
+<section class="app-band">
+  <div class="container-sm">
+    <div class="section-label" style="justify-content:center;">Now on your phone</div>
+    <h2 class="display-3 fade-up" style="color:var(--white); margin-bottom:20px;">
+      Carry the practice with you
+    </h2>
+    <p class="body-lg fade-up" style="color:rgba(255,255,255,0.7); max-width:560px; margin:0 auto 44px;">
+      Daily wisdom, a maturity self-assessment, private journaling, and your path to coaching — installable on iPhone and Android. No app store needed.
+    </p>
+    <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;" class="fade-up">
+      <a href="/app/" class="btn btn-gold btn-lg">
+        Open the App
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+    </div>
+    <div class="app-hint fade-up">
+      On iPhone: tap Share → Add to Home Screen &nbsp;·&nbsp; On Android: tap Install
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ CTA ═══════════════ -->
+<section class="cta-section">
+  <div class="container-sm">
+    <h2 class="display-3 fade-up">Ready to lead from your full self?</h2>
+    <p class="body-lg fade-up">Start with a 30-minute exploratory conversation — no obligation, no agenda, just honest dialogue about what's possible.</p>
+    <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;" class="fade-up">
+      <a href="contact.html" class="btn btn-white btn-lg">Request Confidential Consultation</a>
+      <a href="about.html" class="btn btn-outline" style="color:rgba(255,255,255,0.85); border-color:rgba(255,255,255,0.35);">Meet Eugene →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <div class="footer-logo">M</div>
+          <div class="footer-brand-name">Maturity<span>Coach</span></div>
+        </div>
+        <p class="footer-desc">Ancient wisdom, modern intelligence, and the courage to live fully — while building something extraordinary.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/nkomba" target="_blank" title="LinkedIn">in</a>
+          <a href="#" title="Twitter/X">𝕏</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="philosophy.html">Philosophy</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About Eugene</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Executive Mastery</a></li>
+          <li><a href="services.html">Maturity Circle</a></li>
+          <li><a href="services.html">Leadership Culture</a></li>
+          <li><a href="services.html">Speaking</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="/app/">Get the App</a></li>
+          <li><a href="contact.html">Request Confidential Consultation</a></li>
+          <li><a href="https://www.linkedin.com/in/nkomba" target="_blank">LinkedIn</a></li>
+          <li><a href="mailto:eugene@maturity.coach">Email Eugene</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Maturity Coach. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll effect
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Mobile menu
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+
+  // Fade-up observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  // In script tag at bottom of each HTML file
+document.addEventListener('DOMContentLoaded', () => {
+  const nav = document.getElementById('mainNav');
+  
+  // Set initial state based on current scroll position
+  if (nav) {
+    nav.classList.toggle('scrolled', window.scrollY > 0);
+    
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    });
+  }
+});
+</script>
+
+</body>
+</html>

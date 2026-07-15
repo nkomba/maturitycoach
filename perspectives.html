@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perspectives — Maturity Coach</title>
+  <meta name="description" content="Perspectives from Eugene Nkomba — essays on leading wisely and living fully, at the intersection of ancient wisdom, neuroscience, and the AI era." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── PERSPECTIVES (insights) ── */
+    .pv-hero { background: var(--charcoal); padding: calc(var(--nav-height) + 80px) 0 80px; text-align: center; position: relative; overflow: hidden; }
+    .pv-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 50% 55%, rgba(184,151,90,0.08) 0%, transparent 65%); }
+    .pv-hero .container-sm { position: relative; z-index: 1; }
+    .pv-hero h1 { color: var(--white); margin-bottom: 20px; }
+    .pv-hero h1 em { font-style: italic; color: var(--gold); }
+    .pv-hero p { color: rgba(255,255,255,0.6); max-width: 600px; margin: 0 auto; font-size: 18px; line-height: 1.7; }
+
+    .pv-section { padding: 80px 0 100px; background: var(--white); }
+
+    /* Featured */
+    .pv-featured { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; background: var(--cream); border-radius: var(--radius-xl); overflow: hidden; margin-bottom: 60px; }
+    .pv-featured-art { background: linear-gradient(155deg, var(--charcoal), #2c332b); min-height: 320px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+    .pv-featured-art::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 70% at 70% 30%, rgba(184,151,90,0.18), transparent 60%); }
+    .pv-featured-art .glyph { font-family: var(--font-serif); font-size: 88px; color: rgba(184,151,90,0.5); position: relative; z-index: 1; }
+    .pv-featured-body { padding: 48px 48px 48px 0; }
+    .pv-tag { display:inline-block; font-size:11px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold-dark); background:rgba(184,151,90,0.1); padding:5px 12px; border-radius:100px; margin-bottom:18px; }
+    .pv-featured-body h2 { font-family: var(--font-serif); font-size: clamp(24px, 3vw, 32px); color: var(--text-primary); line-height: 1.2; margin-bottom: 14px; }
+    .pv-featured-body p { font-size: 16px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 22px; }
+    .pv-meta { font-size: 13px; color: var(--text-muted); margin-bottom: 22px; }
+    .pv-read { font-weight: 600; color: var(--gold-dark); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: var(--transition); }
+    .pv-read:hover { gap: 10px; }
+
+    /* Grid of posts */
+    .pv-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .pv-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; transition: var(--transition); display: flex; flex-direction: column; text-decoration: none; }
+    .pv-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: rgba(184,151,90,0.2); }
+    .pv-card-art { height: 140px; background: linear-gradient(155deg, var(--cream), #ece4d2); display: flex; align-items: center; justify-content: center; font-size: 40px; }
+    .pv-card-body { padding: 24px; display: flex; flex-direction: column; flex: 1; }
+    .pv-card-body .pv-tag { margin-bottom: 12px; }
+    .pv-card-body h3 { font-family: var(--font-serif); font-size: 19px; color: var(--text-primary); line-height: 1.25; margin-bottom: 10px; }
+    .pv-card-body p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px; flex: 1; }
+    .pv-card-meta { font-size: 12px; color: var(--text-muted); }
+
+    .pv-soon { text-align: center; color: var(--text-muted); font-size: 14px; margin-top: 48px; }
+
+    @media (max-width: 768px) {
+      .pv-featured { grid-template-columns: 1fr; }
+      .pv-featured-art { min-height: 200px; }
+      .pv-featured-body { padding: 32px; }
+      .pv-grid { grid-template-columns: 1fr; }
+    }
+    /* Override for pages with dark heroes */
+@media (max-width: 768px) {
+  .nav {
+    background: rgba(28,28,30,0.98) !important;
+  }
+  .nav.scrolled {
+    background: rgba(28,28,30,0.98) !important;
+  }
+  .nav-logo, .nav-logo .logo-text, .nav-links a, .nav-hamburger span {
+    color: var(--white) !important;
+  }
+}
+
+/* Desktop: keep white nav always */
+@media (min-width: 769px) {
+  .nav {
+    background: var(--white) !important;
+  }
+  .nav-logo, .nav-logo .logo-text {
+    color: var(--charcoal) !important;
+  }
+}
+  </style>
+<style id="unified-nav-styles">
+  /* Full-width submenu bar: opens ACROSS THE TOP, under the nav */
+  .nav-links .nav-group { position: static; align-self: stretch; display: flex; align-items: center; }
+  .nav-links .nav-group > .nav-group-trigger { display: inline-flex; align-items: center; gap: 6px; height: 100%; position: relative; }
+  .nav-links .nav-group > .nav-group-trigger::after { display: none; }
+  .nav-caret { width: 9px; height: 9px; opacity: .65; transition: transform .3s cubic-bezier(.4,0,.2,1); }
+  .nav-group:hover .nav-caret { transform: rotate(180deg); }
+  .nav-dropdown {
+    position: absolute; top: 100%; left: 0; right: 0; box-sizing: border-box;
+    display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch; gap: 6px;
+    padding: 16px 32px;
+    background: var(--white, #fff);
+    border-top: 1px solid var(--border, rgba(0,0,0,.08));
+    border-bottom: 1px solid var(--border, rgba(0,0,0,.08));
+    box-shadow: 0 24px 50px rgba(28,28,30,.10);
+    opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(-8px);
+    transition: opacity .24s ease, transform .24s cubic-bezier(.4,0,.2,1), visibility .24s; z-index: 9998;
+  }
+  .nav-dropdown::before { content: ''; position: absolute; left: 0; right: 0; top: -26px; height: 26px; }
+  .nav-group:hover .nav-dropdown, .nav-group:focus-within .nav-dropdown {
+    opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0);
+  }
+  .nav-dropdown a {
+    display: block; padding: 12px 18px; border-radius: var(--radius-sm, 8px);
+    font-size: 14px; line-height: 1.35; color: var(--text-primary, #1a1a1a);
+    min-width: 180px; white-space: nowrap;
+  }
+  .nav-dropdown a::after { display: none; }
+  .nav-dropdown a:hover { background: var(--cream, #f7f3ec); color: var(--gold-dark, #8b6e3a); }
+  .nav-dropdown .dropdown-desc {
+    display: block; margin-top: 3px; font-size: 12px; font-weight: 400;
+    color: var(--text-secondary, #6b6b76); white-space: nowrap;
+  }
+  .nav-dropdown .tag {
+    display: inline-block; margin-left: 8px; font-size: 10px; letter-spacing: .06em;
+    text-transform: uppercase; color: var(--gold-dark, #8b6e3a);
+    background: rgba(184,151,90,.14); padding: 2px 8px; border-radius: 100px; vertical-align: middle;
+  }
+  /* Featured "quick value" group */
+  .nav-links .nav-group.featured > .nav-group-trigger { color: var(--gold-dark, #8b6e3a); font-weight: 600; }
+  .nav-links .nav-group.featured > .nav-group-trigger .nav-caret { opacity: .9; }
+  /* Active page state (set automatically by the injected script) */
+  .nav-links > a.active { color: var(--text-primary, #1a1a1a); }
+  .nav-links > a.active::after { transform: scaleX(1); }
+  .nav-links > a.nav-cta.active { background: var(--gold, #b8975a); }
+  .nav-links .nav-group.active > .nav-group-trigger { color: var(--gold-dark, #8b6e3a); font-weight: 600; }
+  .nav-links .nav-group.active > .nav-group-trigger::before {
+    content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 3px;
+    background: var(--gold, #b8975a); border-radius: 3px 3px 0 0;
+  }
+  .nav-dropdown a.active { background: var(--cream, #f7f3ec); color: var(--gold-dark, #8b6e3a); font-weight: 600; }
+  .mobile-menu a.active { color: var(--gold-dark, #8b6e3a); font-weight: 600; }
+  /* Mobile grouped menu */
+  .mobile-menu .m-label {
+    display: block; padding: 20px 32px 2px; text-align: center;
+    font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--gold, #b8975a); border: none;
+    font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
+  }
+  .mobile-menu .m-label:first-child { padding-top: 10px; }
+  .mobile-menu a.m-assess { color: var(--gold-dark, #8b6e3a); }
+  .mobile-menu a.m-cta { color: var(--white, #fff); background: var(--charcoal, #1c1c1e); }
+  @media (max-width: 1040px) { .nav-links { gap: 20px; } }
+</style>
+<script id="unified-nav-script">
+document.addEventListener('DOMContentLoaded', function () {
+  function seg(url) {
+    try {
+      var a = document.createElement('a'); a.href = url;
+      var s = a.pathname.split('/').filter(Boolean).pop();
+      return (s || 'index.html').toLowerCase();
+    } catch (e) { return ''; }
+  }
+  var here = seg(window.location.href) || 'index.html';
+  var links = document.querySelectorAll('#mainNav .nav-links a, #mobileMenu a');
+  Array.prototype.forEach.call(links, function (link) {
+    var href = link.getAttribute('href');
+    if (!href || href.charAt(0) === '#' || href.indexOf('mailto:') === 0) return;
+    if (seg(href) === here) {
+      link.classList.add('active');
+      var g = link.closest && link.closest('.nav-group');
+      if (g) g.classList.add('active');
+    }
+  });
+});
+</script>
+</head>
+<body>
+
+<nav class="nav scrolled" id="mainNav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">M</div>
+      <span class="logo-text">Maturity<span>Coach</span></span>
+    </a>
+    <div class="nav-links">
+      <!-- APPROACH: the why + the framework -->
+      <div class="nav-group">
+        <a href="philosophy.html" class="nav-group-trigger">Approach
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="philosophy.html">Philosophy<span class="dropdown-desc">The Maturity Method &mdash; wisdom, neuroscience &amp; AI</span></a>
+          <a href="framework.html">Ubuntu Roots Coaching&trade;<span class="dropdown-desc">The proprietary coaching framework</span></a>
+        </div>
+      </div>
+
+      <!-- SERVICES: overview + specialised track -->
+      <div class="nav-group">
+        <a href="services.html" class="nav-group-trigger">Services
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="services.html">All Services<span class="dropdown-desc">1:1, cohorts, teams &amp; keynotes</span></a>
+          <a href="coaching-for-technical-leaders.html">Coaching for Technical Leaders<span class="dropdown-desc">CISOs, CIOs, CTOs &amp; federal tech leaders</span></a>
+        </div>
+      </div>
+
+      <!-- INSIGHTS: thought leadership hub + featured essays + blog -->
+      <div class="nav-group">
+        <a href="perspectives.html" class="nav-group-trigger">Insights
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="perspectives.html">Perspectives<span class="dropdown-desc">Essays on leadership &amp; maturity</span></a>
+          <a href="perspectives-human-maturity.html">Why AI Raises the Premium on Human Maturity</a>
+          <a href="perspectives-sacrificial-leader.html">The Myth of the Sacrificial Leader</a>
+          <a href="blog.html">From the Blog<span class="dropdown-desc">Latest notes &amp; articles</span></a>
+        </div>
+      </div>
+
+      <a href="about.html">About Eugene</a>
+
+      <!-- FREE RESOURCES: every no-cost, quick-value entry point in one place. -->
+      <div class="nav-group featured">
+        <a href="assessment-teaser.html" class="nav-group-trigger">Free Resources
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="assessment-teaser.html">Quick Leadership Check<span class="tag">2 min</span><span class="dropdown-desc">Instant snapshot of where you lead from</span></a>
+          <a href="assessment.html">Full Maturity Assessment<span class="dropdown-desc">The complete self-assessment</span></a>
+          <a href="/workshop/">Free Leadership Workshop<span class="dropdown-desc">Live, 90 minutes, for senior leaders</span></a>
+          <a href="/ai-ready-leader/">AI-Ready Leader Guide<span class="dropdown-desc">Free download</span></a>
+          <a href="/app/">Get the App<span class="dropdown-desc">Daily practice on iPhone &amp; Android</span></a>
+        </div>
+      </div>
+
+      <!-- PRIMARY CONVERSION -->
+      <a href="contact.html" class="nav-cta">Request a Consultation</a>
+    </div>
+    <div class="nav-hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <span class="m-label">Approach</span>
+  <a href="philosophy.html" onclick="toggleMenu()">Philosophy</a>
+  <a href="framework.html" onclick="toggleMenu()">Ubuntu Roots Coaching&trade;</a>
+
+  <span class="m-label">Services</span>
+  <a href="services.html" onclick="toggleMenu()">All Services</a>
+  <a href="coaching-for-technical-leaders.html" onclick="toggleMenu()">For Technical Leaders</a>
+
+  <span class="m-label">Insights</span>
+  <a href="perspectives.html" onclick="toggleMenu()">Perspectives</a>
+  <a href="blog.html" onclick="toggleMenu()">From the Blog</a>
+
+  <span class="m-label">Free Resources</span>
+  <a href="assessment-teaser.html" class="m-assess" onclick="toggleMenu()">Quick Leadership Check &middot; 2 min</a>
+  <a href="assessment.html" onclick="toggleMenu()">Full Maturity Assessment</a>
+  <a href="/workshop/" onclick="toggleMenu()">Free Leadership Workshop</a>
+  <a href="/ai-ready-leader/" onclick="toggleMenu()">AI-Ready Leader Guide</a>
+  <a href="/app/" onclick="toggleMenu()">Get the App</a>
+
+  <span class="m-label">More</span>
+  <a href="about.html" onclick="toggleMenu()">About Eugene</a>
+  <a href="contact.html" class="m-cta" onclick="toggleMenu()">Request a Consultation</a>
+</div>
+
+<!-- HERO -->
+<section class="pv-hero">
+  <div class="container-sm">
+    <div class="section-label" style="justify-content:center; color:var(--gold); margin-bottom:20px;">Insights from Eugene</div>
+    <h1 class="display-2"><em>Perspectives</em></h1>
+    <p>Essays on leading wisely and living fully — where ancient wisdom, neuroscience, and the AI era meet the real work of leadership.</p>
+  </div>
+</section>
+
+<!-- POSTS -->
+<section class="pv-section">
+  <div class="container">
+
+    <!-- FEATURED POST -->
+    <a href="perspectives-human-maturity.html" style="text-decoration:none; display:block;">
+      <div class="pv-featured">
+        <div class="pv-featured-art"><span class="glyph">&ldquo;</span></div>
+        <div class="pv-featured-body">
+          <span class="pv-tag">Featured · AI &amp; Leadership</span>
+          <h2>Why AI Raises the Premium on Human Maturity</h2>
+          <p>Artificial intelligence is making answers faster — but not organizations smarter. The gap between the two is widening, and it is precisely where the mature leader now creates disproportionate value.</p>
+          <div class="pv-meta">Eugene Nkomba · July 2026 · 6 min read</div>
+          <span class="pv-read">Read the essay →</span>
+        </div>
+      </div>
+    </a>
+
+    <!--
+      ═══ HOW TO ADD A NEW POST ═══
+      1. Copy the file "perspectives-human-maturity.html", rename it (e.g. "perspectives-your-topic.html"),
+         and write your new essay inside it.
+      2. Copy one <a class="pv-card"> ... </a> block below, paste it at the TOP of the .pv-grid,
+         and update the link (href), tag, title, summary, date, and emoji.
+      That's it — commit and push.
+    -->
+
+    <div class="pv-grid">
+      <a class="pv-card" href="perspectives-sacrificial-leader.html">
+        <div class="pv-card-art">🌤️</div>
+        <div class="pv-card-body">
+          <span class="pv-tag">Leading &amp; Living</span>
+          <h3>The Myth of the Sacrificial Leader</h3>
+          <p>Enjoyment isn't the reward for great leadership — it's one of its sources. Why the sacrifice model quietly costs you.</p>
+          <div class="pv-card-meta">July 2026 · 5 min read</div>
+        </div>
+      </a>
+
+      <a class="pv-card" href="perspectives-human-maturity.html">
+        <div class="pv-card-art">🧭</div>
+        <div class="pv-card-body">
+          <span class="pv-tag">AI &amp; Leadership</span>
+          <h3>Why AI Raises the Premium on Human Maturity</h3>
+          <p>The faster answers get, the more your judgment, presence, and character become the real advantage.</p>
+          <div class="pv-card-meta">July 2026 · 6 min read</div>
+        </div>
+      </a>
+
+      <!-- Duplicate the card above to add more posts. -->
+    </div>
+
+    <p class="pv-soon">More perspectives are on the way. Want them in your inbox? <a href="contact.html" class="plainlink" style="color:var(--gold-dark);">Say hello →</a></p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <div class="footer-logo">M</div>
+          <div class="footer-brand-name">Maturity<span>Coach</span></div>
+        </div>
+        <p class="footer-desc">Ancient wisdom, modern intelligence, and the courage to live fully — while building something extraordinary.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/nkomba" target="_blank" title="LinkedIn">in</a>
+          <a href="#" title="Twitter/X">𝕏</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="philosophy.html">Philosophy</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="perspectives.html">Perspectives</a></li>
+          <li><a href="about.html">About Eugene</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="framework.html">Ubuntu Roots Framework</a></li>
+          <li><a href="services.html">Executive Mastery</a></li>
+          <li><a href="services.html">Maturity Circle</a></li>
+          <li><a href="services.html">Speaking</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="/app/">Get the App</a></li>
+          <li><a href="contact.html">Request Confidential Consultation</a></li>
+          <li><a href="https://www.linkedin.com/in/nkomba" target="_blank">LinkedIn</a></li>
+          <li><a href="mailto:eugene@maturitycoach.com">Email Eugene</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Maturity Coach. All rights reserved.</span>
+      <div class="footer-bottom-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
+  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+  // In script tag at bottom of each HTML file
+document.addEventListener('DOMContentLoaded', () => {
+  const nav = document.getElementById('mainNav');
+  
+  // Set initial state based on current scroll position
+  if (nav) {
+    nav.classList.toggle('scrolled', window.scrollY > 0);
+    
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    });
+  }
+});
+</script>
+</body>
+</html>

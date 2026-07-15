@@ -1,0 +1,9 @@
+/* ------------------------------------------------------------------
+   Local shim.
+   Every page links <link rel="stylesheet" href="style.css">, but the
+   real stylesheet lives in /css/style.css. This file re-exports it so
+   the pages find their styles when opened from this folder.
+   (Safe to keep; if you deploy with style.css already at the root,
+   this just points to the same styles.)
+   ------------------------------------------------------------------ */
+@import url("css/style.css");
