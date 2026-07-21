@@ -1,0 +1,9 @@
+# Local backups created before edits.
+# Kept on disk as a restore point, kept out of the repo.
+*.bak
+*.bak.*
+
+# OS / editor noise
+Thumbs.db
+Desktop.ini
+.DS_Store
