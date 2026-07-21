@@ -255,18 +255,89 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 28px;
+      gap: 26px;
       list-style: none;
     }
 
-    .nav-links a {
+    .nav-links > li > a,
+    .nav-group-trigger {
       font-family: var(--font-head);
       font-size: 0.88rem;
       font-weight: 500;
       color: var(--text-mid);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
     }
 
-    .nav-links a:hover { color: var(--primary); }
+    .nav-links > li > a:hover,
+    .nav-group:hover .nav-group-trigger { color: var(--gold-dark); }
+
+    /* ── Grouped dropdowns, matching the rest of the site ── */
+    .nav-group { position: relative; }
+
+    .nav-caret {
+      width: 9px; height: 9px; opacity: 0.65;
+      transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+    .nav-group:hover .nav-caret { transform: rotate(180deg); }
+
+    .nav-dropdown {
+      position: absolute;
+      top: calc(100% + 14px);
+      left: 50%;
+      transform: translateX(-50%) translateY(-8px);
+      min-width: 280px;
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: var(--transition);
+    }
+
+    /* Bridges the gap so the menu survives the pointer travelling to it. */
+    .nav-group::after {
+      content: '';
+      position: absolute;
+      top: 100%; left: 0; right: 0;
+      height: 16px;
+    }
+
+    .nav-group:hover .nav-dropdown,
+    .nav-group:focus-within .nav-dropdown {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .nav-dropdown a {
+      font-family: var(--font-head);
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      white-space: nowrap;
+      transition: var(--transition);
+    }
+    .nav-dropdown a:hover { background: var(--cream); color: var(--gold-dark); }
+
+    .dropdown-desc {
+      display: block;
+      margin-top: 3px;
+      font-size: 0.72rem;
+      font-weight: 400;
+      color: var(--text-light);
+    }
 
     .nav-cta {
       font-family: var(--font-head);
@@ -302,7 +373,7 @@
       transition: var(--transition);
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
       .nav-toggle { display: flex; }
       .nav-links {
         position: absolute;
@@ -310,21 +381,53 @@
         left: 0;
         right: 0;
         flex-direction: column;
+        align-items: stretch;
         background: white;
-        padding: 20px 24px;
-        gap: 16px;
+        padding: 16px 24px 24px;
+        gap: 4px;
         border-bottom: 1px solid var(--border);
-        box-shadow: var(--shadow-sm);
+        box-shadow: var(--shadow-md);
         transform: translateY(-10px);
         opacity: 0;
         pointer-events: none;
         transition: var(--transition);
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
       }
       .nav-links.open {
         transform: translateY(0);
         opacity: 1;
         pointer-events: auto;
       }
+
+      /* On mobile the dropdowns sit open inline rather than on hover. */
+      .nav-group { position: static; }
+      .nav-caret { display: none; }
+      .nav-group-trigger {
+        padding: 14px 0 6px;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--gold);
+        pointer-events: none;
+      }
+      .nav-dropdown {
+        position: static;
+        transform: none;
+        min-width: 0;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        background: transparent;
+      }
+      .nav-group::after { display: none; }
+      .nav-dropdown a { padding: 9px 0; white-space: normal; }
+      .dropdown-desc { display: none; }
+      .nav-cta { margin-top: 16px; text-align: center; display: block; }
     }
 
     /* ================================================
@@ -1193,7 +1296,7 @@
        ========================================== -->
   <nav class="navbar">
     <div class="container nav-inner">
-      <a href="https://maturity.coach" class="nav-logo">
+      <a href="../index.html" class="nav-logo">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <circle cx="12" cy="12" r="10" stroke="#B8975A" stroke-width="2"/>
           <path d="M12 6L12 18M6 12L18 12" stroke="#B8975A" stroke-width="2" stroke-linecap="round"/>
@@ -1204,9 +1307,69 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links">
-        <li><a href="https://maturity.coach/#services">Services</a></li>
-        <li><a href="https://maturity.coach/#approach">Approach</a></li>
-        <li><a href="https://maturity.coach/#about">About</a></li>
+
+        <!-- APPROACH -->
+        <li class="nav-group">
+          <a href="../philosophy.html" class="nav-group-trigger">Approach
+            <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="nav-dropdown">
+            <a href="../philosophy.html">Philosophy<span class="dropdown-desc">The Maturity Method &mdash; wisdom, neuroscience &amp; AI</span></a>
+            <a href="../framework.html">Ubuntu Roots Coaching&trade;<span class="dropdown-desc">The proprietary coaching framework</span></a>
+          </div>
+        </li>
+
+        <!-- SERVICES -->
+        <li class="nav-group">
+          <a href="../services.html" class="nav-group-trigger">Services
+            <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="nav-dropdown">
+            <a href="../services.html">All Services<span class="dropdown-desc">1:1, cohorts, teams &amp; keynotes</span></a>
+            <a href="../coaching-for-technical-leaders.html">Coaching for Technical Leaders<span class="dropdown-desc">CISOs, CIOs, CTOs &amp; federal tech leaders</span></a>
+          </div>
+        </li>
+
+        <!-- INSIGHTS -->
+        <li class="nav-group">
+          <a href="../perspectives.html" class="nav-group-trigger">Insights
+            <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="nav-dropdown">
+            <a href="../perspectives.html">Perspectives<span class="dropdown-desc">Essays on leadership &amp; maturity</span></a>
+            <a href="../blog.html">From the Blog<span class="dropdown-desc">Latest notes &amp; articles</span></a>
+          </div>
+        </li>
+
+        <!-- OUR COACHES -->
+        <li class="nav-group">
+          <a href="../about.html" class="nav-group-trigger">Our Coaches
+            <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="nav-dropdown">
+            <!-- COACHES:START -->
+            <a href="../about.html">All Coaches<span class="dropdown-desc">Filter by specialization</span></a>
+            <a href="../profiles/eugene.html">Eugene Nkomba<span class="dropdown-desc">Founder &amp; Managing Partner</span></a>
+            <a href="../profiles/catherine.html">Catherine Nkomba<span class="dropdown-desc">Partner Coach &amp; Agile Transformation Lead</span></a>
+            <a href="../profiles/patrice.html">Patrice Nkomba<span class="dropdown-desc">Partner Coach &amp; Technical Advisor</span></a>
+            <!-- COACHES:END -->
+          </div>
+        </li>
+
+        <!-- FREE RESOURCES -->
+        <li class="nav-group">
+          <a href="../assessment-teaser.html" class="nav-group-trigger">Free Resources
+            <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="nav-dropdown">
+            <a href="../assessment-teaser.html">Quick Leadership Check<span class="dropdown-desc">2-minute snapshot</span></a>
+            <a href="../assessment.html">Full Maturity Assessment<span class="dropdown-desc">The complete self-assessment</span></a>
+            <a href="../ai-ready-leader/">AI-Ready Leader Guide<span class="dropdown-desc">Free download</span></a>
+            <a href="../app/">Get the App<span class="dropdown-desc">Daily practice on iPhone &amp; Android</span></a>
+          </div>
+        </li>
+
+        <!-- PAGE CONVERSION -->
         <li><a href="#register" class="nav-cta">Reserve My Seat</a></li>
       </ul>
     </div>
@@ -1366,7 +1529,7 @@
                 By registering, you'll receive a confirmation email with the Zoom link,
                 a pre-workshop reflection prompt, and a calendar invite.
                 We'll also add you to the monthly insights list (unsubscribe anytime).
-                Read our <a href="https://maturity.coach/privacy">Privacy Policy</a>.
+                Read our <a href="../privacy.html">Privacy Policy</a>.
               </p>
             </form>
           </div>
@@ -1383,7 +1546,7 @@
               Check your inbox for a confirmation email with the Zoom link,
               a pre-workshop reflection prompt, and your calendar invite.
             </p>
-            <a href="https://maturity.coach" class="btn-outline">
+            <a href="../index.html" class="btn-outline">
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M3 3H21V21H3V3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
                 <path d="M3 9H21M9 21V9" stroke="currentColor" stroke-width="2"/>
@@ -1587,7 +1750,7 @@
         <!-- LEFT: Photo -->
         <div class="speaker-photo">
           <!-- Replace with actual photo URL -->
-          <img src="https://maturity.coach/images/eugene-nkomba.jpg" alt="Eugene Nkomba, Executive Coach at Maturity Coach" onerror="this.src='https://via.placeholder.com/320x320/f3f0ff/6d4aff?text=Eugene+Nkomba'">
+          <img src="../assets/coaches/eugene.jpg" alt="Eugene Nkomba, Executive Coach at Maturity Coach" loading="lazy">
         </div>
 
         <!-- RIGHT: Bio -->
@@ -1900,11 +2063,12 @@
       <div class="footer-inner">
         <div class="footer-brand">Maturity<span>.coach</span></div>
         <ul class="footer-links">
-          <li><a href="https://maturity.coach">Home</a></li>
-          <li><a href="https://maturity.coach/#services">Services</a></li>
-          <li><a href="https://maturity.coach/#approach">Approach</a></li>
-          <li><a href="https://maturity.coach/privacy">Privacy</a></li>
-          <li><a href="https://maturity.coach/contact">Contact</a></li>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../philosophy.html">Approach</a></li>
+          <li><a href="../about.html">Our Coaches</a></li>
+          <li><a href="../privacy.html">Privacy</a></li>
+          <li><a href="../contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-copy">

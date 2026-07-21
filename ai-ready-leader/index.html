@@ -13,36 +13,52 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Fonts: the site uses Georgia for display headings and the system sans
+       stack elsewhere, so the Montserrat/Merriweather import the old purple
+       theme relied on has been removed. It was render-blocking and unused. -->
 
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
+    /* ------------------------------------------------------------------
+       Palette aligned with the main site (css/style.css).
+       Variable NAMES are unchanged so the rest of this stylesheet keeps
+       working; only the values were remapped from the old purple theme
+       to the site's gold / charcoal / cream system.
+       ------------------------------------------------------------------ */
     :root {
-      --primary: #6d4aff;
-      --primary-dark: #5638cc;
-      --primary-light: #e8e8f5;
-      --primary-lighter: #f3f0ff;
-      --text-dark: #2a2a3e;
-      --text-mid: #555568;
-      --text-light: #8888aa;
-      --bg-white: #ffffff;
-      --bg-off: #f8f8fc;
-      --bg-lavender: #f3f0ff;
-      --bg-dark: #1a1a2e;
-      --border: #e0deef;
-      --accent-gold: #c9a84c;
-      --accent-green: #2ecc71;
-      --shadow-sm: 0 2px 8px rgba(109, 74, 255, 0.08);
-      --shadow-md: 0 8px 32px rgba(109, 74, 255, 0.12);
-      --shadow-lg: 0 16px 48px rgba(109, 74, 255, 0.16);
-      --radius: 12px;
+      --gold: #B8975A;
+      --gold-light: #D4AF7A;
+      --gold-dark: #8B6E3A;
+      --charcoal: #1C1C1E;
+      --cream: #F7F3EC;
+
+      --primary: var(--gold);
+      --primary-dark: var(--gold-dark);
+      --primary-light: #EFE7D8;
+      --primary-lighter: var(--cream);
+      --text-dark: #1A1A1A;
+      --text-mid: #4A4A4A;
+      --text-light: #8A8A8E;
+      --bg-white: #FFFFFF;
+      --bg-off: #FAF8F4;
+      --bg-lavender: var(--cream);   /* legacy name, now cream */
+      --bg-dark: var(--charcoal);
+      --border: rgba(0,0,0,0.08);
+      --accent-gold: var(--gold-light);
+      --accent-green: #2E7D5B;
+      --shadow-sm: 0 2px 12px rgba(0,0,0,0.06);
+      --shadow-md: 0 8px 40px rgba(0,0,0,0.10);
+      --shadow-lg: 0 24px 80px rgba(0,0,0,0.14);
+      --radius: 16px;
       --radius-sm: 8px;
-      --radius-lg: 20px;
+      --radius-lg: 24px;
       --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      --max-width: 1140px;
-      --font-head: 'Montserrat', sans-serif;
-      --font-body: 'Merriweather', serif;
+      --max-width: 1200px;
+      /* Site typography: serif for display headings, system sans for UI/body. */
+      --font-display: 'Georgia', 'Times New Roman', serif;
+      --font-head: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+      --font-body: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
     }
 
     html { scroll-behavior: smooth; font-size: 16px; }
@@ -55,14 +71,17 @@
     .container { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
     .text-center { text-align: center; }
 
+    /* Matches .section-label on the main site: sans, small, gold, tracked. */
     .eyebrow {
-      font-family: var(--font-head); font-size: 0.78rem; font-weight: 600;
-      letter-spacing: 2px; text-transform: uppercase; color: var(--primary); margin-bottom: 16px;
+      font-family: var(--font-head); font-size: 0.7rem; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px;
     }
 
+    /* Display headings use the site serif at regular weight. */
     .heading-xl {
-      font-family: var(--font-head); font-size: clamp(1.8rem, 4vw, 2.6rem);
-      font-weight: 700; line-height: 1.2; color: var(--text-dark); margin-bottom: 20px;
+      font-family: var(--font-display); font-size: clamp(1.9rem, 4vw, 2.9rem);
+      font-weight: 400; line-height: 1.15; letter-spacing: -0.02em;
+      color: var(--text-dark); margin-bottom: 20px;
     }
 
     .lead-center {
@@ -71,54 +90,113 @@
 
     .btn-primary {
       display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-      padding: 16px 36px; background: var(--primary); color: white;
+      padding: 16px 36px; background: linear-gradient(135deg, var(--gold-dark), var(--gold)); color: white;
       font-family: var(--font-head); font-size: 1rem; font-weight: 600;
       border: none; border-radius: var(--radius-sm); cursor: pointer;
       transition: var(--transition); text-decoration: none;
     }
-    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: var(--shadow-md); color: white; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(184,151,90,0.4); color: white; }
     .btn-primary:active { transform: translateY(0); }
     .btn-primary svg { width: 20px; height: 20px; pointer-events: none; }
 
     .btn-outline {
       display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px;
-      background: transparent; color: var(--primary); font-family: var(--font-head);
-      font-size: 0.9rem; font-weight: 600; border: 2px solid var(--primary);
+      background: transparent; color: var(--gold-dark); font-family: var(--font-head);
+      font-size: 0.9rem; font-weight: 600; border: 1.5px solid var(--gold);
       border-radius: var(--radius-sm); cursor: pointer; transition: var(--transition); text-decoration: none;
     }
     .btn-outline:hover { background: var(--primary-light); color: var(--primary); }
     .btn-outline svg { width: 16px; height: 16px; pointer-events: none; }
 
-    /* Navbar */
+    /* ------------------------------------------------------------------
+       Navbar — mirrors the grouped dropdown nav used across the site.
+       Self-contained because this landing page does not link style.css.
+       ------------------------------------------------------------------ */
     .navbar {
-      position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.92);
+      position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95);
       backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border); padding: 14px 0;
     }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
     .nav-logo {
-      font-family: var(--font-head); font-weight: 700; font-size: 1.2rem;
-      color: var(--primary); letter-spacing: -0.5px; display: flex; align-items: center; gap: 8px; text-decoration: none;
+      font-family: var(--font-display); font-weight: 400; font-size: 1.25rem;
+      color: var(--charcoal); letter-spacing: -0.01em; display: flex; align-items: center; gap: 8px; text-decoration: none;
     }
-    .nav-logo span { color: var(--text-light); font-weight: 400; }
-    .nav-links { display: flex; align-items: center; gap: 28px; }
-    .nav-links a { font-family: var(--font-head); font-size: 0.88rem; font-weight: 500; color: var(--text-mid); }
-    .nav-links a:hover { color: var(--primary); }
+    .nav-logo span { color: var(--text-light); }
+    .nav-links { display: flex; align-items: center; gap: 26px; }
+    .nav-links > a,
+    .nav-group-trigger {
+      font-family: var(--font-head); font-size: 0.88rem; font-weight: 500; color: var(--text-mid);
+      display: inline-flex; align-items: center; gap: 6px; cursor: pointer;
+    }
+    .nav-links > a:hover,
+    .nav-group:hover .nav-group-trigger { color: var(--gold-dark); }
+
+    .nav-group { position: relative; }
+    .nav-caret { width: 9px; height: 9px; opacity: 0.65; transition: transform 0.3s cubic-bezier(0.4,0,0.2,1); }
+    .nav-group:hover .nav-caret { transform: rotate(180deg); }
+
+    .nav-dropdown {
+      position: absolute; top: calc(100% + 14px); left: 50%; transform: translateX(-50%) translateY(-8px);
+      min-width: 280px; background: var(--bg-white); border: 1px solid var(--border);
+      border-radius: var(--radius); box-shadow: var(--shadow-md); padding: 10px;
+      display: flex; flex-direction: column; gap: 2px;
+      opacity: 0; visibility: hidden; pointer-events: none;
+      transition: var(--transition);
+    }
+    /* Bridges the gap so the menu survives the pointer travelling to it. */
+    .nav-group::after {
+      content: ''; position: absolute; top: 100%; left: 0; right: 0; height: 16px;
+    }
+    .nav-group:hover .nav-dropdown,
+    .nav-group:focus-within .nav-dropdown {
+      opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0);
+    }
+    .nav-dropdown a {
+      font-family: var(--font-head); font-size: 0.88rem; font-weight: 500;
+      color: var(--text-dark); padding: 10px 14px; border-radius: var(--radius-sm);
+      white-space: nowrap; transition: var(--transition);
+    }
+    .nav-dropdown a:hover { background: var(--cream); color: var(--gold-dark); }
+    .dropdown-desc {
+      display: block; margin-top: 3px; font-size: 0.72rem; font-weight: 400; color: var(--text-light);
+    }
+
     .nav-cta {
       font-family: var(--font-head); font-size: 0.85rem; font-weight: 600;
-      padding: 8px 20px; border-radius: var(--radius-sm); background: var(--primary); color: white !important;
+      padding: 9px 20px; border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold)); color: white !important;
+      white-space: nowrap;
     }
-    .nav-cta:hover { background: var(--primary-dark); transform: translateY(-1px); }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(184,151,90,0.35); }
+
     .nav-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 8px; }
     .nav-toggle span { width: 22px; height: 2px; background: var(--text-dark); border-radius: 2px; transition: var(--transition); }
-    @media (max-width: 768px) {
+
+    @media (max-width: 900px) {
       .nav-toggle { display: flex; }
       .nav-links {
-        position: absolute; top: 100%; left: 0; right: 0; flex-direction: column;
-        background: white; padding: 20px 24px; gap: 16px; border-bottom: 1px solid var(--border);
-        box-shadow: var(--shadow-sm); transform: translateY(-10px); opacity: 0; pointer-events: none; transition: var(--transition);
+        position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch;
+        background: white; padding: 16px 24px 24px; gap: 4px; border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow-md); transform: translateY(-10px); opacity: 0; pointer-events: none; transition: var(--transition);
+        max-height: calc(100vh - 70px); overflow-y: auto;
       }
       .nav-links.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+      /* On mobile the dropdowns sit open inline rather than on hover. */
+      .nav-group { position: static; }
+      .nav-caret { display: none; }
+      .nav-group-trigger {
+        padding: 14px 0 6px; font-size: 0.7rem; font-weight: 600;
+        letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); pointer-events: none;
+      }
+      .nav-dropdown {
+        position: static; transform: none; min-width: 0; opacity: 1; visibility: visible;
+        pointer-events: auto; border: none; box-shadow: none; padding: 0; background: transparent;
+      }
+      .nav-group::after { display: none; }
+      .nav-dropdown a { padding: 9px 0; white-space: normal; }
+      .dropdown-desc { display: none; }
+      .nav-cta { margin-top: 16px; text-align: center; }
     }
 
     /* Hero */
@@ -128,7 +206,7 @@
     }
     .hero::before {
       content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-      background-image: radial-gradient(circle at 20% 50%, rgba(109,74,255,0.15) 0%, transparent 50%),
+      background-image: radial-gradient(circle at 20% 50%, rgba(184,151,90,0.15) 0%, transparent 50%),
                         radial-gradient(circle at 80% 20%, rgba(201,168,76,0.08) 0%, transparent 50%);
       pointer-events: none;
     }
@@ -137,7 +215,7 @@
 
     .hero-badge {
       display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(109,74,255,0.15); border: 1px solid rgba(109,74,255,0.3);
+      background: rgba(184,151,90,0.15); border: 1px solid rgba(184,151,90,0.3);
       color: #b8a0ff; font-family: var(--font-head); font-size: 0.78rem; font-weight: 600;
       padding: 6px 16px; border-radius: 100px; margin-bottom: 24px;
     }
@@ -167,10 +245,10 @@
     /* Doc preview card */
     .doc-preview {
       background: white; border-radius: var(--radius-lg); overflow: hidden;
-      box-shadow: var(--shadow-lg); border: 1px solid rgba(109,74,255,0.2); transform: rotate(1deg);
+      box-shadow: var(--shadow-lg); border: 1px solid rgba(184,151,90,0.2); transform: rotate(1deg);
     }
     .doc-cover {
-      background: linear-gradient(135deg, #1a1a2e 0%, #2a2a5e 50%, #6d4aff 100%);
+      background: linear-gradient(135deg, #1C1C1E 0%, #3A3226 55%, #B8975A 100%);
       padding: 40px 32px; text-align: left; min-height: 280px; display: flex; flex-direction: column; justify-content: center;
     }
     .doc-cover-eyebrow { font-family: var(--font-head); font-size: 0.7rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #c9a84c; margin-bottom: 12px; }
@@ -195,7 +273,7 @@
       color: var(--text-dark); background: var(--bg-off); transition: var(--transition);
     }
     .form-group input:focus, .form-group select:focus {
-      outline: none; border-color: var(--primary); background: white; box-shadow: 0 0 0 3px rgba(109,74,255,0.1);
+      outline: none; border-color: var(--primary); background: white; box-shadow: 0 0 0 3px rgba(184,151,90,0.1);
     }
     .form-group input::placeholder { color: var(--text-light); }
     .form-disclaimer { font-size: 0.76rem; color: var(--text-light); text-align: center; margin-top: 14px; line-height: 1.5; }
@@ -233,8 +311,8 @@
     .stages-track { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 56px; }
     @media (max-width: 900px) { .stages-track { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 480px) { .stages-track { grid-template-columns: 1fr; } }
-    .stage-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(109,74,255,0.2); border-radius: var(--radius); padding: 28px 24px; transition: var(--transition); }
-    .stage-card:hover { background: rgba(109,74,255,0.1); border-color: rgba(109,74,255,0.4); }
+    .stage-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(184,151,90,0.2); border-radius: var(--radius); padding: 28px 24px; transition: var(--transition); }
+    .stage-card:hover { background: rgba(184,151,90,0.1); border-color: rgba(184,151,90,0.4); }
     .stage-badge { font-family: var(--font-head); font-size: 0.72rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #b8a0ff; margin-bottom: 12px; }
     .stage-card h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 600; color: white; margin-bottom: 10px; }
     .stage-card p { font-size: 0.85rem; color: #aaaacc; line-height: 1.6; }
@@ -280,10 +358,10 @@
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="container nav-inner">
-      <a href="https://maturity.coach" class="nav-logo">
+      <a href="../index.html" class="nav-logo">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="10" stroke="#6d4aff" stroke-width="2"/>
-          <path d="M12 6L12 18M6 12L18 12" stroke="#6d4aff" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="12" cy="12" r="10" stroke="#B8975A" stroke-width="2"/>
+          <path d="M12 6L12 18M6 12L18 12" stroke="#B8975A" stroke-width="2" stroke-linecap="round"/>
         </svg>
         Maturity<span>.coach</span>
       </a>
@@ -291,9 +369,69 @@
         <span></span><span></span><span></span>
       </button>
       <div class="nav-links">
-        <a href="https://maturity.coach/#services">Services</a>
-        <a href="https://maturity.coach/#approach">Approach</a>
-        <a href="https://maturity.coach/technical-leaders/">Technical Leaders</a>
+
+        <!-- APPROACH -->
+        <div class="nav-group">
+          <a href="../philosophy.html" class="nav-group-trigger">Approach
+            <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="nav-dropdown">
+            <a href="../philosophy.html">Philosophy<span class="dropdown-desc">The Maturity Method &mdash; wisdom, neuroscience &amp; AI</span></a>
+            <a href="../framework.html">Ubuntu Roots Coaching&trade;<span class="dropdown-desc">The proprietary coaching framework</span></a>
+          </div>
+        </div>
+
+        <!-- SERVICES -->
+        <div class="nav-group">
+          <a href="../services.html" class="nav-group-trigger">Services
+            <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="nav-dropdown">
+            <a href="../services.html">All Services<span class="dropdown-desc">1:1, cohorts, teams &amp; keynotes</span></a>
+            <a href="../coaching-for-technical-leaders.html">Coaching for Technical Leaders<span class="dropdown-desc">CISOs, CIOs, CTOs &amp; federal tech leaders</span></a>
+          </div>
+        </div>
+
+        <!-- INSIGHTS -->
+        <div class="nav-group">
+          <a href="../perspectives.html" class="nav-group-trigger">Insights
+            <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="nav-dropdown">
+            <a href="../perspectives.html">Perspectives<span class="dropdown-desc">Essays on leadership &amp; maturity</span></a>
+            <a href="../blog.html">From the Blog<span class="dropdown-desc">Latest notes &amp; articles</span></a>
+          </div>
+        </div>
+
+        <!-- OUR COACHES -->
+        <div class="nav-group">
+          <a href="../about.html" class="nav-group-trigger">Our Coaches
+            <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="nav-dropdown">
+            <!-- COACHES:START -->
+            <a href="../about.html">All Coaches<span class="dropdown-desc">Filter by specialization</span></a>
+            <a href="../profiles/eugene.html">Eugene Nkomba<span class="dropdown-desc">Founder &amp; Managing Partner</span></a>
+            <a href="../profiles/catherine.html">Catherine Nkomba<span class="dropdown-desc">Partner Coach &amp; Agile Transformation Lead</span></a>
+            <a href="../profiles/patrice.html">Patrice Nkomba<span class="dropdown-desc">Partner Coach &amp; Technical Advisor</span></a>
+            <!-- COACHES:END -->
+          </div>
+        </div>
+
+        <!-- FREE RESOURCES -->
+        <div class="nav-group">
+          <a href="../assessment-teaser.html" class="nav-group-trigger">Free Resources
+            <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <div class="nav-dropdown">
+            <a href="../assessment-teaser.html">Quick Leadership Check<span class="dropdown-desc">2-minute snapshot</span></a>
+            <a href="../assessment.html">Full Maturity Assessment<span class="dropdown-desc">The complete self-assessment</span></a>
+            <a href="../workshop/">Free Leadership Workshop<span class="dropdown-desc">Live, 90 minutes, for senior leaders</span></a>
+            <a href="../app/">Get the App<span class="dropdown-desc">Daily practice on iPhone &amp; Android</span></a>
+          </div>
+        </div>
+
+        <!-- PAGE CONVERSION -->
         <a href="#download" class="nav-cta">Download Free</a>
       </div>
     </div>
@@ -395,7 +533,7 @@
                 </button>
                 <p class="form-disclaimer">
                   By downloading, you'll receive occasional insights on AI-era leadership.
-                  Unsubscribe anytime. Read our <a href="https://maturity.coach/privacy">Privacy Policy</a>.
+                  Unsubscribe anytime. Read our <a href="../privacy.html">Privacy Policy</a>.
                 </p>
               </form>
             </div>
@@ -411,7 +549,7 @@
                 The framework PDF is on its way. You'll also receive a
                 short series on AI-era leadership over the next two weeks.
               </p>
-              <a href="https://maturity.coach/assessment" class="btn-outline">
+              <a href="../assessment.html" class="btn-outline">
                 Take the Self-Assessment
               </a>
             </div>
@@ -647,11 +785,12 @@
       <div class="footer-inner">
         <div class="footer-brand">Maturity<span>.coach</span></div>
         <div class="footer-links">
-          <a href="https://maturity.coach">Home</a>
-          <a href="https://maturity.coach/#services">Services</a>
-          <a href="https://maturity.coach/technical-leaders/">Technical Leaders</a>
-          <a href="https://maturity.coach/privacy">Privacy</a>
-          <a href="https://maturity.coach/contact">Contact</a>
+          <a href="../index.html">Home</a>
+          <a href="../services.html">Services</a>
+          <a href="../about.html">Our Coaches</a>
+          <a href="../coaching-for-technical-leaders.html">Technical Leaders</a>
+          <a href="../privacy.html">Privacy</a>
+          <a href="../contact.html">Contact</a>
         </div>
       </div>
       <div class="footer-copy">
