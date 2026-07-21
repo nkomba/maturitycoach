@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coaching for Technical Leaders — Maturity Coach</title>
+  <meta name="description" content="Executive coaching for CISOs, CIOs, CTOs, and federal technology leaders who have hit a ceiling their technical skills can't break through.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ================================================
+       LANDING PAGE SPECIFIC STYLES
+       ================================================ */
+    .lp-hero {
+      background: linear-gradient(180deg, var(--charcoal) 0%, #1f1f3a 50%, var(--gold) 100%);
+      padding: calc(var(--nav-height) + 80px) 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lp-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 50%, rgba(184,151,90,0.15) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(184,151,90,0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .lp-hero-inner {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 56px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (max-width: 900px) {
+      .lp-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    .lp-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(184,151,90,0.15);
+      border: 1px solid rgba(184,151,90,0.3);
+      color: var(--gold);
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+    }
+
+    .lp-hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: white;
+      margin-bottom: 24px;
+    }
+
+    .lp-hero h1 .highlight { color: var(--gold); }
+
+    .lp-hero h1 .strike {
+      position: relative;
+      display: inline-block;
+    }
+
+    .lp-hero h1 .strike::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: rgba(184,151,90,0.5);
+      transform: translateY(-50%);
+      border-radius: 2px;
+    }
+
+    .lp-hero-sub {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #cccce0;
+      max-width: 520px;
+      margin-bottom: 36px;
+    }
+
+    /* ── NAV: always white on this page ── */
+    .nav {
+      background: var(--white) !important;
+    }
+    .nav.scrolled {
+      background: var(--white) !important;
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    }
+    .nav-logo, .nav-logo .logo-text { color: var(--charcoal) !important; }
+    .nav-links a { color: var(--text-secondary) !important; }
+    .nav-hamburger span { background: var(--charcoal) !important; }
+
+    /* ── COMMON SECTIONS ── */
+    .lp-section {
+      padding: 80px 0;
+      background: var(--white);
+    }
+
+    .lp-section-alt {
+      padding: 80px 0;
+      background: var(--cream);
+    }
+
+    .lp-section-dark {
+      padding: 80px 0;
+      background: var(--charcoal);
+      color: white;
+    }
+
+    .lp-section-dark .eyebrow { color: var(--gold); }
+    .lp-section-dark h2 { color: white; }
+    .lp-section-dark p { color: rgba(255,255,255,0.65); }
+
+    .eyebrow {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .heading-xl {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+    }
+
+    .lead-center {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 36px;
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .btn-primary {
+      background: var(--charcoal);
+      color: white;
+      border: 2px solid var(--charcoal);
+    }
+
+    .btn-primary:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: white;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: white;
+      border: 2px solid var(--gold);
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-dark);
+      border-color: var(--gold-dark);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--charcoal);
+      border: 2px solid var(--charcoal);
+    }
+
+    .btn-outline:hover {
+      background: var(--charcoal);
+      color: white;
+    }
+
+    /* Grid layouts */
+    .lp-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    @media (max-width: 900px) {
+      .lp-grid-3 { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .lp-grid-3 { grid-template-columns: 1fr; }
+    }
+
+    .lp-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      transition: var(--transition);
+    }
+
+    .lp-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    }
+
+    .lp-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .lp-card p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+
+    /* Credentials chips */
+    .lp-creds {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .lp-chip {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 10px 18px;
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--charcoal);
+    }
+
+    /* CTA band */
+    .lp-cta-band {
+      background: var(--gold);
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .lp-cta-band h2 {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      color: white;
+      margin-bottom: 16px;
+    }
+
+    .lp-cta-band p {
+      color: rgba(255,255,255,0.85);
+      max-width: 560px;
+      margin: 0 auto 32px;
+    }
+  </style>
+<style id="unified-nav-styles">
+  /* Full-width submenu bar: opens ACROSS THE TOP, under the nav */
+  .nav-links .nav-group { position: static; align-self: stretch; display: flex; align-items: center; }
+  .nav-links .nav-group > .nav-group-trigger { display: inline-flex; align-items: center; gap: 6px; height: 100%; position: relative; }
+  .nav-links .nav-group > .nav-group-trigger::after { display: none; }
+  .nav-caret { width: 9px; height: 9px; opacity: .65; transition: transform .3s cubic-bezier(.4,0,.2,1); }
+  .nav-group:hover .nav-caret { transform: rotate(180deg); }
+  .nav-dropdown {
+    position: absolute; top: 100%; left: 0; right: 0; box-sizing: border-box;
+    display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch; gap: 6px;
+    padding: 16px 32px;
+    background: var(--white, #fff);
+    border-top: 1px solid var(--border, rgba(0,0,0,.08));
+    border-bottom: 1px solid var(--border, rgba(0,0,0,.08));
+    box-shadow: 0 24px 50px rgba(28,28,30,.10);
+    opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(-8px);
+    transition: opacity .24s ease, transform .24s cubic-bezier(.4,0,.2,1), visibility .24s; z-index: 9998;
+  }
+  .nav-dropdown::before { content: ''; position: absolute; left: 0; right: 0; top: -26px; height: 26px; }
+  .nav-group:hover .nav-dropdown, .nav-group:focus-within .nav-dropdown {
+    opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0);
+  }
+  .nav-dropdown a {
+    display: block; padding: 12px 18px; border-radius: var(--radius-sm, 8px);
+    font-size: 14px; line-height: 1.35; color: var(--text-primary, #1a1a1a);
+    min-width: 180px; white-space: nowrap;
+  }
+  .nav-dropdown a::after { display: none; }
+  .nav-dropdown a:hover { background: var(--cream, #f7f3ec); color: var(--gold-dark, #8b6e3a); }
+  .nav-dropdown .dropdown-desc {
+    display: block; margin-top: 3px; font-size: 12px; font-weight: 400;
+    color: var(--text-secondary, #6b6b76); white-space: nowrap;
+  }
+  .nav-dropdown .tag {
+    display: inline-block; margin-left: 8px; font-size: 10px; letter-spacing: .06em;
+    text-transform: uppercase; color: var(--gold-dark, #8b6e3a);
+    background: rgba(184,151,90,.14); padding: 2px 8px; border-radius: 100px; vertical-align: middle;
+  }
+  /* Featured "quick value" group */
+  .nav-links .nav-group.featured > .nav-group-trigger { color: var(--gold-dark, #8b6e3a); font-weight: 600; }
+  .nav-links .nav-group.featured > .nav-group-trigger .nav-caret { opacity: .9; }
+  /* Active page state (set automatically by the injected script) */
+  .nav-links > a.active { color: var(--text-primary, #1a1a1a); }
+  .nav-links > a.active::after { transform: scaleX(1); }
+  .nav-links > a.nav-cta.active { background: var(--gold, #b8975a); }
+  .nav-links .nav-group.active > .nav-group-trigger { color: var(--gold-dark, #8b6e3a); font-weight: 600; }
+  .nav-links .nav-group.active > .nav-group-trigger::before {
+    content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 3px;
+    background: var(--gold, #b8975a); border-radius: 3px 3px 0 0;
+  }
+  .nav-dropdown a.active { background: var(--cream, #f7f3ec); color: var(--gold-dark, #8b6e3a); font-weight: 600; }
+  .mobile-menu a.active { color: var(--gold-dark, #8b6e3a); font-weight: 600; }
+  /* Mobile grouped menu */
+  .mobile-menu .m-label {
+    display: block; padding: 20px 32px 2px; text-align: center;
+    font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--gold, #b8975a); border: none;
+    font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
+  }
+  .mobile-menu .m-label:first-child { padding-top: 10px; }
+  .mobile-menu a.m-assess { color: var(--gold-dark, #8b6e3a); }
+  .mobile-menu a.m-cta { color: var(--white, #fff); background: var(--charcoal, #1c1c1e); }
+  @media (max-width: 1040px) { .nav-links { gap: 20px; } }
+</style>
+<script id="unified-nav-script">
+document.addEventListener('DOMContentLoaded', function () {
+  function seg(url) {
+    try {
+      var a = document.createElement('a'); a.href = url;
+      var s = a.pathname.split('/').filter(Boolean).pop();
+      return (s || 'index.html').toLowerCase();
+    } catch (e) { return ''; }
+  }
+  var here = seg(window.location.href) || 'index.html';
+  var links = document.querySelectorAll('#mainNav .nav-links a, #mobileMenu a');
+  Array.prototype.forEach.call(links, function (link) {
+    var href = link.getAttribute('href');
+    if (!href || href.charAt(0) === '#' || href.indexOf('mailto:') === 0) return;
+    if (seg(href) === here) {
+      link.classList.add('active');
+      var g = link.closest && link.closest('.nav-group');
+      if (g) g.classList.add('active');
+    }
+  });
+});
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav scrolled" id="mainNav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">M</div>
+      <span class="logo-text">Maturity<span>Coach</span></span>
+    </a>
+    <div class="nav-links">
+      <!-- APPROACH: the why + the framework -->
+      <div class="nav-group">
+        <a href="philosophy.html" class="nav-group-trigger">Approach
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="philosophy.html">Philosophy<span class="dropdown-desc">The Maturity Method &mdash; wisdom, neuroscience &amp; AI</span></a>
+          <a href="framework.html">Ubuntu Roots Coaching&trade;<span class="dropdown-desc">The proprietary coaching framework</span></a>
+        </div>
+      </div>
+
+      <!-- SERVICES: overview + specialised track -->
+      <div class="nav-group">
+        <a href="services.html" class="nav-group-trigger">Services
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="services.html">All Services<span class="dropdown-desc">1:1, cohorts, teams &amp; keynotes</span></a>
+          <a href="coaching-for-technical-leaders.html">Coaching for Technical Leaders<span class="dropdown-desc">CISOs, CIOs, CTOs &amp; federal tech leaders</span></a>
+        </div>
+      </div>
+
+      <!-- INSIGHTS: thought leadership hub + featured essays + blog -->
+      <div class="nav-group">
+        <a href="perspectives.html" class="nav-group-trigger">Insights
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="perspectives.html">Perspectives<span class="dropdown-desc">Essays on leadership &amp; maturity</span></a>
+          <a href="perspectives-human-maturity.html">Why AI Raises the Premium on Human Maturity</a>
+          <a href="perspectives-sacrificial-leader.html">The Myth of the Sacrificial Leader</a>
+          <a href="blog.html">From the Blog<span class="dropdown-desc">Latest notes &amp; articles</span></a>
+        </div>
+      </div>
+
+      <a href="about.html">About Eugene</a>
+
+      <!-- FREE RESOURCES: every no-cost, quick-value entry point in one place. -->
+      <div class="nav-group featured">
+        <a href="assessment-teaser.html" class="nav-group-trigger">Free Resources
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="assessment-teaser.html">Quick Leadership Check<span class="tag">2 min</span><span class="dropdown-desc">Instant snapshot of where you lead from</span></a>
+          <a href="assessment.html">Full Maturity Assessment<span class="dropdown-desc">The complete self-assessment</span></a>
+          <a href="/workshop/">Free Leadership Workshop<span class="dropdown-desc">Live, 90 minutes, for senior leaders</span></a>
+          <a href="/ai-ready-leader/">AI-Ready Leader Guide<span class="dropdown-desc">Free download</span></a>
+          <a href="/app/">Get the App<span class="dropdown-desc">Daily practice on iPhone &amp; Android</span></a>
+        </div>
+      </div>
+
+      <!-- PRIMARY CONVERSION -->
+      <a href="contact.html" class="nav-cta">Request a Consultation</a>
+    </div>
+    <div class="nav-hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <span class="m-label">Approach</span>
+  <a href="philosophy.html" onclick="toggleMenu()">Philosophy</a>
+  <a href="framework.html" onclick="toggleMenu()">Ubuntu Roots Coaching&trade;</a>
+
+  <span class="m-label">Services</span>
+  <a href="services.html" onclick="toggleMenu()">All Services</a>
+  <a href="coaching-for-technical-leaders.html" onclick="toggleMenu()">For Technical Leaders</a>
+
+  <span class="m-label">Insights</span>
+  <a href="perspectives.html" onclick="toggleMenu()">Perspectives</a>
+  <a href="blog.html" onclick="toggleMenu()">From the Blog</a>
+
+  <span class="m-label">Free Resources</span>
+  <a href="assessment-teaser.html" class="m-assess" onclick="toggleMenu()">Quick Leadership Check &middot; 2 min</a>
+  <a href="assessment.html" onclick="toggleMenu()">Full Maturity Assessment</a>
+  <a href="/workshop/" onclick="toggleMenu()">Free Leadership Workshop</a>
+  <a href="/ai-ready-leader/" onclick="toggleMenu()">AI-Ready Leader Guide</a>
+  <a href="/app/" onclick="toggleMenu()">Get the App</a>
+
+  <span class="m-label">More</span>
+  <a href="about.html" onclick="toggleMenu()">About Eugene</a>
+  <a href="contact.html" class="m-cta" onclick="toggleMenu()">Request a Consultation</a>
+</div>
+
+<!-- HERO -->
+<section class="lp-hero">
+  <div class="container">
+    <div class="lp-hero-inner">
+      <div>
+        <div class="lp-badge">
+          <span>✦</span> For Technical Leaders
+        </div>
+        <h1>
+          You Mastered the <span class="strike">Technology</span>.<br>
+          Now Master the <span class="highlight">Leadership</span>.
+        </h1>
+        <p class="lp-hero-sub">
+          Every CISO, CTO, and technical director faces the same wall: the skills
+          that got you here are not the ones that get you further.
+          I speak both languages fluently. Let's talk.
+        </p>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="contact.html" class="btn btn-gold">
+            Book Your 30-Minute Exploratory Call
+          </a>
+          <a href="assessment.html" class="btn btn-outline" style="color:#b8a0ff; border-color:#b8a0ff;">
+            Take the Self-Assessment
+          </a>
+        </div>
+      </div>
+      
+      <!-- Terminal credential card -->
+      <div style="background:rgba(10,10,25,0.85); border:1px solid rgba(184,151,90,0.3); border-radius:12px; overflow:hidden; backdrop-filter:blur(8px);">
+        <div style="display:flex; align-items:center; gap:8px; padding:12px 16px; background:rgba(255,255,255,0.05); border-bottom:1px solid rgba(184,151,90,0.2);">
+          <div style="width:12px; height:12px; border-radius:50%; background:#ff5f57;"></div>
+          <div style="width:12px; height:12px; border-radius:50%; background:#ffbd2e;"></div>
+          <div style="width:12px; height:12px; border-radius:50%; background:#28ca42;"></div>
+          <span style="font-family:var(--font-mono); font-size:12px; color:#8888aa; margin-left:8px;">eugene@leadership:~</span>
+        </div>
+        <div style="padding:24px 20px; font-family:var(--font-mono); font-size:14px; line-height:1.8; color:#aaaacc;">
+          <div><span style="color:#b8a0ff">$</span> <span style="color:#fff;">cat</span> credentials.json</div>
+          <div>&nbsp;</div>
+          <div><span style="color:#c9a84c">"coaching"</span>: [</div>
+          <div>&nbsp;&nbsp;<span style="color:#2ecc71">"ICF PCC"</span>,</div>
+          <div>&nbsp;&nbsp;<span style="color:#2ecc71">"CPCC (Co-Active)"</span></div>
+          <div>],</div>
+          <div><span style="color:#c9a84c">"cybersecurity"</span>: [</div>
+          <div>&nbsp;&nbsp;<span style="color:#2ecc71">"CISA"</span>, <span style="color:#2ecc71">"CISM"</span>, <span style="color:#2ecc71">"CRISC"</span></div>
+          <div>],</div>
+          <div><span style="color:#c9a84c">"agile"</span>: [</div>
+          <div>&nbsp;&nbsp;<span style="color:#2ecc71">"PMP"</span>, <span style="color:#2ecc71">"PMI-ACP"</span>, <span style="color:#2ecc71">"PSM III"</span></div>
+          <div>],</div>
+          <div>&nbsp;</div>
+          <div><span style="color:#555577; font-style:italic;"># bilingual: engineering + leadership</span></div>
+          <div><span style="color:#b8a0ff">$</span> <span style="display:inline-block; width:8px; height:16px; background:#b8a0ff; animation:blink 1s step-end infinite;"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>@keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; }}</style>
+
+<!-- THE PROBLEM -->
+<section class="lp-section">
+  <div class="container">
+    <div class="text-center">
+      <p class="eyebrow">The Wall</p>
+      <h2 class="heading-xl">Why Technical Leaders Plateau</h2>
+      <p class="lead-center">It's not a skill gap. It's a translation gap.</p>
+    </div>
+    <div class="lp-grid-3">
+      <div class="lp-card">
+        <h3>The Competence Trap</h3>
+        <p>You're the smartest person in the room. So you solve the problems yourself. Your team escalates everything. You become the bottleneck.</p>
+      </div>
+      <div class="lp-card">
+        <h3>Influence Without Authority</h3>
+        <p>Logic isn't persuasion. And no RFC will fix why the board or CFO doesn't see your recommendation the way you do.</p>
+      </div>
+      <div class="lp-card">
+        <h3>Delegation Feels Like Risk</h3>
+        <p>When you delegate, quality might drop. When the breach hits, it's your name. So you hold on. The team doesn't grow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BILINGUAL ADVANTAGE -->
+<section class="lp-section-alt">
+  <div class="container">
+    <div class="text-center">
+      <p class="eyebrow">The Unfair Advantage</p>
+      <h2 class="heading-xl">A Coach Who Speaks Both Languages</h2>
+      <p class="lead-center">Most coaches understand leadership but not your world. Most consultants understand your world but not leadership.</p>
+    </div>
+    <div class="lp-creds">
+      <div class="lp-chip">ICF PCC</div>
+      <div class="lp-chip">CPCC (Co-Active)</div>
+      <div class="lp-chip">CISA</div>
+      <div class="lp-chip">CISM</div>
+      <div class="lp-chip">CRISC</div>
+      <div class="lp-chip">PMP</div>
+      <div class="lp-chip">PMI-ACP</div>
+      <div class="lp-chip">PSM III</div>
+      <div class="lp-chip">Six Sigma MBB</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSFORMATION ARC -->
+<section class="lp-section-dark">
+  <div class="container">
+    <div class="text-center">
+      <p class="eyebrow">The Arc</p>
+      <h2 class="heading-xl">From Technician to Strategic Leader</h2>
+      <p class="lead-center">Four stages. Every technical leader passes through them.</p>
+    </div>
+    <div class="lp-grid-3" style="margin-top:56px;">
+      <div class="lp-card" style="background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.15);">
+        <h3 style="color:white;">1. Expert</h3>
+        <p style="color:rgba(255,255,255,0.7);">Your technical depth is the value. The team relies on your knowledge. Promotions come from competence.</p>
+      </div>
+      <div class="lp-card" style="background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.15);">
+        <h3 style="color:white;">2. Manager</h3>
+        <p style="color:rgba(255,255,255,0.7);">You delegate tasks but not decisions. Everything flows through you. The bus factor is 1. This is where most plateau.</p>
+      </div>
+      <div class="lp-card" style="background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.15);">
+        <h3 style="color:white;">3. Architect → Strategist</h3>
+        <p style="color:rgba(255,255,255,0.7);">You design systems and decision rights. The team operates without you. Coaching gets you here.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="lp-cta-band">
+  <div class="container">
+    <h2>Let's Have an Honest Conversation</h2>
+    <p>Thirty minutes. No pitch. Just clarity about where you are, where you want to be, and whether coaching can bridge the gap.</p>
+    <a href="contact.html" class="btn btn-primary" style="background:white; color:var(--gold); border-color:white;">
+      Book Your 30-Minute Exploratory Call
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <div class="footer-logo">M</div>
+          <div class="footer-brand-name">Maturity<span>Coach</span></div>
+        </div>
+        <p class="footer-desc">Ancient wisdom, modern intelligence, and the courage to live fully — while building something extraordinary.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/nkomba" target="_blank" rel="noopener noreferrer" title="LinkedIn">in</a>
+          <a href="#" title="Twitter/X">𝕏</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="philosophy.html">Philosophy</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="perspectives.html">Perspectives</a></li>
+          <li><a href="about.html">About Eugene</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="framework.html">Ubuntu Roots Framework</a></li>
+          <li><a href="coaching-for-technical-leaders.html">Coaching for Technical Leaders</a></li>
+          <li><a href="services.html">Executive Mastery</a></li>
+          <li><a href="services.html">Speaking</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="/app/">Get the App</a></li>
+          <li><a href="contact.html">Request Confidential Consultation</a></li>
+          <li><a href="https://www.linkedin.com/in/nkomba" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="mailto:eugene@maturitycoach.com">Email Eugene</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Maturity Coach. All rights reserved.</span>
+      <div class="footer-bottom-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('mainNav');
+  nav.classList.add('scrolled');
+  window.addEventListener('scroll', () => { nav.classList.add('scrolled'); });
+  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+</script>
+</body>
+</html>

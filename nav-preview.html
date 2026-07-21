@@ -49,8 +49,10 @@
   .nav-dropdown a:hover{background:var(--cream);color:var(--gold-dark);}
   .nav-dropdown .dropdown-desc{display:block;margin-top:3px;font-size:12px;font-weight:400;color:var(--text-secondary);white-space:nowrap;}
   .nav-dropdown .tag{display:inline-block;margin-left:8px;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-dark);background:rgba(184,151,90,.14);padding:2px 8px;border-radius:100px;vertical-align:middle;}
-  .nav-links .nav-group.featured>.nav-group-trigger{color:var(--gold-dark);font-weight:600;}
-  .nav-links .nav-group.featured>.nav-group-trigger .nav-caret{opacity:.9;}
+  .nav-links a.nav-assess{border:1.5px solid var(--gold);color:var(--gold-dark);padding:9px 18px;border-radius:100px;font-size:14px;font-weight:500;white-space:nowrap;}
+  .nav-links a.nav-assess::after{display:none;}
+  .nav-links a.nav-assess:hover{background:var(--gold);color:#fff;}
+  .nav-links a.nav-assess.active{background:var(--gold);color:#fff;}
   /* active page state */
   .nav-links>a.active{color:var(--text-primary);}
   .nav-links>a.active::after{transform:scaleX(1);}
@@ -83,7 +85,7 @@
   .pill.c{background:var(--charcoal);color:#fff;}
   .note{margin-top:34px;padding:20px 24px;background:var(--cream);border-left:3px solid var(--gold);border-radius:0 var(--radius-sm) var(--radius-sm) 0;font-size:14px;color:#4a4a52;}
   .note b{color:var(--gold-dark);}
-  @media (max-width:900px){
+  @media (max-width:1120px){
     .nav-links{display:none;}
     .nav-hamburger{display:flex;}
   }
@@ -91,7 +93,7 @@
 </head>
 <body>
 
-<div class="banner">Live preview — hover <b>Approach</b>, <b>Services</b>, <b>Insights</b>, or the gold <b>Free Resources</b> to open the submenus. <b>Insights</b> shows the active-page highlight (gold underline).</div>
+<div class="banner">Live preview — hover <b>Approach</b>, <b>Services</b>, or <b>Insights</b> to open the submenus. The gold <b>Take the 2-Minute Maturity Assessment</b> is a direct button. <b>Insights</b> shows the active-page highlight.</div>
 
 <!-- Unified nav (matches nav.html) -->
 <nav class="nav" id="mainNav">
@@ -130,19 +132,8 @@
           <a href="#">From the Blog<span class="dropdown-desc">Latest notes &amp; articles</span></a>
         </div>
       </div>
-      <a href="#">About Eugene</a>
-      <div class="nav-group featured">
-        <a href="#" class="nav-group-trigger">Free Resources
-          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <div class="nav-dropdown">
-          <a href="#">Quick Leadership Check<span class="tag">2 min</span><span class="dropdown-desc">Instant snapshot of where you lead from</span></a>
-          <a href="#">Full Maturity Assessment<span class="dropdown-desc">The complete self-assessment</span></a>
-          <a href="#">Free Leadership Workshop<span class="dropdown-desc">Live, 90 minutes, for senior leaders</span></a>
-          <a href="#">AI-Ready Leader Guide<span class="dropdown-desc">Free download</span></a>
-          <a href="#">Get the App<span class="dropdown-desc">Daily practice on iPhone &amp; Android</span></a>
-        </div>
-      </div>
+      <a href="#">Our Coaches</a>
+      <a href="#" class="nav-assess">Take the 2-Minute Maturity Assessment</a>
       <a href="#" class="nav-cta">Request a Consultation</a>
     </div>
     <div class="nav-hamburger"><span></span><span></span><span></span></div>
@@ -156,7 +147,7 @@
 
 <div class="wrap">
   <h2>Site map &amp; submenu logic</h2>
-  <p class="sub">Six things in the bar. Four open a submenu; two are direct. Built for a C-suite visitor who wants quick value.</p>
+  <p class="sub">Six things in the bar. Three open a submenu; three are direct. Built for a C-suite visitor who wants quick value.</p>
 
   <div class="map">
     <div class="col badge-drop">
@@ -182,33 +173,24 @@
         <li>From the Blog <small>ongoing notes</small></li>
       </ul>
     </div>
-    <div class="col hot badge-drop">
-      <h3>Free Resources <span class="pill q">quick value</span></h3>
+    <div class="col hot">
+      <h3>Direct actions</h3>
       <ul>
-        <li>Quick Leadership Check <small>2-min self-check — the lead hook</small></li>
-        <li>Full Maturity Assessment <small>the complete tool</small></li>
-        <li>Free Leadership Workshop <small>live, 90 min · /workshop/</small></li>
-        <li>AI-Ready Leader Guide <small>free download · /ai-ready-leader/</small></li>
-        <li>Get the App <small>the PWA · /app/</small></li>
-      </ul>
-    </div>
-    <div class="col">
-      <h3>Direct</h3>
-      <ul>
-        <li>About Eugene <small>credibility</small></li>
-        <li>Request a Consultation <span class="pill c">convert</span></li>
+        <li>Our Coaches <small>credibility</small></li>
+        <li>Take the 2-Minute Maturity Assessment <span class="pill q">quick value</span><small>gold button → the 2-min quick check</small></li>
+        <li>Request a Consultation <span class="pill c">convert</span><small>dark button → contact</small></li>
       </ul>
     </div>
   </div>
 
   <div class="note">
-    <b>Why this shape.</b> A submenu earns its place only when a top item has more than one real destination.
-    The gold <b>Free Resources</b> menu gathers every no-cost, immediate-value entry point — assessment, workshop,
-    guide, app — and leads with the <b>Quick Leadership Check</b>, the fast hook you chose to lead with. The dark
+    <b>Why this shape.</b> A submenu earns its place only when a top item has more than one real destination —
+    so Approach, Services, and Insights get one; About and the two buttons stay one click away.
+    The gold <b>Take the 2-Minute Maturity Assessment</b> is the fast, low-commitment hook; the dark
     <b>Request a Consultation</b> is the conversion. <br><br>
-    <b>Reached from the menu but kept lean:</b> the <i>Workshop</i> and <i>AI-Ready Leader</i> pages keep their own
-    single-goal headers (a full menu would leak conversions). <br>
-    <b>Footer only:</b> Privacy / Terms. &nbsp; <b>Not linked (internal):</b> tracking.html.
+    <b>Now in the footer</b> (not the top bar): the Full Assessment, Free Workshop, AI-Ready Leader Guide, and Get the App —
+    plus Privacy / Terms. On mobile they also appear in the hamburger menu. <br>
+    <b>Not linked (internal):</b> tracking.html.
   </div>
 </div>
 

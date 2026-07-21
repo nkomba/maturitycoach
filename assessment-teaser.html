@@ -292,7 +292,20 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
       </div>
 
-      <a href="about.html">About Eugene</a>
+      <!-- OUR COACHES -->
+      <div class="nav-group">
+        <a href="about.html" class="nav-group-trigger">Our Coaches
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <!-- COACHES:START -->
+          <a href="about.html">All Coaches<span class="dropdown-desc">Filter by specialization</span></a>
+          <a href="profiles/eugene.html">Eugene Nkomba<span class="dropdown-desc">Founder &amp; Managing Partner</span></a>
+          <a href="profiles/catherine.html">Catherine Nkomba<span class="dropdown-desc">Partner Coach &amp; Agile Transformation Lead</span></a>
+          <a href="profiles/patrice.html">Patrice Nkomba<span class="dropdown-desc">Partner Coach &amp; Technical Advisor</span></a>
+          <!-- COACHES:END -->
+        </div>
+      </div>
 
       <!-- FREE RESOURCES: every no-cost, quick-value entry point in one place. -->
       <div class="nav-group featured">
@@ -337,8 +350,15 @@ document.addEventListener('DOMContentLoaded', function () {
   <a href="/ai-ready-leader/" onclick="toggleMenu()">AI-Ready Leader Guide</a>
   <a href="/app/" onclick="toggleMenu()">Get the App</a>
 
+  <span class="m-label">Our Coaches</span>
+  <!-- COACHES-MOBILE:START -->
+  <a href="about.html" onclick="toggleMenu()">All Coaches</a>
+  <a href="profiles/eugene.html" onclick="toggleMenu()">Eugene Nkomba</a>
+  <a href="profiles/catherine.html" onclick="toggleMenu()">Catherine Nkomba</a>
+  <a href="profiles/patrice.html" onclick="toggleMenu()">Patrice Nkomba</a>
+  <!-- COACHES-MOBILE:END -->
+
   <span class="m-label">More</span>
-  <a href="about.html" onclick="toggleMenu()">About Eugene</a>
   <a href="contact.html" class="m-cta" onclick="toggleMenu()">Request a Consultation</a>
 </div>
 
@@ -443,7 +463,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <h2 class="display-3 fade-up">Ready to go deeper?</h2>
     <p class="body-lg fade-up">Start with a 30-minute exploratory conversation — no obligation, no agenda, just honest dialogue about what's possible.</p>
     <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;" class="fade-up">
-      <a href="contact.html" class="btn btn-white btn-lg">Request Confidential Consultation</a>
+      <a href="contact.html" class="btn btn-white btn-lg">Request a Consultation</a>
       <a href="assessment.html" class="btn btn-outline" style="color:rgba(255,255,255,0.85); border-color:rgba(255,255,255,0.35);">Take Full Assessment →</a>
     </div>
   </div>
@@ -470,7 +490,7 @@ document.addEventListener('DOMContentLoaded', function () {
           <li><a href="index.html">Home</a></li>
           <li><a href="philosophy.html">Philosophy</a></li>
           <li><a href="services.html">Services</a></li>
-          <li><a href="about.html">About Eugene</a></li>
+          <li><a href="about.html">Our Coaches</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>

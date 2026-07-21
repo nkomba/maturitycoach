@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Unified Navigation — Preview</title>
+<style>
+  :root{
+    --white:#FFFFFF; --cream:#F7F3EC; --gold:#B8975A; --gold-light:#D4AF7A; --gold-dark:#8B6E3A;
+    --charcoal:#1C1C1E; --text-primary:#1A1A1A; --text-secondary:#6b6b76;
+    --border:rgba(0,0,0,0.08); --radius-sm:8px; --radius-md:16px; --radius-lg:24px;
+    --nav-height:72px; --max-width:1140px; --font-serif:'Georgia','Times New Roman',serif;
+    --font-sans:system-ui,-apple-system,'Segoe UI',sans-serif;
+    --transition:all .3s cubic-bezier(.4,0,.2,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:var(--font-sans);color:var(--text-primary);background:var(--white);line-height:1.6;}
+  a{text-decoration:none;color:inherit;}
+
+  /* ---- base nav (mirrors style.css) ---- */
+  .nav{position:sticky;top:0;left:0;right:0;height:var(--nav-height);z-index:9999;background:var(--white);border-bottom:1px solid var(--border);transition:var(--transition);}
+  .nav-inner{max-width:var(--max-width);margin:0 auto;padding:0 32px;height:100%;display:flex;align-items:center;justify-content:space-between;}
+  .nav-logo{display:flex;align-items:center;gap:10px;}
+  .logo-mark{width:38px;height:38px;background:linear-gradient(135deg,var(--gold-dark),var(--gold));border-radius:9px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px;font-family:var(--font-serif);}
+  .logo-text{font-family:var(--font-serif);font-size:19px;color:var(--charcoal);}
+  .logo-text span{color:var(--gold);}
+  .nav-links{display:flex;align-items:center;gap:24px;}
+  .nav-links a{font-size:15px;color:var(--text-secondary);transition:var(--transition);position:relative;}
+  .nav-links a::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:var(--transition);}
+  .nav-links a:hover{color:var(--text-primary);}
+  .nav-links a:hover::after{transform:scaleX(1);}
+  .nav-cta{background:var(--charcoal);color:var(--white)!important;padding:10px 22px;border-radius:100px;font-size:14px;}
+  .nav-cta::after{display:none;}
+  .nav-cta:hover{background:var(--gold);}
+  .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+  .nav-hamburger span{display:block;width:24px;height:1.5px;background:var(--charcoal);transition:var(--transition);}
+
+  /* ---- unified additions (identical to nav.html / the script) ---- */
+  .nav-links .nav-group{position:static;align-self:stretch;display:flex;align-items:center;}
+  .nav-links .nav-group>.nav-group-trigger{display:inline-flex;align-items:center;gap:6px;height:100%;position:relative;}
+  .nav-links .nav-group>.nav-group-trigger::after{display:none;}
+  .nav-caret{width:9px;height:9px;opacity:.65;transition:transform .3s cubic-bezier(.4,0,.2,1);}
+  .nav-group:hover .nav-caret{transform:rotate(180deg);}
+  .nav-dropdown{position:absolute;top:100%;left:0;right:0;box-sizing:border-box;display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch;gap:6px;padding:16px 32px;background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);box-shadow:0 24px 50px rgba(28,28,30,.10);opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-8px);transition:opacity .24s ease,transform .24s cubic-bezier(.4,0,.2,1),visibility .24s;z-index:9998;}
+  .nav-dropdown::before{content:'';position:absolute;left:0;right:0;top:-26px;height:26px;}
+  .nav-group:hover .nav-dropdown,.nav-group:focus-within .nav-dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0);}
+  .nav-dropdown a{display:block;padding:12px 18px;border-radius:var(--radius-sm);font-size:14px;line-height:1.35;color:var(--text-primary);min-width:180px;white-space:nowrap;}
+  .nav-dropdown a::after{display:none;}
+  .nav-dropdown a:hover{background:var(--cream);color:var(--gold-dark);}
+  .nav-dropdown .dropdown-desc{display:block;margin-top:3px;font-size:12px;font-weight:400;color:var(--text-secondary);white-space:nowrap;}
+  .nav-dropdown .tag{display:inline-block;margin-left:8px;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-dark);background:rgba(184,151,90,.14);padding:2px 8px;border-radius:100px;vertical-align:middle;}
+  .nav-links a.nav-assess{border:1.5px solid var(--gold);color:var(--gold-dark);padding:9px 18px;border-radius:100px;font-size:14px;font-weight:500;white-space:nowrap;}
+  .nav-links a.nav-assess::after{display:none;}
+  .nav-links a.nav-assess:hover{background:var(--gold);color:#fff;}
+  .nav-links a.nav-assess.active{background:var(--gold);color:#fff;}
+  /* active page state */
+  .nav-links>a.active{color:var(--text-primary);}
+  .nav-links>a.active::after{transform:scaleX(1);}
+  .nav-links>a.nav-cta.active{background:var(--gold);}
+  .nav-links .nav-group.active>.nav-group-trigger{color:var(--gold-dark);font-weight:600;}
+  .nav-links .nav-group.active>.nav-group-trigger::before{content:'';position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--gold);border-radius:3px 3px 0 0;}
+  .nav-dropdown a.active{background:var(--cream);color:var(--gold-dark);font-weight:600;}
+
+  /* ---- preview page chrome ---- */
+  .banner{background:var(--cream);border-bottom:1px solid var(--border);padding:10px 32px;text-align:center;font-size:13px;color:var(--gold-dark);letter-spacing:.02em;}
+  .hero{background:var(--charcoal);color:#fff;padding:80px 32px;text-align:center;}
+  .hero h1{font-family:var(--font-serif);font-size:clamp(32px,5vw,54px);font-weight:400;margin-bottom:16px;}
+  .hero h1 em{color:var(--gold);font-style:italic;}
+  .hero p{color:rgba(255,255,255,.6);max-width:560px;margin:0 auto;}
+  .wrap{max-width:var(--max-width);margin:0 auto;padding:60px 32px;}
+  .wrap h2{font-family:var(--font-serif);font-weight:400;font-size:30px;margin-bottom:8px;}
+  .wrap .sub{color:var(--text-secondary);margin-bottom:36px;}
+
+  .map{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;}
+  .col{border:1px solid var(--border);border-radius:var(--radius-md);padding:22px 22px 8px;background:#fff;}
+  .col.hot{border-color:rgba(184,151,90,.5);background:linear-gradient(180deg,rgba(184,151,90,.06),#fff 60%);}
+  .col h3{font-family:var(--font-sans);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .col.badge-drop h3::after{content:'submenu';font-size:9px;letter-spacing:.08em;background:rgba(184,151,90,.12);color:var(--gold-dark);padding:2px 8px;border-radius:100px;}
+  .col ul{list-style:none;}
+  .col li{padding:9px 0;border-top:1px solid var(--border);font-size:14px;color:var(--text-primary);}
+  .col li:first-child{border-top:none;}
+  .col li small{display:block;color:var(--text-secondary);font-size:12px;}
+  .pill{display:inline-block;font-size:11px;padding:2px 9px;border-radius:100px;margin-left:6px;vertical-align:middle;}
+  .pill.q{background:rgba(184,151,90,.14);color:var(--gold-dark);}
+  .pill.c{background:var(--charcoal);color:#fff;}
+  .note{margin-top:34px;padding:20px 24px;background:var(--cream);border-left:3px solid var(--gold);border-radius:0 var(--radius-sm) var(--radius-sm) 0;font-size:14px;color:#4a4a52;}
+  .note b{color:var(--gold-dark);}
+  @media (max-width:1120px){
+    .nav-links{display:none;}
+    .nav-hamburger{display:flex;}
+  }
+</style>
+</head>
+<body>
+
+<div class="banner">Live preview — hover <b>Approach</b>, <b>Services</b>, or <b>Insights</b> to open the submenus. The gold <b>Take the 2-Minute Maturity Assessment</b> is a direct button. <b>Insights</b> shows the active-page highlight.</div>
+
+<!-- Unified nav (matches nav.html) -->
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="logo-mark">M</div>
+      <span class="logo-text">Maturity<span>Coach</span></span>
+    </a>
+    <div class="nav-links">
+      <div class="nav-group">
+        <a href="#" class="nav-group-trigger">Approach
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="#">Philosophy<span class="dropdown-desc">The Maturity Method — wisdom, neuroscience &amp; AI</span></a>
+          <a href="#">Ubuntu Roots Coaching™<span class="dropdown-desc">The proprietary coaching framework</span></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a href="#" class="nav-group-trigger">Services
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="#">All Services<span class="dropdown-desc">1:1, cohorts, teams &amp; keynotes</span></a>
+          <a href="#">Coaching for Technical Leaders<span class="dropdown-desc">CISOs, CIOs, CTOs &amp; federal tech leaders</span></a>
+        </div>
+      </div>
+      <div class="nav-group active">
+        <a href="#" class="nav-group-trigger">Insights
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="#">Perspectives<span class="dropdown-desc">Essays on leadership &amp; maturity</span></a>
+          <a href="#">Why AI Raises the Premium on Human Maturity</a>
+          <a href="#">The Myth of the Sacrificial Leader</a>
+          <a href="#">From the Blog<span class="dropdown-desc">Latest notes &amp; articles</span></a>
+        </div>
+      </div>
+      <a href="#">About Eugene</a>
+      <a href="#" class="nav-assess">Take the 2-Minute Maturity Assessment</a>
+      <a href="#" class="nav-cta">Request Confidential Conversation</a>
+    </div>
+    <div class="nav-hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<section class="hero">
+  <h1>Lead Wisely. <em>Live</em> Fully.</h1>
+  <p>The bar above is the finished navigation. Below is the information architecture it encodes.</p>
+</section>
+
+<div class="wrap">
+  <h2>Site map &amp; submenu logic</h2>
+  <p class="sub">Six things in the bar. Three open a submenu; three are direct. Built for a C-suite visitor who wants quick value.</p>
+
+  <div class="map">
+    <div class="col badge-drop">
+      <h3>Approach</h3>
+      <ul>
+        <li>Philosophy <small>the “why” / the method</small></li>
+        <li>Ubuntu Roots Coaching™ <small>the framework</small></li>
+      </ul>
+    </div>
+    <div class="col badge-drop">
+      <h3>Services</h3>
+      <ul>
+        <li>All Services <small>overview of offerings</small></li>
+        <li>Coaching for Technical Leaders <small>CISOs, CIOs, CTOs</small></li>
+      </ul>
+    </div>
+    <div class="col badge-drop">
+      <h3>Insights</h3>
+      <ul>
+        <li>Perspectives <small>essay hub</small></li>
+        <li>Why AI Raises the Premium… <small>featured essay</small></li>
+        <li>The Myth of the Sacrificial Leader <small>featured essay</small></li>
+        <li>From the Blog <small>ongoing notes</small></li>
+      </ul>
+    </div>
+    <div class="col hot">
+      <h3>Direct actions</h3>
+      <ul>
+        <li>About Eugene <small>credibility</small></li>
+        <li>Take the 2-Minute Maturity Assessment <span class="pill q">quick value</span><small>gold button → the 2-min quick check</small></li>
+        <li>Request Confidential Conversation <span class="pill c">convert</span><small>dark button → contact</small></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="note">
+    <b>Why this shape.</b> A submenu earns its place only when a top item has more than one real destination —
+    so Approach, Services, and Insights get one; About and the two buttons stay one click away.
+    The gold <b>Take the 2-Minute Maturity Assessment</b> is the fast, low-commitment hook; the dark
+    <b>Request Confidential Conversation</b> is the conversion. <br><br>
+    <b>Now in the footer</b> (not the top bar): the Full Assessment, Free Workshop, AI-Ready Leader Guide, and Get the App —
+    plus Privacy / Terms. On mobile they also appear in the hamburger menu. <br>
+    <b>Not linked (internal):</b> tracking.html.
+  </div>
+</div>
+
+</body>
+</html>

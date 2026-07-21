@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services — Maturity Coach</title>
-  <meta name="description" content="Executive coaching services by Eugene Nkomba — 1:1 executive mastery, group cohorts, leadership culture design, and keynote speaking." />
+  <meta name="description" content="Executive coaching services from the Maturity Coach team — 1:1 executive mastery, group cohorts, leadership culture design, and keynote speaking." />
   <link rel="stylesheet" href="style.css" />
   <style>
     /* ── SERVICES PAGE ── */
@@ -368,7 +368,19 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
       </div>
 
-      <a href="about.html">About Eugene</a>
+<div class="nav-group">
+  <a href="about.html" class="nav-group-trigger">Our Coaches
+    <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+  <div class="nav-dropdown">
+    <!-- COACHES:START -->
+    <a href="about.html">All Coaches<span class="dropdown-desc">Filter by specialization</span></a>
+    <a href="profiles/eugene.html">Eugene Nkomba<span class="dropdown-desc">Founder &amp; Managing Partner</span></a>
+    <a href="profiles/catherine.html">Catherine Nkomba<span class="dropdown-desc">Partner Coach &amp; Agile Transformation Lead</span></a>
+    <a href="profiles/patrice.html">Patrice Nkomba<span class="dropdown-desc">Partner Coach &amp; Technical Advisor</span></a>
+    <!-- COACHES:END -->
+  </div>
+</div>
 
       <!-- FREE RESOURCES: every no-cost, quick-value entry point in one place. -->
       <div class="nav-group featured">
@@ -413,8 +425,14 @@ document.addEventListener('DOMContentLoaded', function () {
   <a href="/ai-ready-leader/" onclick="toggleMenu()">AI-Ready Leader Guide</a>
   <a href="/app/" onclick="toggleMenu()">Get the App</a>
 
-  <span class="m-label">More</span>
-  <a href="about.html" onclick="toggleMenu()">About Eugene</a>
+<span class="m-label">Our Coaches</span>
+<!-- COACHES-MOBILE:START -->
+<a href="about.html" onclick="toggleMenu()">All Coaches</a>
+<a href="profiles/eugene.html" onclick="toggleMenu()">Eugene Nkomba</a>
+<a href="profiles/catherine.html" onclick="toggleMenu()">Catherine Nkomba</a>
+<a href="profiles/patrice.html" onclick="toggleMenu()">Patrice Nkomba</a>
+<!-- COACHES-MOBILE:END -->
+<!-- ...remaining coaches -->
   <a href="contact.html" class="m-cta" onclick="toggleMenu()">Request a Consultation</a>
 </div>
 
@@ -574,7 +592,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="deco-circle deco-circle-1"></div>
         <div class="deco-circle deco-circle-2"></div>
         <div class="service-block-visual-inner">
-          <img src="eugene-nkomba.jpg" alt="Eugene Nkomba" style="width:100px; height:100px; border-radius:50%; object-fit:cover; object-position:center top; border:3px solid rgba(184,151,90,0.35); margin:0 auto 16px;" />
+          <img src="assets/coaches/eugene.jpg" alt="Eugene Nkomba" style="width:100px; height:100px; border-radius:50%; object-fit:cover; object-position:center top; border:3px solid rgba(184,151,90,0.35); margin:0 auto 16px;" />
           <div class="service-visual-icon" style="font-size:28px; margin-bottom:8px;">🎤</div>
           <div class="service-visual-label">Keynote & Workshop</div>
           <div style="margin-top:12px; display:flex; gap:6px; justify-content:center; flex-wrap:wrap;">
@@ -608,7 +626,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <div class="feature-text">Pre-event executive briefing and customization</div>
           </div>
         </div>
-        <a href="contact.html" class="btn btn-primary">Book Eugene to Speak</a>
+        <a href="contact.html" class="btn btn-primary">Book a Speaker</a>
       </div>
     </div>
   </div>
@@ -704,7 +722,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="gold-line" style="margin-bottom:48px;"></div>
     <h2 class="display-3 fade-up" style="margin-bottom:20px;">Not sure where to start?</h2>
     <p class="body-lg text-muted fade-up" style="margin-bottom:44px;">A free 30-minute conversation will tell us both everything we need to know.</p>
-    <a href="contact.html" class="btn btn-primary btn-lg fade-up">Request Confidential Consultation</a>
+    <a href="contact.html" class="btn btn-primary btn-lg fade-up">Request a Consultation</a>
   </div>
 </section>
 
@@ -728,14 +746,8 @@ document.addEventListener('DOMContentLoaded', function () {
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="philosophy.html">Philosophy</a></li>
-          <li><div class="nav-item-has-dropdown">
-              <a href="services.html">Services ▾</a>
-              <div class="nav-dropdown">
-                <a href="services.html">Service Overview</a>
-                <a href="coaching-for-technical-leaders.html">Coaching for Technical Leaders<span class="dropdown-desc">CISOs, CIOs, CTOs & federal tech leaders</span></a>
-              </div>
-            </div></li>
-          <li><a href="about.html">About Eugene</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">Our Coaches</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
@@ -752,9 +764,9 @@ document.addEventListener('DOMContentLoaded', function () {
         <h4>Connect</h4>
         <ul>
           <li><a href="/app/">Get the App</a></li>
-          <li><a href="contact.html">Request Confidential Consultation</a></li>
+          <li><a href="contact.html">Request a Consultation</a></li>
           <li><a href="https://www.linkedin.com/in/nkomba" target="_blank">LinkedIn</a></li>
-          <li><a href="mailto:eugene@maturitycoach.com">Email Eugene</a></li>
+          <li><a href="mailto:eugene@maturity.coach">Email Eugene</a></li>
         </ul>
       </div>
     </div>

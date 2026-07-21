@@ -1,0 +1,10 @@
+/* ------------------------------------------------------------------
+   Local shim.
+   about.html and the pages in profiles/ link
+   <link rel="stylesheet" href="components.css">, but the real
+   stylesheet lives in /css/components.css. This file re-exports it so
+   those pages resolve correctly from the site root.
+
+   Mirrors the same pattern already used by style.css.
+   ------------------------------------------------------------------ */
+@import url("css/components.css");

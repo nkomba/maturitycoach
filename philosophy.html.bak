@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Philosophy — Maturity Coach</title>
+  <meta name="description" content="The Maturity Coach philosophy: ancient wisdom traditions, modern neuroscience, and AI-era technology — united in service of leaders who want to live fully and lead wisely." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── PHILOSOPHY PAGE ── */
+
+    .philosophy-hero {
+      background: var(--charcoal);
+      padding: calc(var(--nav-height) + 80px) 0 100px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .philosophy-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 50% 70% at 30% 60%, rgba(184,151,90,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 70% at 70% 30%, rgba(184,151,90,0.05) 0%, transparent 60%);
+    }
+
+    .philosophy-hero h1 { color: var(--white); position: relative; z-index: 1; margin-bottom: 24px; }
+    .philosophy-hero p { color: rgba(255,255,255,0.6); max-width: 620px; margin: 0 auto; position: relative; z-index: 1; }
+
+    /* The Core Tension */
+    .tension-section {
+      padding: 100px 0;
+      background: var(--white);
+    }
+
+    .tension-blocks {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 0;
+      align-items: center;
+      margin-top: 64px;
+    }
+
+    .tension-block {
+      padding: 48px;
+      border-radius: var(--radius-xl);
+    }
+
+    .tension-block-ancient {
+      background: var(--cream);
+      text-align: right;
+    }
+
+    .tension-block-modern {
+      background: var(--charcoal);
+    }
+
+    .tension-center {
+      width: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tension-center-symbol {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      box-shadow: 0 0 0 8px white;
+    }
+
+    .tension-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+    }
+
+    .tension-block-title {
+      font-family: var(--font-serif);
+      font-size: clamp(20px, 3vw, 28px);
+      margin-bottom: 16px;
+    }
+
+    .tension-block-ancient .tension-block-title { color: var(--text-primary); }
+    .tension-block-modern .tension-block-title { color: var(--white); }
+
+    .tension-block-text { font-size: 16px; line-height: 1.7; }
+    .tension-block-ancient .tension-block-text { color: var(--text-secondary); }
+    .tension-block-modern .tension-block-text { color: rgba(255,255,255,0.55); }
+
+    .tension-items { margin-top: 24px; }
+    .tension-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+      font-size: 15px;
+    }
+    .tension-block-ancient .tension-item { justify-content: flex-end; color: var(--text-secondary); }
+    .tension-block-modern .tension-item { color: rgba(255,255,255,0.65); }
+    .tension-item-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+
+    /* The Three Pillars Deep Dive */
+    .pillars-deep {
+      background: var(--cream);
+      padding: 100px 0;
+    }
+
+    .pillar-deep {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 60px;
+      align-items: start;
+      padding: 60px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .pillar-deep:last-child { border-bottom: none; }
+
+    .pillar-deep-number {
+      font-family: var(--font-serif);
+      font-size: 80px;
+      color: rgba(184,151,90,0.15);
+      line-height: 1;
+    }
+
+    .pillar-deep-label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .pillar-deep-title { font-family: var(--font-serif); font-size: clamp(24px, 3.5vw, 36px); color: var(--text-primary); margin-bottom: 20px; }
+    .pillar-deep-text { font-size: 17px; color: var(--text-secondary); line-height: 1.75; margin-bottom: 16px; }
+    .pillar-deep-text:last-child { margin-bottom: 0; }
+
+    .wisdom-quote {
+      margin-top: 24px;
+      padding: 24px 0 24px 24px;
+      border-left: 2px solid var(--gold);
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 17px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .wisdom-quote cite {
+      display: block;
+      margin-top: 8px;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* The Maturity Model */
+    .model-section {
+      padding: 100px 0;
+      background: var(--white);
+    }
+
+    .maturity-model {
+      background: var(--charcoal);
+      border-radius: var(--radius-xl);
+      padding: 60px;
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      overflow: hidden;
+    }
+
+    .model-step {
+      background: rgba(255,255,255,0.03);
+      padding: 36px 28px;
+      text-align: center;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .model-step:hover { background: rgba(184,151,90,0.08); }
+
+    .model-step::after {
+      content: '→';
+      position: absolute;
+      right: -12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: rgba(184,151,90,0.3);
+      font-size: 20px;
+      z-index: 1;
+    }
+
+    .model-step:last-child::after { display: none; }
+
+    .model-step-num { font-family: var(--font-serif); font-size: 40px; color: rgba(184,151,90,0.25); line-height: 1; margin-bottom: 16px; }
+    .model-step-title { font-family: var(--font-serif); font-size: 18px; color: var(--white); margin-bottom: 12px; }
+    .model-step-text { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.65; }
+
+    /* Humanity section */
+    .humanity-section {
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .humanity-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .humanity-inner { position: relative; z-index: 1; text-align: center; }
+    .humanity-inner h2 { color: var(--white); margin-bottom: 24px; }
+    .humanity-inner p { color: rgba(255,255,255,0.85); font-size: 19px; line-height: 1.7; max-width: 680px; margin: 0 auto 48px; }
+
+    @media (max-width: 768px) {
+      .tension-blocks { grid-template-columns: 1fr; }
+      .tension-center { flex-direction: row; width: 100%; justify-content: center; }
+      .tension-line { width: 40px; height: 1px; background: linear-gradient(to right, var(--gold), transparent); }
+      .tension-block-ancient { text-align: left; }
+      .tension-block-ancient .tension-item { justify-content: flex-start; }
+      .pillar-deep { grid-template-columns: 1fr; gap: 24px; }
+      .maturity-model { grid-template-columns: 1fr 1fr; padding: 32px 24px; }
+      .model-step::after { display: none; }
+    }
+    /* Override for pages with dark heroes */
+    @media (max-width: 768px) {
+      .nav {
+        background: rgba(28,28,30,0.98) !important;
+      }
+      .nav.scrolled {
+        background: rgba(28,28,30,0.98) !important;
+      }
+      .nav-logo, .nav-logo .logo-text, .nav-links a, .nav-hamburger span {
+        color: var(--white) !important;
+      }
+    }
+
+    /* Desktop: keep white nav always */
+    @media (min-width: 769px) {
+      .nav {
+        background: var(--white) !important;
+      }
+      .nav-logo, .nav-logo .logo-text {
+        color: var(--charcoal) !important;
+      }
+    }
+  </style>
+<style id="unified-nav-styles">
+  /* Full-width submenu bar: opens ACROSS THE TOP, under the nav */
+  .nav-links .nav-group { position: static; align-self: stretch; display: flex; align-items: center; }
+  .nav-links .nav-group > .nav-group-trigger { display: inline-flex; align-items: center; gap: 6px; height: 100%; position: relative; }
+  .nav-links .nav-group > .nav-group-trigger::after { display: none; }
+  .nav-caret { width: 9px; height: 9px; opacity: .65; transition: transform .3s cubic-bezier(.4,0,.2,1); }
+  .nav-group:hover .nav-caret { transform: rotate(180deg); }
+  .nav-dropdown {
+    position: absolute; top: 100%; left: 0; right: 0; box-sizing: border-box;
+    display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch; gap: 6px;
+    padding: 16px 32px;
+    background: var(--white, #fff);
+    border-top: 1px solid var(--border, rgba(0,0,0,.08));
+    border-bottom: 1px solid var(--border, rgba(0,0,0,.08));
+    box-shadow: 0 24px 50px rgba(28,28,30,.10);
+    opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(-8px);
+    transition: opacity .24s ease, transform .24s cubic-bezier(.4,0,.2,1), visibility .24s; z-index: 9998;
+  }
+  .nav-dropdown::before { content: ''; position: absolute; left: 0; right: 0; top: -26px; height: 26px; }
+  .nav-group:hover .nav-dropdown, .nav-group:focus-within .nav-dropdown {
+    opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0);
+  }
+  .nav-dropdown a {
+    display: block; padding: 12px 18px; border-radius: var(--radius-sm, 8px);
+    font-size: 14px; line-height: 1.35; color: var(--text-primary, #1a1a1a);
+    min-width: 180px; white-space: nowrap;
+  }
+  .nav-dropdown a::after { display: none; }
+  .nav-dropdown a:hover { background: var(--cream, #f7f3ec); color: var(--gold-dark, #8b6e3a); }
+  .nav-dropdown .dropdown-desc {
+    display: block; margin-top: 3px; font-size: 12px; font-weight: 400;
+    color: var(--text-secondary, #6b6b76); white-space: nowrap;
+  }
+  .nav-dropdown .tag {
+    display: inline-block; margin-left: 8px; font-size: 10px; letter-spacing: .06em;
+    text-transform: uppercase; color: var(--gold-dark, #8b6e3a);
+    background: rgba(184,151,90,.14); padding: 2px 8px; border-radius: 100px; vertical-align: middle;
+  }
+  /* Featured "quick value" group */
+  .nav-links .nav-group.featured > .nav-group-trigger { color: var(--gold-dark, #8b6e3a); font-weight: 600; }
+  .nav-links .nav-group.featured > .nav-group-trigger .nav-caret { opacity: .9; }
+  /* Active page state (set automatically by the injected script) */
+  .nav-links > a.active { color: var(--text-primary, #1a1a1a); }
+  .nav-links > a.active::after { transform: scaleX(1); }
+  .nav-links > a.nav-cta.active { background: var(--gold, #b8975a); }
+  .nav-links .nav-group.active > .nav-group-trigger { color: var(--gold-dark, #8b6e3a); font-weight: 600; }
+  .nav-links .nav-group.active > .nav-group-trigger::before {
+    content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 3px;
+    background: var(--gold, #b8975a); border-radius: 3px 3px 0 0;
+  }
+  .nav-dropdown a.active { background: var(--cream, #f7f3ec); color: var(--gold-dark, #8b6e3a); font-weight: 600; }
+  .mobile-menu a.active { color: var(--gold-dark, #8b6e3a); font-weight: 600; }
+  /* Mobile grouped menu */
+  .mobile-menu .m-label {
+    display: block; padding: 20px 32px 2px; text-align: center;
+    font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--gold, #b8975a); border: none;
+    font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
+  }
+  .mobile-menu .m-label:first-child { padding-top: 10px; }
+  .mobile-menu a.m-assess { color: var(--gold-dark, #8b6e3a); }
+  .mobile-menu a.m-cta { color: var(--white, #fff); background: var(--charcoal, #1c1c1e); }
+  @media (max-width: 1040px) { .nav-links { gap: 20px; } }
+</style>
+<script id="unified-nav-script">
+document.addEventListener('DOMContentLoaded', function () {
+  function seg(url) {
+    try {
+      var a = document.createElement('a'); a.href = url;
+      var s = a.pathname.split('/').filter(Boolean).pop();
+      return (s || 'index.html').toLowerCase();
+    } catch (e) { return ''; }
+  }
+  var here = seg(window.location.href) || 'index.html';
+  var links = document.querySelectorAll('#mainNav .nav-links a, #mobileMenu a');
+  Array.prototype.forEach.call(links, function (link) {
+    var href = link.getAttribute('href');
+    if (!href || href.charAt(0) === '#' || href.indexOf('mailto:') === 0) return;
+    if (seg(href) === here) {
+      link.classList.add('active');
+      var g = link.closest && link.closest('.nav-group');
+      if (g) g.classList.add('active');
+    }
+  });
+});
+</script>
+</head>
+<body>
+
+<nav class="nav scrolled" id="mainNav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">M</div>
+      <span class="logo-text">Maturity<span>Coach</span></span>
+    </a>
+          <div class="nav-links">
+      <!-- APPROACH: the why + the framework -->
+      <div class="nav-group">
+        <a href="philosophy.html" class="nav-group-trigger">Approach
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="philosophy.html">Philosophy<span class="dropdown-desc">The Maturity Method &mdash; wisdom, neuroscience &amp; AI</span></a>
+          <a href="framework.html">Ubuntu Roots Coaching&trade;<span class="dropdown-desc">The proprietary coaching framework</span></a>
+        </div>
+      </div>
+
+      <!-- SERVICES: overview + specialised track -->
+      <div class="nav-group">
+        <a href="services.html" class="nav-group-trigger">Services
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="services.html">All Services<span class="dropdown-desc">1:1, cohorts, teams &amp; keynotes</span></a>
+          <a href="coaching-for-technical-leaders.html">Coaching for Technical Leaders<span class="dropdown-desc">CISOs, CIOs, CTOs &amp; federal tech leaders</span></a>
+        </div>
+      </div>
+
+      <!-- INSIGHTS: thought leadership hub + featured essays + blog -->
+      <div class="nav-group">
+        <a href="perspectives.html" class="nav-group-trigger">Insights
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="perspectives.html">Perspectives<span class="dropdown-desc">Essays on leadership &amp; maturity</span></a>
+          <a href="perspectives-human-maturity.html">Why AI Raises the Premium on Human Maturity</a>
+          <a href="perspectives-sacrificial-leader.html">The Myth of the Sacrificial Leader</a>
+          <a href="blog.html">From the Blog<span class="dropdown-desc">Latest notes &amp; articles</span></a>
+        </div>
+      </div>
+
+<div class="nav-group">
+  <a href="about.html" class="nav-group-trigger">Our Coaches
+    <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+  <div class="nav-dropdown">
+    <a href="about.html">All Coaches<span class="dropdown-desc">Filter by specialization</span></a>
+    <a href="profiles/eugene.html">Eugene Nkomba<span class="dropdown-desc">Founder & Managing Partner</span></a>
+    <a href="profiles/[coach2].html">[Name]<span class="dropdown-desc">[Title]</span></a>
+    <a href="profiles/[coach3].html">[Name]<span class="dropdown-desc">[Title]</span></a>
+    <!-- ...remaining coaches -->
+  </div>
+</div>
+
+      <!-- FREE RESOURCES: every no-cost, quick-value entry point in one place. -->
+      <div class="nav-group featured">
+        <a href="assessment-teaser.html" class="nav-group-trigger">Free Resources
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="assessment-teaser.html">Quick Leadership Check<span class="tag">2 min</span><span class="dropdown-desc">Instant snapshot of where you lead from</span></a>
+          <a href="assessment.html">Full Maturity Assessment<span class="dropdown-desc">The complete self-assessment</span></a>
+          <a href="/workshop/">Free Leadership Workshop<span class="dropdown-desc">Live, 90 minutes, for senior leaders</span></a>
+          <a href="/ai-ready-leader/">AI-Ready Leader Guide<span class="dropdown-desc">Free download</span></a>
+          <a href="/app/">Get the App<span class="dropdown-desc">Daily practice on iPhone &amp; Android</span></a>
+        </div>
+      </div>
+
+      <!-- PRIMARY CONVERSION -->
+      <a href="contact.html" class="nav-cta">Request a Consultation</a>
+    </div>
+    <div class="nav-hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <span class="m-label">Approach</span>
+  <a href="philosophy.html" onclick="toggleMenu()">Philosophy</a>
+  <a href="framework.html" onclick="toggleMenu()">Ubuntu Roots Coaching&trade;</a>
+
+  <span class="m-label">Services</span>
+  <a href="services.html" onclick="toggleMenu()">All Services</a>
+  <a href="coaching-for-technical-leaders.html" onclick="toggleMenu()">For Technical Leaders</a>
+
+  <span class="m-label">Insights</span>
+  <a href="perspectives.html" onclick="toggleMenu()">Perspectives</a>
+  <a href="blog.html" onclick="toggleMenu()">From the Blog</a>
+
+  <span class="m-label">Free Resources</span>
+  <a href="assessment-teaser.html" class="m-assess" onclick="toggleMenu()">Quick Leadership Check &middot; 2 min</a>
+  <a href="assessment.html" onclick="toggleMenu()">Full Maturity Assessment</a>
+  <a href="/workshop/" onclick="toggleMenu()">Free Leadership Workshop</a>
+  <a href="/ai-ready-leader/" onclick="toggleMenu()">AI-Ready Leader Guide</a>
+  <a href="/app/" onclick="toggleMenu()">Get the App</a>
+
+<span class="m-label">Our Coaches</span>
+<a href="about.html" onclick="toggleMenu()">All Coaches</a>
+<a href="profiles/eugene.html" onclick="toggleMenu()">Eugene Nkomba</a>
+<a href="profiles/[coach2].html" onclick="toggleMenu()">[Name]</a>
+<!-- ...remaining coaches -->
+  <a href="contact.html" class="m-cta" onclick="toggleMenu()">Request a Consultation</a>
+</div>
+
+<!-- HERO -->
+<section class="philosophy-hero">
+  <div class="container-sm">
+    <div class="section-label" style="justify-content:center; color:var(--gold); margin-bottom:20px;">The Maturity Philosophy</div>
+    <h1 class="display-2">Where ancient wisdom<br>meets tomorrow's world</h1>
+    <p class="body-lg" style="margin-top:24px;">A coherent, integrated framework for leaders who refuse to choose between worldly success and an enjoyable, deeply human life.</p>
+  </div>
+</section>
+
+<!-- CORE TENSION -->
+<section class="tension-section">
+  <div class="container">
+    <div class="text-center fade-up">
+      <div class="section-label" style="justify-content:center;">The Central Insight</div>
+      <h2 class="display-3" style="margin-bottom:16px; max-width:700px; margin-left:auto; margin-right:auto;">Two traditions. One integrated leader.</h2>
+      <p class="body-md text-muted" style="max-width:560px; margin:0 auto;">The ancient world knew things the modern world has forgotten. The modern world has tools the ancient world could never have imagined. Maturity coaching brings them together.</p>
+    </div>
+
+    <div class="tension-blocks" style="margin-top:64px;">
+      <div class="tension-block tension-block-ancient fade-up">
+        <div class="tension-block-title">Ancient Wisdom</div>
+        <p class="tension-block-text">Thousands of years of tested human insight into what it means to flourish — as a person, a leader, and a community member.</p>
+        <div class="tension-items">
+          <div class="tension-item"><span>Stoic philosophy — clarity under pressure</span><div class="tension-item-dot"></div></div>
+          <div class="tension-item"><span>Ubuntu — leadership through relationship</span><div class="tension-item-dot"></div></div>
+          <div class="tension-item"><span>Eastern contemplative practice</span><div class="tension-item-dot"></div></div>
+          <div class="tension-item"><span>Proverbs — the wisdom of the elders</span><div class="tension-item-dot"></div></div>
+          <div class="tension-item"><span>Indigenous leadership frameworks</span><div class="tension-item-dot"></div></div>
+        </div>
+      </div>
+
+      <div class="tension-center">
+        <div class="tension-line"></div>
+        <div class="tension-center-symbol">∞</div>
+        <div class="tension-line" style="transform: scaleY(-1);"></div>
+      </div>
+
+      <div class="tension-block tension-block-modern fade-up">
+        <div class="tension-block-title" style="color:var(--white);">Modern Intelligence</div>
+        <p class="tension-block-text">Cutting-edge science and technology that amplifies human capacity — when guided by wisdom, values, and mature self-awareness.</p>
+        <div class="tension-items">
+          <div class="tension-item"><div class="tension-item-dot"></div><span>Neuroscience — how the brain leads</span></div>
+          <div class="tension-item"><div class="tension-item-dot"></div><span>Systems psychodynamics</span></div>
+          <div class="tension-item"><div class="tension-item-dot"></div><span>AI tools and leverage</span></div>
+          <div class="tension-item"><div class="tension-item-dot"></div><span>Behavioral science & habit design</span></div>
+          <div class="tension-item"><div class="tension-item-dot"></div><span>Organizational complexity models</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THREE PILLARS DEEP DIVE -->
+<section class="pillars-deep">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom:20px;">
+      <div class="section-label" style="justify-content:center;">The Three Pillars</div>
+      <h2 class="display-3">What we build on</h2>
+    </div>
+
+    <div class="pillar-deep fade-up">
+      <div>
+        <div class="pillar-deep-number">01</div>
+      </div>
+      <div>
+        <div class="pillar-deep-label">Ancient Wisdom</div>
+        <div class="pillar-deep-title">The accumulated intelligence of civilization</div>
+        <p class="pillar-deep-text">
+          Before there were MBAs, there were philosophers, elders, and wisdom traditions — and they were asking the same questions leaders face today: How do I remain clear under pressure? How do I lead people through uncertainty? How do I build something that lasts?
+        </p>
+        <p class="pillar-deep-text">
+          Stoic philosophy teaches leaders to distinguish between what they can and cannot control — and to act excellently within that boundary. Ubuntu philosophy reminds us that leadership is always relational: a leader only flourishes as the community flourishes. The book of Proverbs offers unparalleled counsel on integrity, speech, and the long arc of wise decision-making.
+        </p>
+        <p class="pillar-deep-text">
+          These are not charming additions to the coaching work. They are the foundation — the field of tested human insight that gives the modern tools their proper context.
+        </p>
+        <div class="wisdom-quote">
+          "Waste no more time arguing about what a good man should be. Be one."
+          <cite>— Marcus Aurelius, Meditations</cite>
+        </div>
+      </div>
+    </div>
+
+    <div class="pillar-deep fade-up">
+      <div>
+        <div class="pillar-deep-number">02</div>
+      </div>
+      <div>
+        <div class="pillar-deep-label">Neuroscience</div>
+        <div class="pillar-deep-title">Your brain is your leadership instrument</div>
+        <p class="pillar-deep-text">
+          The prefrontal cortex — the seat of agency, clarity, planning, and self-regulation — is the most powerful tool a leader possesses. And it is exquisitely sensitive to stress, reactivity, and the accumulated weight of unprocessed experience.
+        </p>
+        <p class="pillar-deep-text">
+          Neuro-informed coaching helps leaders understand what is happening in their nervous system during high-stakes moments, and teaches them to consistently access their prefrontal capacity rather than reacting from more primitive brain structures.
+        </p>
+        <p class="pillar-deep-text">
+          The result is leaders who can hold more complexity, have more genuine presence in difficult conversations, and make decisions from clarity rather than fear.
+        </p>
+        <div class="wisdom-quote">
+          "Between stimulus and response there is a space. In that space lies our freedom."
+          <cite>— Viktor Frankl</cite>
+        </div>
+      </div>
+    </div>
+
+    <div class="pillar-deep fade-up">
+      <div>
+        <div class="pillar-deep-number">03</div>
+      </div>
+      <div>
+        <div class="pillar-deep-label">Technology & the AI Era</div>
+        <div class="pillar-deep-title">The new leverage — and the new risk</div>
+        <p class="pillar-deep-text">
+          Artificial intelligence is the most significant technological shift in a generation. It is reshaping organizations, redefining roles, and restructuring competitive landscapes at a pace that outstrips most leaders' capacity to adapt.
+        </p>
+        <p class="pillar-deep-text">
+          But here is the insight that distinguishes mature leadership from reactive leadership: AI amplifies. It amplifies whatever is already there. Leaders with strong self-awareness, genuine values, and mature judgment use AI to build better organizations and live fuller lives. Leaders without those inner resources use AI to go further in the wrong direction, faster.
+        </p>
+        <p class="pillar-deep-text">
+          Maturity coaching helps leaders develop the inner infrastructure that makes technological leverage genuinely beneficial — for their organizations, their people, and themselves.
+        </p>
+        <div class="wisdom-quote">
+          "AI is making answers faster — but it is not making organizations smarter. That gap is precisely where human maturity lives."
+          <cite>— Eugene Nkomba, MBA · PCC · CPCC · CTCC</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE MATURITY MODEL -->
+<section class="model-section">
+  <div class="container">
+    <div class="text-center fade-up">
+      <div class="section-label" style="justify-content:center;">The Maturity Model</div>
+      <h2 class="display-3" style="margin-bottom:16px;">Four capacities. One integrated leader.</h2>
+      <p class="body-md text-muted" style="max-width:560px; margin:0 auto;">Leadership maturity is not a destination — it is a deepening practice across four interconnected capacities.</p>
+    </div>
+
+    <div class="maturity-model fade-up">
+      <div class="model-step">
+        <div class="model-step-num">I</div>
+        <div class="model-step-title">Self-Awareness</div>
+        <p class="model-step-text">Knowing your patterns, your triggers, your gifts, and your shadows with radical honesty and compassion.</p>
+      </div>
+      <div class="model-step">
+        <div class="model-step-num">II</div>
+        <div class="model-step-title">Self-Regulation</div>
+        <p class="model-step-text">The capacity to remain centered, clear, and responsive — even in the highest-stakes moments of your leadership.</p>
+      </div>
+      <div class="model-step">
+        <div class="model-step-num">III</div>
+        <div class="model-step-title">Relational Wisdom</div>
+        <p class="model-step-text">Leading others with the kind of presence that brings out the best in the people around you — including the difficult ones.</p>
+      </div>
+      <div class="model-step">
+        <div class="model-step-num">IV</div>
+        <div class="model-step-title">Systemic Intelligence</div>
+        <p class="model-step-text">Seeing the invisible dynamics that shape your organization and your life — and intervening at the right level.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UBUNTU ROOTS FRAMEWORK -->
+<section class="section" style="background:var(--cream);">
+  <div class="container">
+    <div class="grid-2" style="align-items:center;">
+      <div class="fade-up">
+        <div class="section-label">An Original Framework</div>
+        <h2 class="display-3" style="margin-bottom:20px;">The Ubuntu Roots Framework</h2>
+        <p class="body-md text-muted" style="margin-bottom:28px; max-width:460px;">
+          Eugene's own community-centered coaching framework — grounded in ancestral wisdom (African Ubuntu, Indigenous, Andean, and Celtic traditions) and built for contemporary leaders. Across five dimensions of relational leadership, it treats a leader not as an isolated individual but as a living node in a web of relationships — and is brought into an engagement when it serves the client best.
+        </p>
+        <a href="framework.html" class="btn btn-primary">Explore the Framework →</a>
+      </div>
+      <div class="fade-up">
+        <div style="background:linear-gradient(155deg,var(--charcoal),#2c332b); border-radius:var(--radius-xl); padding:56px 40px; text-align:center; position:relative; overflow:hidden;">
+          <div style="font-size:56px; line-height:1;">🌍</div>
+          <div style="font-family:var(--font-serif); font-style:italic; font-size:21px; margin-top:18px; color:rgba(255,255,255,0.9);">"I am because we are."</div>
+          <div style="font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gold); margin-top:12px;">Ubuntu</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HUMANITY -->
+<section class="humanity-section">
+  <div class="humanity-inner container-sm">
+    <div class="section-label" style="justify-content:center; color:rgba(255,255,255,0.7); margin-bottom:24px;">The Heart of it All</div>
+    <h2 class="display-3 fade-up">Enjoyable. Sustainable. Fully Human.</h2>
+    <p class="fade-up">
+      At the center of everything we do is a conviction that success and enjoyment are not in competition. The most enduring leaders we know are not grinding through life — they are genuinely engaged with it. They lead well because they live well.
+    </p>
+    <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;" class="fade-up">
+      <a href="contact.html" class="btn btn-white btn-lg">Begin Your Journey</a>
+      <a href="about.html" class="btn btn-outline" style="color:rgba(255,255,255,0.85); border-color:rgba(255,255,255,0.3);">Meet Eugene →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <div class="footer-logo">M</div>
+          <div class="footer-brand-name">Maturity<span>Coach</span></div>
+        </div>
+        <p class="footer-desc">Ancient wisdom, modern intelligence, and the courage to live fully — while building something extraordinary.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/nkomba" target="_blank" title="LinkedIn">in</a>
+          <a href="#" title="Twitter/X">𝕏</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="philosophy.html">Philosophy</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><div class="nav-group">
+  <a href="about.html" class="nav-group-trigger">Our Coaches
+    <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </a>
+  <div class="nav-dropdown">
+    <a href="about.html">All Coaches<span class="dropdown-desc">Filter by specialization</span></a>
+    <a href="profiles/eugene.html">Eugene Nkomba<span class="dropdown-desc">Founder & Managing Partner</span></a>
+    <a href="profiles/[coach2].html">[Name]<span class="dropdown-desc">[Title]</span></a>
+    <a href="profiles/[coach3].html">[Name]<span class="dropdown-desc">[Title]</span></a>
+    <!-- ...remaining coaches -->
+  </div>
+</div></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Executive Mastery</a></li>
+          <li><a href="services.html">Maturity Circle</a></li>
+          <li><a href="services.html">Leadership Culture</a></li>
+          <li><a href="services.html">Speaking</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="/app/">Get the App</a></li>
+          <li><a href="contact.html">Request Confidential Consultation</a></li>
+          <li><a href="https://www.linkedin.com/in/nkomba" target="_blank">LinkedIn</a></li>
+          <li><a href="mailto:eugene@maturitycoach.com">Email Eugene</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Maturity Coach. All rights reserved.</span>
+      <div class="footer-bottom-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 20); });
+  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  // In script tag at bottom of each HTML file
+document.addEventListener('DOMContentLoaded', () => {
+  const nav = document.getElementById('mainNav');
+  
+  // Set initial state based on current scroll position
+  if (nav) {
+    nav.classList.toggle('scrolled', window.scrollY > 0);
+    
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    });
+  }
+});
+</script>
+</body>
+</html>

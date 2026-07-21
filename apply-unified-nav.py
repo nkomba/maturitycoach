@@ -87,22 +87,11 @@ NAV_LINKS = '''
 
       <a href="about.html">About Eugene</a>
 
-      <!-- FREE RESOURCES: every no-cost, quick-value entry point in one place. -->
-      <div class="nav-group featured">
-        <a href="assessment-teaser.html" class="nav-group-trigger">Free Resources
-          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <div class="nav-dropdown">
-          <a href="assessment-teaser.html">Quick Leadership Check<span class="tag">2 min</span><span class="dropdown-desc">Instant snapshot of where you lead from</span></a>
-          <a href="assessment.html">Full Maturity Assessment<span class="dropdown-desc">The complete self-assessment</span></a>
-          <a href="/workshop/">Free Leadership Workshop<span class="dropdown-desc">Live, 90 minutes, for senior leaders</span></a>
-          <a href="/ai-ready-leader/">AI-Ready Leader Guide<span class="dropdown-desc">Free download</span></a>
-          <a href="/app/">Get the App<span class="dropdown-desc">Daily practice on iPhone &amp; Android</span></a>
-        </div>
-      </div>
+      <!-- QUICK VALUE: standalone assessment CTA (2-minute quick check) -->
+      <a href="assessment-teaser.html" class="nav-assess">Take the 2-Minute Maturity Assessment</a>
 
       <!-- PRIMARY CONVERSION -->
-      <a href="contact.html" class="nav-cta">Request a Consultation</a>
+      <a href="contact.html" class="nav-cta">Request Confidential Conversation</a>
     '''
 
 # ── The unified mobile menu (goes inside <div class="mobile-menu"> … </div>) ──
@@ -119,16 +108,16 @@ MOBILE_LINKS = '''
   <a href="perspectives.html" onclick="toggleMenu()">Perspectives</a>
   <a href="blog.html" onclick="toggleMenu()">From the Blog</a>
 
-  <span class="m-label">Free Resources</span>
-  <a href="assessment-teaser.html" class="m-assess" onclick="toggleMenu()">Quick Leadership Check &middot; 2 min</a>
+  <span class="m-label">Assessment</span>
+  <a href="assessment-teaser.html" class="m-assess" onclick="toggleMenu()">Take the 2-Minute Maturity Assessment</a>
   <a href="assessment.html" onclick="toggleMenu()">Full Maturity Assessment</a>
+
+  <span class="m-label">More</span>
   <a href="/workshop/" onclick="toggleMenu()">Free Leadership Workshop</a>
   <a href="/ai-ready-leader/" onclick="toggleMenu()">AI-Ready Leader Guide</a>
   <a href="/app/" onclick="toggleMenu()">Get the App</a>
-
-  <span class="m-label">More</span>
   <a href="about.html" onclick="toggleMenu()">About Eugene</a>
-  <a href="contact.html" class="m-cta" onclick="toggleMenu()">Request a Consultation</a>
+  <a href="contact.html" class="m-cta" onclick="toggleMenu()">Request Confidential Conversation</a>
 '''
 
 # ── CSS added once per page (only the pieces style.css lacks) ──
@@ -170,9 +159,11 @@ NAV_CSS = '''<style id="unified-nav-styles">
     text-transform: uppercase; color: var(--gold-dark, #8b6e3a);
     background: rgba(184,151,90,.14); padding: 2px 8px; border-radius: 100px; vertical-align: middle;
   }
-  /* Featured "quick value" group */
-  .nav-links .nav-group.featured > .nav-group-trigger { color: var(--gold-dark, #8b6e3a); font-weight: 600; }
-  .nav-links .nav-group.featured > .nav-group-trigger .nav-caret { opacity: .9; }
+  /* Assessment button (secondary gold CTA) */
+  .nav-links a.nav-assess { border: 1.5px solid var(--gold, #b8975a); color: var(--gold-dark, #8b6e3a); padding: 9px 18px; border-radius: 100px; font-size: 14px; font-weight: 500; white-space: nowrap; }
+  .nav-links a.nav-assess::after { display: none; }
+  .nav-links a.nav-assess:hover { background: var(--gold, #b8975a); color: var(--white, #fff); }
+  .nav-links a.nav-assess.active { background: var(--gold, #b8975a); color: var(--white, #fff); }
   /* Active page state (set automatically by the injected script) */
   .nav-links > a.active { color: var(--text-primary, #1a1a1a); }
   .nav-links > a.active::after { transform: scaleX(1); }
@@ -194,7 +185,8 @@ NAV_CSS = '''<style id="unified-nav-styles">
   .mobile-menu .m-label:first-child { padding-top: 10px; }
   .mobile-menu a.m-assess { color: var(--gold-dark, #8b6e3a); }
   .mobile-menu a.m-cta { color: var(--white, #fff); background: var(--charcoal, #1c1c1e); }
-  @media (max-width: 1040px) { .nav-links { gap: 20px; } }
+  #mainNav .nav-links { gap: 22px; }
+  @media (max-width: 1120px) { #mainNav .nav-links { display: none; } #mainNav .nav-hamburger { display: flex; } }
 </style>
 '''
 

@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leadership Maturity Assessment — maturity.coach</title>
+  <meta name="description" content="Take the Leadership Maturity Self-Assessment" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ASSESSMENT PAGE SPECIFIC STYLES */
+    .assessment-hero {
+      min-height: 70vh;
+      background: var(--charcoal);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: var(--nav-height);
+    }
+    .assessment-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 80% at 80% 40%, rgba(184,151,90,0.1) 0%, transparent 60%);
+    }
+    .assessment-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 80px 32px;
+      text-align: center;
+      width: 100%;
+    }
+    .assessment-hero h1 { color: var(--white); margin-bottom: 20px; }
+    .assessment-hero-title { color: var(--gold); font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 24px; }
+    .assessment-hero p { color: rgba(255,255,255,0.65); max-width: 580px; margin: 0 auto 32px; font-size: 18px; line-height: 1.65; font-weight: 300; }
+    .assessment-meta { font-size: 13px; color: rgba(255,255,255,0.45); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 40px; }
+    
+    .quiz-section { background: var(--charcoal); color: var(--white); padding: 80px 0; }
+    .quiz-container { max-width: 720px; margin: 0 auto; padding: 0 32px; }
+    .quiz-wrap {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: var(--radius-lg);
+      padding: 48px 40px;
+      min-height: 420px;
+    }
+    .quiz-start-screen { text-align: center; padding: 20px 0; }
+    .quiz-start-screen p { color: rgba(255,255,255,0.6); font-size: 16px; line-height: 1.7; margin-bottom: 32px; max-width: 460px; margin: 0 auto 32px; }
+    
+    .quiz-progress-bar { width: 100%; height: 4px; background: rgba(255,255,255,0.10); border-radius: 2px; margin-bottom: 32px; overflow: hidden; }
+    .quiz-progress-fill { height: 100%; background: linear-gradient(90deg, var(--gold-dark), var(--gold)); border-radius: 2px; transition: width 0.4s ease; width: 0%; }
+    .quiz-step-indicator { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 20px; text-align: right; }
+    .quiz-question { font-family: var(--font-serif); font-size: clamp(22px, 3vw, 30px); color: var(--white); margin-bottom: 32px; line-height: 1.3; text-align: left; }
+    .question-dimension { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: block; }
+    
+    .quiz-options { display: flex; flex-direction: column; gap: 12px; }
+    .quiz-option {
+      display: flex; align-items: center; gap: 16px;
+      padding: 18px 24px; border: 1.5px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-md); background: transparent;
+      color: rgba(255,255,255,0.85); font-size: 16px; cursor: pointer;
+      transition: var(--transition); text-align: left; width: 100%;
+      font-family: var(--font-sans);
+    }
+    .quiz-option:hover { border-color: var(--gold); background: rgba(184,151,90,0.08); transform: translateX(4px); }
+    .quiz-option.selected { border-color: var(--gold); background: rgba(184,151,90,0.15); }
+    .quiz-option-radio { width: 22px; height: 22px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.25); flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: var(--transition); }
+    .quiz-option.selected .quiz-option-radio { border-color: var(--gold); }
+    .quiz-option.selected .quiz-option-radio::after { content: ''; width: 10px; height: 10px; border-radius: 50%; background: var(--gold); }
+    
+    .quiz-nav { display: flex; justify-content: space-between; margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.10); }
+    .quiz-btn { padding: 12px 28px; border-radius: 100px; font-size: 14px; font-weight: 500; cursor: pointer; border: none; transition: var(--transition); font-family: var(--font-sans); }
+    .quiz-btn-back { background: transparent; color: rgba(255,255,255,0.5); border: 1.5px solid rgba(255,255,255,0.15); }
+    .quiz-btn-back:hover { color: var(--white); border-color: rgba(255,255,255,0.4); }
+    .quiz-btn-next { background: linear-gradient(135deg, var(--gold-dark), var(--gold)); color: var(--white); }
+    .quiz-btn-next:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(184,151,90,0.35); }
+    .quiz-btn-next:disabled, .quiz-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; box-shadow: none; }
+    
+    .quiz-result { text-align: center; }
+    .quiz-score-ring { width: 140px; height: 140px; margin: 0 auto 24px; border-radius: 50%; position: relative; background: conic-gradient(var(--gold) 0deg, rgba(255,255,255,0.10) 0deg); display: flex; align-items: center; justify-content: center; }
+    .quiz-score-ring-inner { width: 118px; height: 118px; border-radius: 50%; background: var(--charcoal); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-size: 42px; color: var(--gold); }
+    .quiz-result-label { font-family: var(--font-serif); font-size: 24px; color: var(--white); margin-bottom: 12px; }
+    .quiz-result-description { font-size: 15px; color: rgba(255,255,255,0.6); line-height: 1.7; max-width: 480px; margin: 0 auto 32px; }
+    .quiz-recommendation { background: rgba(184,151,90,0.08); border: 1px solid rgba(184,151,90,0.20); border-radius: var(--radius-md); padding: 24px; margin: 24px 0; text-align: left; }
+    .quiz-recommendation-title { font-size: 14px; font-weight: 600; color: var(--gold); margin-bottom: 8px; letter-spacing: 0.04em; }
+    .quiz-recommendation-text { font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.65; }
+    .quiz-result-cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 32px; }
+    
+    .dimension-breakdown { max-width: 600px; margin: 32px auto 0; text-align: left; }
+    .breakdown-title { font-size: 16px; font-weight: 600; color: rgba(255,255,255,0.8); margin-bottom: 20px; text-align: center; }
+    .dimension-row { margin-bottom: 16px; padding: 16px; background: rgba(255,255,255,0.04); border-radius: var(--radius-sm); }
+    .dimension-info { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .dimension-name { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.8); }
+    .dimension-label { font-size: 10px; color: var(--gold); font-weight: 600; background: rgba(184,151,90,0.12); padding: 2px 8px; border-radius: 4px; }
+    .dimension-bar { display: flex; align-items: center; gap: 12px; }
+    .dimension-bar-track { flex: 1; height: 8px; background: rgba(255,255,255,0.10); border-radius: 4px; overflow: hidden; }
+    .dimension-bar-fill { height: 100%; background: linear-gradient(90deg, var(--gold-dark), var(--gold)); border-radius: 4px; transition: width 0.5s ease; }
+    .dimension-score { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.6); min-width: 36px; text-align: right; }
+    .quiz-alert { color: #c64949; font-size: 13px; margin-top: 8px; padding: 8px; background: rgba(198,73,73,0.1); border-left: 3px solid #c64949; border-radius: 4px; text-align: left; }
+    
+    @media (max-width: 768px) {
+      .assessment-hero-inner { padding: 60px 20px; }
+      .quiz-wrap { padding: 32px 24px; }
+      .quiz-nav { flex-direction: column; gap: 12px; }
+      .quiz-nav .quiz-btn { width: 100%; }
+      .quiz-result-cta { flex-direction: column; }
+    }
+        /* Email Gate */
+    .email-gate-icon {
+      width: 64px; height: 64px; margin: 0 auto 24px;
+      border-radius: 50%;
+      background: rgba(184,151,90,0.12);
+      border: 1px solid rgba(184,151,90,0.25);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px; color: var(--gold);
+    }
+    #userEmail::placeholder { color: rgba(255,255,255,0.3); }
+    #userEmail:focus { border-color: var(--gold) !important; box-shadow: 0 0 0 3px rgba(184,151,90,0.12) !important; }
+  </style>
+<style id="unified-nav-styles">
+  /* Full-width submenu bar: opens ACROSS THE TOP, under the nav */
+  .nav-links .nav-group { position: static; align-self: stretch; display: flex; align-items: center; }
+  .nav-links .nav-group > .nav-group-trigger { display: inline-flex; align-items: center; gap: 6px; height: 100%; position: relative; }
+  .nav-links .nav-group > .nav-group-trigger::after { display: none; }
+  .nav-caret { width: 9px; height: 9px; opacity: .65; transition: transform .3s cubic-bezier(.4,0,.2,1); }
+  .nav-group:hover .nav-caret { transform: rotate(180deg); }
+  .nav-dropdown {
+    position: absolute; top: 100%; left: 0; right: 0; box-sizing: border-box;
+    display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch; gap: 6px;
+    padding: 16px 32px;
+    background: var(--white, #fff);
+    border-top: 1px solid var(--border, rgba(0,0,0,.08));
+    border-bottom: 1px solid var(--border, rgba(0,0,0,.08));
+    box-shadow: 0 24px 50px rgba(28,28,30,.10);
+    opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(-8px);
+    transition: opacity .24s ease, transform .24s cubic-bezier(.4,0,.2,1), visibility .24s; z-index: 9998;
+  }
+  .nav-dropdown::before { content: ''; position: absolute; left: 0; right: 0; top: -26px; height: 26px; }
+  .nav-group:hover .nav-dropdown, .nav-group:focus-within .nav-dropdown {
+    opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0);
+  }
+  .nav-dropdown a {
+    display: block; padding: 12px 18px; border-radius: var(--radius-sm, 8px);
+    font-size: 14px; line-height: 1.35; color: var(--text-primary, #1a1a1a);
+    min-width: 180px; white-space: nowrap;
+  }
+  .nav-dropdown a::after { display: none; }
+  .nav-dropdown a:hover { background: var(--cream, #f7f3ec); color: var(--gold-dark, #8b6e3a); }
+  .nav-dropdown .dropdown-desc {
+    display: block; margin-top: 3px; font-size: 12px; font-weight: 400;
+    color: var(--text-secondary, #6b6b76); white-space: nowrap;
+  }
+  .nav-dropdown .tag {
+    display: inline-block; margin-left: 8px; font-size: 10px; letter-spacing: .06em;
+    text-transform: uppercase; color: var(--gold-dark, #8b6e3a);
+    background: rgba(184,151,90,.14); padding: 2px 8px; border-radius: 100px; vertical-align: middle;
+  }
+  /* Featured "quick value" group */
+  .nav-links .nav-group.featured > .nav-group-trigger { color: var(--gold-dark, #8b6e3a); font-weight: 600; }
+  .nav-links .nav-group.featured > .nav-group-trigger .nav-caret { opacity: .9; }
+  /* Active page state (set automatically by the injected script) */
+  .nav-links > a.active { color: var(--text-primary, #1a1a1a); }
+  .nav-links > a.active::after { transform: scaleX(1); }
+  .nav-links > a.nav-cta.active { background: var(--gold, #b8975a); }
+  .nav-links .nav-group.active > .nav-group-trigger { color: var(--gold-dark, #8b6e3a); font-weight: 600; }
+  .nav-links .nav-group.active > .nav-group-trigger::before {
+    content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 3px;
+    background: var(--gold, #b8975a); border-radius: 3px 3px 0 0;
+  }
+  .nav-dropdown a.active { background: var(--cream, #f7f3ec); color: var(--gold-dark, #8b6e3a); font-weight: 600; }
+  .mobile-menu a.active { color: var(--gold-dark, #8b6e3a); font-weight: 600; }
+  /* Mobile grouped menu */
+  .mobile-menu .m-label {
+    display: block; padding: 20px 32px 2px; text-align: center;
+    font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--gold, #b8975a); border: none;
+    font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
+  }
+  .mobile-menu .m-label:first-child { padding-top: 10px; }
+  .mobile-menu a.m-assess { color: var(--gold-dark, #8b6e3a); }
+  .mobile-menu a.m-cta { color: var(--white, #fff); background: var(--charcoal, #1c1c1e); }
+  @media (max-width: 1040px) { .nav-links { gap: 20px; } }
+</style>
+<script id="unified-nav-script">
+document.addEventListener('DOMContentLoaded', function () {
+  function seg(url) {
+    try {
+      var a = document.createElement('a'); a.href = url;
+      var s = a.pathname.split('/').filter(Boolean).pop();
+      return (s || 'index.html').toLowerCase();
+    } catch (e) { return ''; }
+  }
+  var here = seg(window.location.href) || 'index.html';
+  var links = document.querySelectorAll('#mainNav .nav-links a, #mobileMenu a');
+  Array.prototype.forEach.call(links, function (link) {
+    var href = link.getAttribute('href');
+    if (!href || href.charAt(0) === '#' || href.indexOf('mailto:') === 0) return;
+    if (seg(href) === here) {
+      link.classList.add('active');
+      var g = link.closest && link.closest('.nav-group');
+      if (g) g.classList.add('active');
+    }
+  });
+});
+</script>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">M</div>
+      <span class="logo-text">Maturity<span>Coach</span></span>
+    </a>
+    <div class="nav-links">
+      <!-- APPROACH: the why + the framework -->
+      <div class="nav-group">
+        <a href="philosophy.html" class="nav-group-trigger">Approach
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="philosophy.html">Philosophy<span class="dropdown-desc">The Maturity Method &mdash; wisdom, neuroscience &amp; AI</span></a>
+          <a href="framework.html">Ubuntu Roots Coaching&trade;<span class="dropdown-desc">The proprietary coaching framework</span></a>
+        </div>
+      </div>
+
+      <!-- SERVICES: overview + specialised track -->
+      <div class="nav-group">
+        <a href="services.html" class="nav-group-trigger">Services
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="services.html">All Services<span class="dropdown-desc">1:1, cohorts, teams &amp; keynotes</span></a>
+          <a href="coaching-for-technical-leaders.html">Coaching for Technical Leaders<span class="dropdown-desc">CISOs, CIOs, CTOs &amp; federal tech leaders</span></a>
+        </div>
+      </div>
+
+      <!-- INSIGHTS: thought leadership hub + featured essays + blog -->
+      <div class="nav-group">
+        <a href="perspectives.html" class="nav-group-trigger">Insights
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="perspectives.html">Perspectives<span class="dropdown-desc">Essays on leadership &amp; maturity</span></a>
+          <a href="perspectives-human-maturity.html">Why AI Raises the Premium on Human Maturity</a>
+          <a href="perspectives-sacrificial-leader.html">The Myth of the Sacrificial Leader</a>
+          <a href="blog.html">From the Blog<span class="dropdown-desc">Latest notes &amp; articles</span></a>
+        </div>
+      </div>
+
+      <a href="about.html">About Eugene</a>
+
+      <!-- FREE RESOURCES: every no-cost, quick-value entry point in one place. -->
+      <div class="nav-group featured">
+        <a href="assessment-teaser.html" class="nav-group-trigger">Free Resources
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="assessment-teaser.html">Quick Leadership Check<span class="tag">2 min</span><span class="dropdown-desc">Instant snapshot of where you lead from</span></a>
+          <a href="assessment.html">Full Maturity Assessment<span class="dropdown-desc">The complete self-assessment</span></a>
+          <a href="/workshop/">Free Leadership Workshop<span class="dropdown-desc">Live, 90 minutes, for senior leaders</span></a>
+          <a href="/ai-ready-leader/">AI-Ready Leader Guide<span class="dropdown-desc">Free download</span></a>
+          <a href="/app/">Get the App<span class="dropdown-desc">Daily practice on iPhone &amp; Android</span></a>
+        </div>
+      </div>
+
+      <!-- PRIMARY CONVERSION -->
+      <a href="contact.html" class="nav-cta">Request a Consultation</a>
+    </div>
+    <div class="nav-hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <span class="m-label">Approach</span>
+  <a href="philosophy.html" onclick="toggleMenu()">Philosophy</a>
+  <a href="framework.html" onclick="toggleMenu()">Ubuntu Roots Coaching&trade;</a>
+
+  <span class="m-label">Services</span>
+  <a href="services.html" onclick="toggleMenu()">All Services</a>
+  <a href="coaching-for-technical-leaders.html" onclick="toggleMenu()">For Technical Leaders</a>
+
+  <span class="m-label">Insights</span>
+  <a href="perspectives.html" onclick="toggleMenu()">Perspectives</a>
+  <a href="blog.html" onclick="toggleMenu()">From the Blog</a>
+
+  <span class="m-label">Free Resources</span>
+  <a href="assessment-teaser.html" class="m-assess" onclick="toggleMenu()">Quick Leadership Check &middot; 2 min</a>
+  <a href="assessment.html" onclick="toggleMenu()">Full Maturity Assessment</a>
+  <a href="/workshop/" onclick="toggleMenu()">Free Leadership Workshop</a>
+  <a href="/ai-ready-leader/" onclick="toggleMenu()">AI-Ready Leader Guide</a>
+  <a href="/app/" onclick="toggleMenu()">Get the App</a>
+
+  <span class="m-label">More</span>
+  <a href="about.html" onclick="toggleMenu()">About Eugene</a>
+  <a href="contact.html" class="m-cta" onclick="toggleMenu()">Request a Consultation</a>
+</div>
+
+<!-- HERO -->
+<section class="assessment-hero">
+  <div class="assessment-hero-bg"></div>
+  <div class="assessment-hero-inner">
+    <div class="fade-up">
+      <div class="assessment-hero-title">Leadership Maturity Assessment</div>
+      <h1 class="display-2">Discover Your Leadership Maturity</h1>
+      <p>A 10-minute self-assessment that reveals your leadership strengths, growth edges, and personalized next steps.</p>
+      <div class="assessment-meta">15 questions · ~10 minutes · Confidential results</div>
+      <a href="#takeAssessment" class="btn btn-gold btn-lg">Begin Assessment</a>
+    </div>
+  </div>
+</section>
+
+<!-- QUIZ SECTION -->
+<section class="quiz-section section" id="takeAssessment">
+  <div class="quiz-container">
+    <div class="quiz-wrap fade-up">
+      
+      <!-- START SCREEN -->
+      <div id="quizStartScreen" class="quiz-start-screen">
+        <p>You're about to begin the Leadership Maturity Assessment. This will take approximately 10 minutes to complete. Your results are confidential and will be used solely to provide personalized recommendations.</p>
+        <div class="divider"></div>
+        <button id="beginAssessmentBtn" class="btn btn-gold btn-lg">Start Now</button>
+      </div>
+
+      <!-- QUIZ INTERFACE (hidden initially) -->
+      <div id="quizInterface" style="display:none">
+        <div class="quiz-progress-bar">
+          <div id="progressFill" class="quiz-progress-fill"></div>
+        </div>
+        <div id="stepIndicator" class="quiz-step-indicator">Question 1 of 15</div>
+        <div id="quizBody"></div>
+        <div class="quiz-nav">
+          <button id="prevBtn" class="quiz-btn quiz-btn-back" disabled>← Previous</button>
+          <button id="nextBtn" class="quiz-btn quiz-btn-next">Next →</button>
+          <button id="submitBtn" class="quiz-btn quiz-btn-next" style="display:none;">See My Results</button>
+        </div>
+      </div>
+
+            <!-- EMAIL GATE (shown after quiz, before results) -->
+      <div id="emailGate" style="display:none;" class="quiz-result">
+        <div class="email-gate-icon">✉</div>
+        <h2 class="quiz-result-label" style="margin-bottom: 12px;">Your Results Are Ready</h2>
+        <p class="quiz-result-description" style="margin-bottom: 28px;">
+          Enter your email to reveal your Leadership Maturity Profile — including your score, band, and personalized dimension breakdown.
+        </p>
+        <div style="max-width: 400px; margin: 0 auto;">
+          <div class="form-group" style="text-align: left;">
+            <label for="userEmail">Email Address</label>
+            <input type="email" id="userEmail" placeholder="you@example.com" style="background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.15); color: var(--white);" />
+          </div>
+          <p id="emailError" style="color: #c64949; font-size: 13px; display: none; margin-bottom: 12px;">Please enter a valid email address.</p>
+          <button id="revealResultsBtn" class="btn btn-gold btn-lg" style="width: 100%; margin-bottom: 16px;">Reveal My Results</button>
+          <p style="font-size: 12px; color: rgba(255,255,255,0.4); line-height: 1.5;">
+            We respect your privacy. Your email will never be shared. You may receive occasional insights on leadership development — unsubscribe anytime.
+          </p>
+        </div>
+      </div>
+
+      <!-- RESULTS SCREEN (hidden initially) -->
+      <div id="resultsScreen" style="display:none" class="quiz-result">
+        <div class="quiz-score-ring">
+          <div id="overallScore" class="quiz-score-ring-inner">0/60</div>
+        </div>
+        <div id="scoreBandLabel" class="quiz-result-label">Emerging Leader</div>
+        <div id="scoreBandSummary" class="quiz-result-description"></div>
+        <div class="quiz-recommendation">
+          <div class="quiz-recommendation-title">Recommended Next Step</div>
+          <div id="recommendationText" class="quiz-recommendation-text"></div>
+        </div>
+        <div id="dimensionBreakdown" class="dimension-breakdown"></div>
+        <div class="quiz-result-cta">
+          <a href="contact.html" class="btn btn-gold btn-lg">Book a Discovery Session</a>
+          <a href="services.html" class="btn quiz-btn-back">View Services →</a>
+        </div>
+        <div style="margin-top: 40px; font-size: 13px; color: rgba(255,255,255,0.4);">
+          <a href="#" onclick="location.reload(); return false;" style="color: rgba(255,255,255,0.5);">Retake Assessment</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section section">
+  <div class="container-sm">
+    <h2 class="display-3 fade-up">Ready to lead from your full self?</h2>
+    <p class="body-lg fade-up">Start with a 30-minute exploratory conversation — no obligation, no agenda, just honest dialogue about what's possible.</p>
+    <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;" class="fade-up">
+      <a href="contact.html" class="btn btn-white btn-lg">Request Confidential Consultation</a>
+      <a href="about.html" class="btn btn-outline" style="color:rgba(255,255,255,0.85); border-color:rgba(255,255,255,0.35);">Meet Eugene →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <div class="footer-logo">M</div>
+          <div class="footer-brand-name">Maturity<span>Coach</span></div>
+        </div>
+        <p class="footer-desc">Ancient wisdom, modern intelligence, and the courage to live fully.</p>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/in/nkomba" target="_blank" title="LinkedIn">in</a>
+          <a href="#" title="Twitter/X">𝕏</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="philosophy.html">Philosophy</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About Eugene</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Executive Mastery</a></li>
+          <li><a href="services.html">Maturity Circle</a></li>
+          <li><a href="services.html">Leadership Culture</a></li>
+          <li><a href="services.html">Speaking</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="/app/">Get the App</a></li>
+          <li><a href="contact.html">Request Consultation</a></li>
+          <li><a href="https://www.linkedin.com/in/nkomba" target="_blank">LinkedIn</a></li>
+          <li><a href="mailto:eugene@maturity.coach">Email Eugene</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Maturity Coach. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="js/tracking.js"></script> 
+<script src="js/assessment-data.js"></script>
+<script src="js/assessment-ui.js"></script>
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
