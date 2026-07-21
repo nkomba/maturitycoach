@@ -1,344 +1,439 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Safia Abji — Human Development Consultant & Leadership Coach | Sophia Coaching</title>
-    <meta name="description" content="Safia Abji is a Human Development Consultant and Leadership Coach, founder of the 3P Framework (Pain to Power to Purpose). 15+ years designing transformational experiences globally.">
-
-    <!-- Using site-wide stylesheet -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/components.css">
-
-    <!-- Favicon -->
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Safia Abji — Human Development Consultant &amp; Leadership Coach | Maturity Coach</title>
+  <meta name="description" content="Safia Abji is a human development consultant and leadership coach at Maturity Coach — creator of the 3P Framework, with 15+ years across global and African contexts." />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../components.css" />
+  <link rel="stylesheet" href="../css/profile.css" />
 </head>
 <body>
 
-    <!-- ===== NAVIGATION ===== -->
-    <nav id="mainNav" class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <img src="assets/logo.svg" alt="Sophia Coaching Logo">
-            </a>
-            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="coaches.html" class="nav-link active">Our Coaches</a></li>
-                <li><a href="assessment.html" class="nav-link">Assessment</a></li>
-                <li><a href="perspectives.html" class="nav-link">Perspectives</a></li>
-                <li><a href="contact.html" class="nav-link">Take a 2-minute Maturity Assessment</a></li>
-            </ul>
+<!-- ═══════════════ NAVIGATION ═══════════════ -->
+<nav class="nav scrolled" id="mainNav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <div class="logo-mark">M</div>
+      <span class="logo-text">Maturity<span>Coach</span></span>
+    </a>
+    <div class="nav-links">
+      <div class="nav-group">
+        <a href="../philosophy.html" class="nav-group-trigger">Approach
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="../philosophy.html">Philosophy<span class="dropdown-desc">The Maturity Method &mdash; wisdom, neuroscience &amp; AI</span></a>
+          <a href="../framework.html">Ubuntu Roots Coaching&trade;<span class="dropdown-desc">The proprietary coaching framework</span></a>
         </div>
-    </nav>
+      </div>
+      <div class="nav-group">
+        <a href="../services.html" class="nav-group-trigger">Services
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="../services.html">All Services<span class="dropdown-desc">1:1, cohorts, teams &amp; keynotes</span></a>
+          <a href="../coaching-for-technical-leaders.html">Coaching for Technical Leaders<span class="dropdown-desc">CISOs, CIOs, CTOs &amp; federal tech leaders</span></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a href="../perspectives.html" class="nav-group-trigger">Insights
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="../perspectives.html">Perspectives<span class="dropdown-desc">Essays on leadership &amp; maturity</span></a>
+          <a href="../blog.html">From the Blog<span class="dropdown-desc">Latest notes &amp; articles</span></a>
+        </div>
+      </div>
+      <div class="nav-group active">
+        <a href="../about.html" class="nav-group-trigger">Our Coaches
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <!-- COACHES:START -->
+          <a href="../about.html">All Coaches<span class="dropdown-desc">Filter by specialization</span></a>
+          <a href="../profiles/eugene.html">Eugene Nkomba<span class="dropdown-desc">Founder &amp; Managing Partner</span></a>
+          <a href="../profiles/catherine.html">Catherine Nkomba<span class="dropdown-desc">Partner Coach &amp; Agile Transformation Lead</span></a>
+          <a href="../profiles/gary.html">Gary Luehr<span class="dropdown-desc">Agile &amp; Leadership Coach</span></a>
+          <a href="../profiles/cindy.html">Cindy McCown<span class="dropdown-desc">Executive &amp; Communications Coach</span></a>
+          <a href="../profiles/grace.html">Grace Adele Boyle<span class="dropdown-desc">Executive &amp; Creative Coach</span></a>
+          <a href="../profiles/safia.html">Safia Abji<span class="dropdown-desc">Human Development Consultant &amp; Keynote Speaker</span></a>
+          <!-- COACHES:END -->
+        </div>
+      </div>
+      <div class="nav-group featured">
+        <a href="../assessment-teaser.html" class="nav-group-trigger">Free Resources
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="../assessment-teaser.html">Quick Leadership Check<span class="tag">2 min</span><span class="dropdown-desc">Instant snapshot</span></a>
+          <a href="../assessment.html">Full Maturity Assessment<span class="dropdown-desc">The complete self-assessment</span></a>
+          <a href="/app/">Get the App<span class="dropdown-desc">Daily practice on iPhone &amp; Android</span></a>
+        </div>
+      </div>
+      <a href="../contact.html" class="nav-cta">Request a Consultation</a>
+    </div>
+    <div class="nav-hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
 
-    <!-- ===== COACH PROFILE HERO ===== -->
-    <section class="coach-hero">
-        <div class="coach-hero-container">
-            <div class="coach-photo-wrapper">
-                <!-- TODO: Replace with Safia's actual headshot -->
-                <img src="assets/coaches/safia-abji.jpg"
-                     alt="Safia Abji, Human Development Consultant & Leadership Coach"
-                     class="coach-photo"
-                     loading="lazy">
-            </div>
-            <div class="coach-hero-info">
-                <span class="coach-tag">Human Development Consultant & Keynote Speaker</span>
-                <h1 class="coach-name">Safia Abji</h1>
-                <p class="coach-tagline">Founder of the 3P Framework (Pain → Power → Purpose). Helping individuals, organizations, and communities move from pain to power to purpose.</p>
-                <div class="coach-credentials-bar">
-                    <span class="credential-badge">15+ Years Global Experience</span>
-                    <span class="credential-badge">Co-Active Trained</span>
-                    <span class="credential-badge">3P Framework Creator</span>
-                </div>
-                <a href="contact.html?coach=safia" class="btn btn-primary coach-cta">
-                    Request a Confidential Conversation with Safia
-                </a>
-            </div>
-        </div>
-    </section>
+<div class="mobile-menu" id="mobileMenu">
+  <span class="m-label">Approach</span>
+  <a href="../philosophy.html" onclick="toggleMenu()">Philosophy</a>
+  <a href="../framework.html" onclick="toggleMenu()">Ubuntu Roots Coaching&trade;</a>
+  <span class="m-label">Services</span>
+  <a href="../services.html" onclick="toggleMenu()">All Services</a>
+  <span class="m-label">Insights</span>
+  <a href="../perspectives.html" onclick="toggleMenu()">Perspectives</a>
+  <a href="../blog.html" onclick="toggleMenu()">From the Blog</a>
+  <span class="m-label">Our Coaches</span>
+  <!-- COACHES-MOBILE:START -->
+  <a href="../about.html" onclick="toggleMenu()">All Coaches</a>
+  <a href="../profiles/eugene.html" onclick="toggleMenu()">Eugene Nkomba</a>
+  <a href="../profiles/catherine.html" onclick="toggleMenu()">Catherine Nkomba</a>
+  <a href="../profiles/gary.html" onclick="toggleMenu()">Gary Luehr</a>
+  <a href="../profiles/cindy.html" onclick="toggleMenu()">Cindy McCown</a>
+  <a href="../profiles/grace.html" onclick="toggleMenu()">Grace Adele Boyle</a>
+  <a href="../profiles/safia.html" onclick="toggleMenu()">Safia Abji</a>
+  <!-- COACHES-MOBILE:END -->
+  <span class="m-label">Free Resources</span>
+  <a href="../assessment-teaser.html" class="m-assess" onclick="toggleMenu()">Quick Leadership Check</a>
+  <a href="../assessment.html" onclick="toggleMenu()">Full Maturity Assessment</a>
+  <span class="m-label">More</span>
+  <a href="../contact.html" class="m-cta" onclick="toggleMenu()">Request a Consultation</a>
+</div>
 
-    <!-- ===== ABOUT SECTION ===== -->
-    <section class="section section-light">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">About Safia</h2>
-            </div>
-            <div class="coach-bio">
-                <p>
-                    In school, Safia was most likely to get in trouble for side chats with friends—because there was always something to think deeply about, even at that age! That same hunger for meaningful connection and deeper inquiry has carried through her career. Her biggest life lesson crystallized over time: <strong>You can design any type of life you want, but it takes wanting to know yourself first.</strong> This principle now anchors her coaching practice and her work with leaders, organizations, and communities worldwide.
-                </p>
-                <p>
-                    Safia's proudest professional accomplishment was quitting a successful linear private sector career in Canada to explore her personal and professional purpose in Kenya. That courageous pivot—from established corporate trajectory to entrepreneurial calling in East Africa—epitomizes the transformational journey she now guides others through. It required self-knowledge, courage, and the willingness to design a life aligned with her deepest values rather than external expectations.
-                </p>
-                <p>
-                    With over <strong>15 years of experience across global and African contexts</strong>, Safia works at the intersection of human development, leadership transformation, and cultural ecosystem building. She supports individuals, organizations, and communities in moving from pain to power to purpose using conscious leadership, emotional intelligence, and immersive experience design. Her clients include KPMG, Deloitte, Aga Khan Foundation East Africa, Transformational Business Network, and Global Apprenticeship Network.
-                </p>
-                <p>
-                    At the core of her practice is the <strong>3P Framework (Pain → Power → Purpose)</strong>—a transformational methodology that supports individuals and groups to move through change, reconnect with authenticity, and develop clarity, agency, and direction. Safia's work is trauma-informed, Co-Active trained, and grounded in deep belief that people and systems can evolve in ways that are authentic, embodied, and sustainable.
-                </p>
-            </div>
-        </div>
-    </section>
+<!-- ═══════════════ PROFILE HERO ═══════════════ -->
+<header class="profile-hero">
+  <div class="profile-container">
+    <a href="../about.html" class="back-link">← Back to All Coaches</a>
+    <div class="profile-hero-content">
+      <div>
+        <div class="profile-hero-credentials">Co-Active Trained · 15+ Years Global · 3P Framework Creator</div>
+        <h1 class="profile-hero-title">Safia Abji</h1>
+        <p class="profile-hero-text">
+          Human development consultant and keynote speaker. Helping individuals, organizations, and communities move from pain to power to purpose.
+        </p>
+        <a href="../contact.html" class="btn btn-gold btn-lg">Book Session With Safia</a>
+      </div>
+      <div class="profile-image-frame">
+        <img src="../assets/coaches/safia.jpg" alt="Safia Abji — Human Development Consultant &amp; Leadership Coach" loading="lazy" />
+        <div class="profile-deco-ring"></div>
+      </div>
+    </div>
+  </div>
+</header>
 
-    <!-- ===== THE 3P FRAMEWORK HIGHLIGHT ===== -->
-    <section class="section section-highlight">
-        <div class="container highlight-container">
-            <div class="highlight-content">
-                <div class="highlight-number">3P</div>
-                <div class="highlight-text">
-                    <h3>The Pain → Power → Purpose Framework</h3>
-                    <p>A transformational methodology Safia created to help individuals and groups move through change, reconnect with authenticity, and develop clarity, agency, and direction.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ═══════════════ BIO ═══════════════ -->
+<section class="bio-section">
+  <div class="container">
+    <div class="bio-lead fade-up">
+      "You can design any type of life you want, but it takes wanting to know yourself first."
+    </div>
+    <div class="bio-body">
+      <div>
+        <p>
+          In school, Safia was most likely to get in trouble for side chats with friends — because there was always something to think deeply about, even at that age. That same hunger for meaningful connection and deeper inquiry has carried through her career, and now anchors her work with leaders, organizations, and communities worldwide.
+        </p>
+        <p>
+          Safia's proudest professional accomplishment was leaving a successful linear private sector career in Canada to explore her personal and professional purpose in Kenya. That pivot — from established corporate trajectory to entrepreneurial calling in East Africa — epitomizes the transformational journey she now guides others through. It required self-knowledge, courage, and the willingness to design a life aligned with her deepest values rather than external expectations.
+        </p>
+        <p>
+          With over <strong>15 years of experience across global and African contexts</strong>, Safia works at the intersection of human development, leadership transformation, and cultural ecosystem building. She supports individuals, organizations, and communities in moving from pain to power to purpose using conscious leadership, emotional intelligence, and immersive experience design.
+        </p>
+        <p>
+          At the core of her practice is the <strong>3P Framework (Pain → Power → Purpose)</strong> — a transformational methodology that supports individuals and groups to move through change, reconnect with authenticity, and develop clarity, agency, and direction. Her work is trauma-informed, Co-Active trained, and grounded in a deep belief that people and systems can evolve in ways that are authentic, embodied, and sustainable.
+        </p>
+      </div>
 
-    <!-- ===== AREAS OF EXPERTISE ===== -->
-    <section class="section section-white">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Areas of Expertise</h2>
-                <p class="section-subtitle">Where Safia drives measurable impact</p>
-            </div>
-            <div class="expertise-grid">
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="12" cy="12" r="10"/>
-                            <line x1="12" y1="16" x2="12" y2="12"/>
-                            <line x1="12" y1="8" x2="12.01" y2="8"/>
-                        </svg>
-                    </div>
-                    <h3 class="expertise-title">Human Development & Leadership Coaching</h3>
-                    <p class="expertise-desc">1:1 and group coaching strengthening emotional intelligence, self-awareness, and authentic leadership. Trauma-informed and Co-Active trained.</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                            <polyline points="22 4 12 14.01 9 11.01"/>
-                        </svg>
-                    </div>
-                    <h3 class="expertise-title">Leadership & Cultural Consulting</h3>
-                    <p class="expertise-desc">Partnering with organizations to evolve leadership capacity, organizational culture, and alignment between values and lived experience.</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="12" cy="5" r="3"/>
-                            <path d="M6.5 8.5a8.5 8.5 0 0 0 11 0"/>
-                            <path d="M5.5 19a11.5 11.5 0 0 1 13 0"/>
-                        </svg>
-                    </div>
-                    <h3 class="expertise-title">Immersive Experience Curation</h3>
-                    <p class="expertise-desc">Designing bespoke workshops, retreats, and experiential spaces combining reflection, embodiment, and cultural connection for transformation.</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                        </svg>
-                    </div>
-                    <h3 class="expertise-title">Creative Ecosystem Development</h3>
-                    <p class="expertise-desc">Supporting creative and entrepreneurial ecosystems across Africa, enabling long-term cultural and structural development.</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-                            <line x1="12" y1="22.08" x2="12" y2="12"/>
-                        </svg>
-                    </div>
-                    <h3 class="expertise-title">Conscious Leadership</h3>
-                    <p class="expertise-desc">Supporting leaders in returning to authenticity, expanding capacity, and creating meaningful and conscious impact in their organizations.</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                        </svg>
-                    </div>
-                    <h3 class="expertise-title">Trauma-Informed Practice</h3>
-                    <p class="expertise-desc">Grounded in understanding how past pain shapes present capacity, guiding clients toward healing, empowerment, and forward momentum.</p>
-                </div>
-            </div>
+      <div>
+        <div class="credentials-panel fade-up">
+          <div class="section-label" style="margin-bottom:24px;">Credentials</div>
+          <div class="credential-item">
+            <div class="credential-label">Current Role</div>
+            <div class="credential-value">Human Development Consultant &amp; Keynote Speaker, Maturity Coach</div>
+          </div>
+          <div class="credential-item">
+            <div class="credential-label">Training</div>
+            <div class="credential-value">Co-Active trained · Trauma-informed practice</div>
+          </div>
+          <div class="credential-item">
+            <div class="credential-label">Framework</div>
+            <div class="credential-value">Creator of the 3P Framework — Pain → Power → Purpose</div>
+          </div>
+          <div class="credential-item">
+            <div class="credential-label">Specialization</div>
+            <div class="credential-value">Conscious Leadership · Cultural Consulting · Immersive Experience Design</div>
+          </div>
+          <div class="credential-item">
+            <div class="credential-label">Experience</div>
+            <div class="credential-value">15+ years across global &amp; African contexts</div>
+          </div>
+          <div class="credential-item">
+            <div class="credential-label">Frameworks</div>
+            <div class="credential-value"><a href="../framework.html" style="color:var(--gold); font-weight:500;">Ubuntu Roots Framework →</a></div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ===== ORGANIZATIONS SERVED ===== -->
-    <section class="section section-light">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Organizations & Institutions Served</h2>
-            </div>
-            <div class="organizations-grid">
-                <div class="org-card">
-                    <h3 class="org-name">KPMG</h3>
-                    <p class="org-desc">Leadership development and cultural consulting</p>
-                </div>
-                <div class="org-card">
-                    <h3 class="org-name">Deloitte</h3>
-                    <p class="org-desc">Capacity-building programs and transformational design</p>
-                </div>
-                <div class="org-card">
-                    <h3 class="org-name">Aga Khan Foundation East Africa</h3>
-                    <p class="org-desc">Leadership and institutional capacity development</p>
-                </div>
-                <div class="org-card">
-                    <h3 class="org-name">Transformational Business Network</h3>
-                    <p class="org-desc">Culture and ecosystem building initiatives</p>
-                </div>
-                <div class="org-card">
-                    <h3 class="org-name">Global Apprenticeship Network</h3>
-                    <p class="org-desc">Youth leadership and skills development programs</p>
-                </div>
-                <div class="org-card">
-                    <h3 class="org-name">Brain and Mind Institute</h3>
-                    <p class="org-desc">Aga Khan University — Research and development partnerships</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ═══════════════ 3P FRAMEWORK BAND ═══════════════ -->
+<section class="framework-band">
+  <div class="container">
+    <div class="framework-inner">
+      <div class="framework-mark">3P</div>
+      <div class="framework-copy">
+        <h3>The Pain → Power → Purpose Framework</h3>
+        <p>A transformational methodology Safia created to help individuals and groups move through change, reconnect with authenticity, and develop clarity, agency, and direction.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ===== PROFESSIONAL BACKGROUND ===== -->
-    <section class="section section-white">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Professional Journey</h2>
-            </div>
-            <div class="experience-timeline">
-                <div class="experience-item">
-                    <div class="experience-marker"></div>
-                    <div class="experience-content">
-                        <h3 class="experience-role">Human Development Consultant & Keynote Speaker</h3>
-                        <p class="experience-org">Independent Practice (Kenya & Global)</p>
-                        <p class="experience-desc">
-                            Founder of the 3P Framework, supporting individuals, organizations, and communities in moving from pain to power to purpose. Designing and facilitating leadership, culture, and capacity-building programs across Africa and globally.
-                        </p>
-                    </div>
-                </div>
-                <div class="experience-item">
-                    <div class="experience-marker"></div>
-                    <div class="experience-content">
-                        <h3 class="experience-role">Private Sector Leader</h3>
-                        <p class="experience-org">Canada</p>
-                        <p class="experience-desc">
-                            Built a successful linear career in the Canadian private sector before making the courageous pivot to explore personal and professional purpose in Kenya.
-                        </p>
-                    </div>
-                </div>
-                <div class="experience-item">
-                    <div class="experience-marker"></div>
-                    <div class="experience-content">
-                        <h3 class="experience-role">Research Fellow</h3>
-                        <p class="experience-org">Brain and Mind Institute, Aga Khan University</p>
-                        <p class="experience-desc">
-                            Contributing to research and institutional development at the intersection of neuroscience, human development, and leadership transformation.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ═══════════════ EXPERTISE ═══════════════ -->
+<section class="expertise-section">
+  <div class="container">
+    <div class="text-center fade-up">
+      <div class="section-label" style="justify-content:center;">Areas of Expertise</div>
+      <h2 class="display-3" style="margin-bottom:20px;">How Safia works</h2>
+      <p class="body-md text-muted" style="max-width:600px; margin:0 auto;">
+        Conscious leadership, emotional intelligence, and immersive experience design — across individuals, institutions, and ecosystems.
+      </p>
+    </div>
+    <div class="expertise-grid">
+      <div class="expertise-card fade-up">
+        <div class="expertise-icon">🧠</div>
+        <h3 class="expertise-title">Human Development &amp; Leadership Coaching</h3>
+        <p class="expertise-text">1:1 and group coaching strengthening emotional intelligence, self-awareness, and authentic leadership. Trauma-informed and Co-Active trained.</p>
+      </div>
+      <div class="expertise-card fade-up">
+        <div class="expertise-icon">🏛️</div>
+        <h3 class="expertise-title">Leadership &amp; Cultural Consulting</h3>
+        <p class="expertise-text">Partnering with organizations to evolve leadership capacity, organizational culture, and alignment between values and lived experience.</p>
+      </div>
+      <div class="expertise-card fade-up">
+        <div class="expertise-icon">🌍</div>
+        <h3 class="expertise-title">Immersive Experience Curation</h3>
+        <p class="expertise-text">Designing bespoke workshops, retreats, and experiential spaces combining reflection, embodiment, and cultural connection.</p>
+      </div>
+      <div class="expertise-card fade-up">
+        <div class="expertise-icon">👥</div>
+        <h3 class="expertise-title">Creative Ecosystem Development</h3>
+        <p class="expertise-text">Supporting creative and entrepreneurial ecosystems across Africa, enabling long-term cultural and structural development.</p>
+      </div>
+      <div class="expertise-card fade-up">
+        <div class="expertise-icon">✨</div>
+        <h3 class="expertise-title">Conscious Leadership</h3>
+        <p class="expertise-text">Supporting leaders in returning to authenticity, expanding capacity, and creating meaningful and conscious impact in their organizations.</p>
+      </div>
+      <div class="expertise-card fade-up">
+        <div class="expertise-icon">🛡️</div>
+        <h3 class="expertise-title">Trauma-Informed Practice</h3>
+        <p class="expertise-text">Grounded in understanding how past pain shapes present capacity, guiding clients toward healing, empowerment, and forward momentum.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ===== WHO SAFIA WORKS WITH ===== -->
-    <section class="section section-light">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Who Safia Works With</h2>
-            </div>
-            <div class="client-profiles">
-                <div class="client-profile-card">
-                    <h3 class="profile-title">Leaders in Transition</h3>
-                    <p class="profile-desc">Executives and entrepreneurs navigating major life or career pivots, seeking clarity and authentic realignment.</p>
-                </div>
-                <div class="client-profile-card">
-                    <h3 class="profile-title">Mission-Driven Organizations</h3>
-                    <p class="profile-desc">Institutions and NGOs wanting to strengthen leadership capacity, culture, and values alignment.</p>
-                </div>
-                <div class="client-profile-card">
-                    <h3 class="profile-title">Creative Ecosystems</h3>
-                    <p class="profile-desc">Entrepreneurial and creative communities across Africa building long-term cultural and structural development.</p>
-                </div>
-                <div class="client-profile-card">
-                    <h3 class="profile-title">Groups Seeking Transformation</h3>
-                    <p class="profile-desc">Teams and cohorts ready for immersive, experiential learning that catalyzes personal and collective shift.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ═══════════════ ORGANIZATIONS ═══════════════ -->
+<section class="approach-section">
+  <div class="container">
+    <div class="text-center fade-up">
+      <div class="section-label" style="justify-content:center;">Selected Clients</div>
+      <h2 class="display-3" style="margin-bottom:20px;">Organizations &amp; institutions served</h2>
+    </div>
+    <div class="org-grid">
+      <div class="org-card fade-up">
+        <h3 class="org-name">KPMG</h3>
+        <p class="org-desc">Leadership development and cultural consulting</p>
+      </div>
+      <div class="org-card fade-up">
+        <h3 class="org-name">Deloitte</h3>
+        <p class="org-desc">Capacity-building programs and transformational design</p>
+      </div>
+      <div class="org-card fade-up">
+        <h3 class="org-name">Aga Khan Foundation East Africa</h3>
+        <p class="org-desc">Leadership and institutional capacity development</p>
+      </div>
+      <div class="org-card fade-up">
+        <h3 class="org-name">Transformational Business Network</h3>
+        <p class="org-desc">Culture and ecosystem building initiatives</p>
+      </div>
+      <div class="org-card fade-up">
+        <h3 class="org-name">Global Apprenticeship Network</h3>
+        <p class="org-desc">Youth leadership and skills development programs</p>
+      </div>
+      <div class="org-card fade-up">
+        <h3 class="org-name">Brain and Mind Institute</h3>
+        <p class="org-desc">Aga Khan University — research and development partnerships</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ===== PERSONAL PHILOSOPHY ===== -->
-    <section class="section section-quote">
-        <div class="container quote-container">
-            <blockquote class="quote-block">
-                <p class="quote-text">
-                    "You can design any type of life you want, but it takes wanting to know yourself first."
-                </p>
-                <footer class="quote-author">— Safia Abji</footer>
-            </blockquote>
-        </div>
-    </section>
+<!-- ═══════════════ WHO SAFIA WORKS WITH ═══════════════ -->
+<section class="values-section">
+  <div class="container">
+    <div class="text-center fade-up">
+      <div class="section-label" style="justify-content:center; color:var(--gold);">Who She Works With</div>
+      <h2 class="display-3 text-white">People and systems ready to evolve</h2>
+    </div>
+    <div class="values-grid" style="margin-top:56px;">
+      <div class="value-card fade-up">
+        <div class="value-number">01</div>
+        <div class="value-title">Leaders in Transition</div>
+        <p class="value-text">Executives and entrepreneurs navigating major life or career pivots, seeking clarity and authentic realignment.</p>
+      </div>
+      <div class="value-card fade-up">
+        <div class="value-number">02</div>
+        <div class="value-title">Mission-Driven Organizations</div>
+        <p class="value-text">Institutions and NGOs wanting to strengthen leadership capacity, culture, and values alignment.</p>
+      </div>
+      <div class="value-card fade-up">
+        <div class="value-number">03</div>
+        <div class="value-title">Creative Ecosystems</div>
+        <p class="value-text">Entrepreneurial and creative communities across Africa building long-term cultural and structural development.</p>
+      </div>
+      <div class="value-card fade-up">
+        <div class="value-number">04</div>
+        <div class="value-title">Groups Seeking Transformation</div>
+        <p class="value-text">Teams and cohorts ready for immersive, experiential learning that catalyzes personal and collective shift.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ===== CTA SECTION ===== -->
-    <section class="section section-cta">
-        <div class="container cta-container">
-            <h2 class="cta-title">Let's Move From Pain to Power to Purpose</h2>
-            <p class="cta-text">
-                Whether you're navigating a transition, designing your next chapter, or leading organizational transformation,
-                Safia welcomes you into a space of deep inquiry, embodiment, and conscious partnership.
-            </p>
-            <a href="contact.html?coach=safia" class="btn btn-primary btn-large">
-                Take a 2-Minute Maturity Assessment
-            </a>
+<!-- ═══════════════ JOURNEY ═══════════════ -->
+<section class="approach-section">
+  <div class="container">
+    <div class="grid-2" style="align-items:start;">
+      <div class="fade-up">
+        <div class="section-label">Professional Journey</div>
+        <h2 class="display-3" style="margin-bottom:20px;">From Canada to Kenya</h2>
+        <p class="body-md text-muted">
+          The pivot she now guides others through, she made herself first.
+        </p>
+      </div>
+      <div>
+        <div class="timeline">
+          <div class="timeline-item fade-up">
+            <div class="timeline-dot">🌍</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Human Development Consultant &amp; Keynote Speaker</div>
+              <div class="timeline-org">Kenya &amp; Global</div>
+              <p class="timeline-text">Founder of the 3P Framework, supporting individuals, organizations, and communities in moving from pain to power to purpose. Designing and facilitating leadership, culture, and capacity-building programs across Africa and globally.</p>
+            </div>
+          </div>
+          <div class="timeline-item fade-up">
+            <div class="timeline-dot">🏢</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Private Sector Leader</div>
+              <div class="timeline-org">Canada</div>
+              <p class="timeline-text">Built a successful linear career in the Canadian private sector before making the courageous pivot to explore personal and professional purpose in Kenya.</p>
+            </div>
+          </div>
+          <div class="timeline-item fade-up">
+            <div class="timeline-dot">🔬</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Research Fellow</div>
+              <div class="timeline-org">Brain and Mind Institute, Aga Khan University</div>
+              <p class="timeline-text">Contributing to research and institutional development at the intersection of neuroscience, human development, and leadership transformation.</p>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ===== FOOTER ===== -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-col">
-                <img src="assets/logo.svg" alt="Sophia Coaching" class="footer-logo">
-                <p class="footer-desc">Becoming whole through Belonging.</p>
-            </div>
-            <div class="footer-col">
-                <h4 class="footer-heading">Our Coaches</h4>
-                <ul class="footer-links">
-                    <li><a href="grace.html">Grace Adele Boyle</a></li>
-                    <li><a href="catherine.html">Catherine Nkomba</a></li>
-                    <li><a href="gary.html">Gary Luehr</a></li>
-                    <li><a href="eugene.html">Eugene Nkomba</a></li>
-                    <li><a href="cindy.html">Cindy McCown</a></li>
-                    <li><a href="grace.html">Grace Adele Boyle</a></li>
-                    <li><a href="safia.html">Safia Abji</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4 class="footer-heading">Explore</h4>
-                <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="assessment.html">Maturity Assessment</a></li>
-                    <li><a href="perspectives.html">Perspectives</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Sophia Coaching. All rights reserved.</p>
-        </div>
-    </footer>
+<!-- ═══════════════ CTA ═══════════════ -->
+<section class="profile-cta">
+  <div class="container-sm">
+    <div class="gold-line" style="margin-bottom:48px;"></div>
+    <div class="section-label" style="justify-content:center;">Next Step</div>
+    <h2 class="display-3 fade-up" style="margin-bottom:20px;">Begin with knowing yourself</h2>
+    <p class="body-lg text-muted fade-up" style="margin-bottom:44px;">
+      Whether you're moving through a personal transition or leading an organization through one — start with an honest conversation about where you are.
+    </p>
+    <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;" class="fade-up">
+      <a href="../contact.html" class="btn btn-primary btn-lg">Request a Consultation</a>
+      <a href="../services.html" class="btn btn-outline">Explore Our Services →</a>
+    </div>
+  </div>
+</section>
 
-    <!-- ===== SCRIPTS ===== -->
-    <script src="js/nav.js"></script>
-    <script src="js/main.js"></script>
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <div class="footer-logo">M</div>
+          <div class="footer-brand-name">Maturity<span>Coach</span></div>
+        </div>
+        <p class="footer-desc">Ancient wisdom, modern intelligence, and the courage to live fully — while building something extraordinary.</p>
+        <div class="footer-social">
+          <a href="#" title="LinkedIn">in</a>
+          <a href="#" title="Twitter/X">𝕏</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../philosophy.html">Philosophy</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../about.html">Our Coaches</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="../services.html">Executive Mastery</a></li>
+          <li><a href="../services.html">Maturity Circle</a></li>
+          <li><a href="../services.html">Leadership Culture</a></li>
+          <li><a href="../services.html">Speaking</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="/app/">Get the App</a></li>
+          <li><a href="../contact.html">Request a Consultation</a></li>
+          <!-- TODO: confirm Safia's email address -->
+          <li><a href="mailto:safia@maturity.coach">Email Safia</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Maturity Coach. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
 </body>
 </html>

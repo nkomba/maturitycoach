@@ -1,313 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gary Luehr — Agile & Leadership Coach | Sophia Coaching</title>
-    <meta name="description" content="Gary Luehr is a PCC, CPCC, and SPC6-certified Agile and Leadership Coach at Sophia Coaching, specializing in aerospace and enterprise software teams.">
-
-    <!-- Using site-wide stylesheet -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/components.css">
-
-    <!-- Favicon -->
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gary Luehr — Agile &amp; Leadership Coach | Maturity Coach</title>
+  <meta name="description" content="Gary Luehr is an agile and leadership coach at Maturity Coach — over a decade coaching software and engineering teams in aerospace through large-scale Agile transformations." />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../components.css" />
+  <link rel="stylesheet" href="../css/profile.css" />
 </head>
 <body>
 
-    <!-- ===== NAVIGATION ===== -->
-    <!-- Replace with your site's include/nav pattern -->
-    <nav id="mainNav" class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <img src="assets/logo.svg" alt="Sophia Coaching Logo">
-            </a>
-            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="coaches.html" class="nav-link active">Our Coaches</a></li>
-                <li><a href="assessment.html" class="nav-link">Assessment</a></li>
-                <li><a href="perspectives.html" class="nav-link">Perspectives</a></li>
-                <li><a href="contact.html" class="nav-link">Take a 2-minute Maturity Assessment</a></li>
-            </ul>
+<!-- ═══════════════ NAVIGATION ═══════════════ -->
+<nav class="nav scrolled" id="mainNav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <div class="logo-mark">M</div>
+      <span class="logo-text">Maturity<span>Coach</span></span>
+    </a>
+    <div class="nav-links">
+      <div class="nav-group">
+        <a href="../philosophy.html" class="nav-group-trigger">Approach
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="../philosophy.html">Philosophy<span class="dropdown-desc">The Maturity Method &mdash; wisdom, neuroscience &amp; AI</span></a>
+          <a href="../framework.html">Ubuntu Roots Coaching&trade;<span class="dropdown-desc">The proprietary coaching framework</span></a>
         </div>
-    </nav>
+      </div>
+      <div class="nav-group">
+        <a href="../services.html" class="nav-group-trigger">Services
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="../services.html">All Services<span class="dropdown-desc">1:1, cohorts, teams &amp; keynotes</span></a>
+          <a href="../coaching-for-technical-leaders.html">Coaching for Technical Leaders<span class="dropdown-desc">CISOs, CIOs, CTOs &amp; federal tech leaders</span></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a href="../perspectives.html" class="nav-group-trigger">Insights
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="../perspectives.html">Perspectives<span class="dropdown-desc">Essays on leadership &amp; maturity</span></a>
+          <a href="../blog.html">From the Blog<span class="dropdown-desc">Latest notes &amp; articles</span></a>
+        </div>
+      </div>
+      <div class="nav-group active">
+        <a href="../about.html" class="nav-group-trigger">Our Coaches
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <!-- COACHES:START -->
+          <a href="../about.html">All Coaches<span class="dropdown-desc">Filter by specialization</span></a>
+          <a href="../profiles/eugene.html">Eugene Nkomba<span class="dropdown-desc">Founder &amp; Managing Partner</span></a>
+          <a href="../profiles/catherine.html">Catherine Nkomba<span class="dropdown-desc">Partner Coach &amp; Agile Transformation Lead</span></a>
+          <a href="../profiles/gary.html">Gary Luehr<span class="dropdown-desc">Agile &amp; Leadership Coach</span></a>
+          <a href="../profiles/cindy.html">Cindy McCown<span class="dropdown-desc">Executive &amp; Communications Coach</span></a>
+          <a href="../profiles/grace.html">Grace Adele Boyle<span class="dropdown-desc">Executive &amp; Creative Coach</span></a>
+          <a href="../profiles/safia.html">Safia Abji<span class="dropdown-desc">Human Development Consultant &amp; Keynote Speaker</span></a>
+          <!-- COACHES:END -->
+        </div>
+      </div>
+      <div class="nav-group featured">
+        <a href="../assessment-teaser.html" class="nav-group-trigger">Free Resources
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="../assessment-teaser.html">Quick Leadership Check<span class="tag">2 min</span><span class="dropdown-desc">Instant snapshot</span></a>
+          <a href="../assessment.html">Full Maturity Assessment<span class="dropdown-desc">The complete self-assessment</span></a>
+          <a href="/app/">Get the App<span class="dropdown-desc">Daily practice on iPhone &amp; Android</span></a>
+        </div>
+      </div>
+      <a href="../contact.html" class="nav-cta">Request a Consultation</a>
+    </div>
+    <div class="nav-hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
 
-    <!-- ===== COACH PROFILE HERO ===== -->
-    <section class="coach-hero">
-        <div class="coach-hero-container">
-            <div class="coach-photo-wrapper">
-                <!-- TODO: Replace with Gary's actual headshot -->
-                <img src="assets/coaches/gary-luehr.jpg"
-                     alt="Gary Luehr, Agile and Leadership Coach"
-                     class="coach-photo"
-                     loading="lazy">
-            </div>
-            <div class="coach-hero-info">
-                <span class="coach-tag">Agile & Leadership Coach</span>
-                <h1 class="coach-name">Gary Luehr</h1>
-                <p class="coach-tagline">Empowering organizations to embrace Agile and coaching teams to achieve great things.</p>
-                <div class="coach-credentials-bar">
-                    <span class="credential-badge">PCC</span>
-                    <span class="credential-badge">CPCC</span>
-                    <span class="credential-badge">MS</span>
-                    <span class="credential-badge">SPC6</span>
-                </div>
-                <a href="contact.html?coach=gary" class="btn btn-primary coach-cta">
-                    Request a Confidential Conversation with Gary
-                </a>
-            </div>
-        </div>
-    </section>
+<div class="mobile-menu" id="mobileMenu">
+  <span class="m-label">Approach</span>
+  <a href="../philosophy.html" onclick="toggleMenu()">Philosophy</a>
+  <a href="../framework.html" onclick="toggleMenu()">Ubuntu Roots Coaching&trade;</a>
+  <span class="m-label">Services</span>
+  <a href="../services.html" onclick="toggleMenu()">All Services</a>
+  <span class="m-label">Insights</span>
+  <a href="../perspectives.html" onclick="toggleMenu()">Perspectives</a>
+  <a href="../blog.html" onclick="toggleMenu()">From the Blog</a>
+  <span class="m-label">Our Coaches</span>
+  <!-- COACHES-MOBILE:START -->
+  <a href="../about.html" onclick="toggleMenu()">All Coaches</a>
+  <a href="../profiles/eugene.html" onclick="toggleMenu()">Eugene Nkomba</a>
+  <a href="../profiles/catherine.html" onclick="toggleMenu()">Catherine Nkomba</a>
+  <a href="../profiles/gary.html" onclick="toggleMenu()">Gary Luehr</a>
+  <a href="../profiles/cindy.html" onclick="toggleMenu()">Cindy McCown</a>
+  <a href="../profiles/grace.html" onclick="toggleMenu()">Grace Adele Boyle</a>
+  <a href="../profiles/safia.html" onclick="toggleMenu()">Safia Abji</a>
+  <!-- COACHES-MOBILE:END -->
+  <span class="m-label">Free Resources</span>
+  <a href="../assessment-teaser.html" class="m-assess" onclick="toggleMenu()">Quick Leadership Check</a>
+  <a href="../assessment.html" onclick="toggleMenu()">Full Maturity Assessment</a>
+  <span class="m-label">More</span>
+  <a href="../contact.html" class="m-cta" onclick="toggleMenu()">Request a Consultation</a>
+</div>
 
-    <!-- ===== ABOUT SECTION ===== -->
-    <section class="section section-light">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">About Gary</h2>
-            </div>
-            <div class="coach-bio">
-                <p>
-                    Gary Luehr is a seasoned Agile and Leadership Coach with over a decade of experience
-                    coaching and leading software teams in the aerospace industry. His focus is helping
-                    organizations embrace Agile methodologies and coaching teams to achieve great things—turning
-                    complexity into clarity and resistance into momentum.
-                </p>
-                <p>
-                    Throughout his career, Gary has worked with major aerospace and defense organizations,
-                    including <strong>Northrop Grumman</strong>, where he guided distributed engineering teams
-                    through large-scale Agile transformations. His approach blends deep technical understanding
-                    with a human-centered coaching philosophy rooted in active listening, powerful questioning,
-                    and creating awareness.
-                </p>
-                <p>
-                    As a <strong>Professional Certified Coach (PCC)</strong> through the International Coaching
-                    Federation (ICF) and a <strong>Certified Professional Co-Active Coach (CPCC)</strong>,
-                    Gary brings rigor and empathy to every engagement. His <strong>SAFe Program Consultant
-                    certification (SPC6)</strong> and Master of Science degree further ground his coaching in
-                    both agile frameworks and academic discipline.
-                </p>
-                <p>
-                    Gary believes that great organizations are built by great teams—and great teams are built
-                    by leaders who listen, empower, and remove obstacles. He partners with executives, managers,
-                    and individual contributors alike to cultivate the mindset and practices that drive
-                    sustainable, high-performance delivery.
-                </p>
-            </div>
-        </div>
-    </section>
+<!-- ═══════════════ PROFILE HERO ═══════════════ -->
+<header class="profile-hero">
+  <div class="profile-container">
+    <a href="../about.html" class="back-link">← Back to All Coaches</a>
+    <div class="profile-hero-content">
+      <div>
+        <div class="profile-hero-credentials">PCC · CPCC · SPC6 · MS</div>
+        <h1 class="profile-hero-title">Gary Luehr</h1>
+        <p class="profile-hero-text">
+          Empowering organizations to embrace Agile, and coaching teams to achieve great things — turning complexity into clarity and resistance into momentum.
+        </p>
+        <a href="../contact.html" class="btn btn-gold btn-lg">Book Session With Gary</a>
+      </div>
+      <div class="profile-image-frame">
+        <img src="../assets/coaches/gary.jpg" alt="Gary Luehr — Agile &amp; Leadership Coach" loading="lazy" />
+        <div class="profile-deco-ring"></div>
+      </div>
+    </div>
+  </div>
+</header>
 
-    <!-- ===== SPECIALTIES / EXPERTISE ===== -->
-    <section class="section section-white">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Areas of Expertise</h2>
-                <p class="section-subtitle">Where Gary drives measurable impact</p>
-            </div>
-            <div class="expertise-grid">
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                            <path d="M2 17l10 5 10-5"/>
-                            <path d="M2 12l10 5 10-5"/>
-                        </svg>
-                    </div>
-                    <h3 class="expertise-title">Agile Transformations</h3>
-                    <p class="expertise-desc">Guiding organizations through enterprise-scale Agile adoptions, from pilot teams to full SAFe rollouts.</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="12" cy="8" r="5"/>
-                            <path d="M20 21a8 8 0 0 0-16 0"/>
-                        </svg>
-                    </div>
-                    <h3 class="expertise-title">Leadership Coaching</h3>
-                    <p class="expertise-desc">One-on-one and group coaching for leaders seeking to amplify their influence and build empowered teams.</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                            <polyline points="22 4 12 14.01 9 11.01"/>
-                        </svg>
-                    </div>
-                    <h3 class="expertise-title">Team Performance</h3>
-                    <p class="expertise-desc">Coaching cross-functional software teams to self-organize, deliver continuously, and continuously improve.</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                        </svg>
-                    </div>
-                    <h3 class="expertise-title">Aerospace & Defense</h3>
-                    <p class="expertise-desc">Deep domain expertise in aerospace software development, compliance-driven environments, and large systems integration.</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <rect x="3" y="3" width="7" height="7"/>
-                            <rect x="14" y="3" width="7" height="7"/>
-                            <rect x="14" y="14" width="7" height="7"/>
-                            <rect x="3" y="14" width="7" height="7"/>
-                        </svg>
-                    </div>
-                    <h3 class="expertise-title">Scaled Agile (SAFe)</h3>
-                    <p class="expertise-desc">SPC6-certified delivery of SAFe implementations, including PI Planning, ART launches, and Lean Portfolio Management.</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M3 3v18h18"/>
-                            <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14"/>
-                        </svg>
-                    </div>
-                    <h3 class="expertise-title">Continuous Improvement</h3>
-                    <p class="expertise-desc">Establishing feedback loops, metrics, and retrospection practices that make improvement a habit, not an event.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ═══════════════ BIO ═══════════════ -->
+<section class="bio-section">
+  <div class="container">
+    <div class="bio-lead fade-up">
+      "Great organizations are built by great teams — and great teams are built by leaders who listen, empower, and remove obstacles."
+    </div>
+    <div class="bio-body">
+      <div>
+        <p>
+          Gary Luehr is a seasoned agile and leadership coach with over a decade of experience coaching and leading software teams in the aerospace industry. His focus is helping organizations embrace Agile methodologies and coaching teams to achieve great things — turning complexity into clarity and resistance into momentum.
+        </p>
+        <p>
+          Throughout his career, Gary has worked with major aerospace and defense organizations, including <strong>Northrop Grumman</strong>, where he guided distributed engineering teams through large-scale Agile transformations. His approach blends deep technical understanding with a human-centered coaching philosophy rooted in active listening, powerful questioning, and creating awareness.
+        </p>
+        <p>
+          As a <strong>Professional Certified Coach (PCC)</strong> through the International Coaching Federation and a <strong>Certified Professional Co-Active Coach (CPCC)</strong>, Gary brings rigor and empathy to every engagement. His <strong>SAFe Program Consultant certification (SPC6)</strong> and Master of Science degree further ground his coaching in both agile frameworks and academic discipline.
+        </p>
+        <p>
+          Gary partners with executives, managers, and individual contributors alike to cultivate the mindset and practices that drive sustainable, high-performance delivery.
+        </p>
+      </div>
 
-    <!-- ===== CERTIFICATIONS ===== -->
-    <section class="section section-light">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Certifications & Credentials</h2>
+      <div>
+        <div class="credentials-panel fade-up">
+          <div class="section-label" style="margin-bottom:24px;">Credentials</div>
+          <div class="credential-item">
+            <div class="credential-label">Current Role</div>
+            <div class="credential-value">Agile &amp; Leadership Coach, Maturity Coach</div>
+          </div>
+          <div class="credential-item">
+            <div class="credential-label">Coaching Certifications</div>
+            <div class="credential-value">
+              PCC — Professional Certified Coach (ICF)<br>
+              CPCC — Certified Professional Co-Active Coach
             </div>
-            <div class="credentials-list">
-                <div class="credential-item">
-                    <div class="credential-badge-lg">PCC</div>
-                    <div class="credential-detail">
-                        <h3>Professional Certified Coach</h3>
-                        <p>International Coaching Federation (ICF) — demonstrates advanced coaching competency, ethics, and logged coaching hours.</p>
-                    </div>
-                </div>
-                <div class="credential-item">
-                    <div class="credential-badge-lg">CPCC</div>
-                    <div class="credential-detail">
-                        <h3>Certified Professional Co-Active Coach</h3>
-                        <p>The Co-Active Training Institute — rigorous experiential training in the Co-Active coaching model, emphasizing relationship-forward coaching.</p>
-                    </div>
-                </div>
-                <div class="credential-item">
-                    <div class="credential-badge-lg">SPC6</div>
-                    <div class="credential-detail">
-                        <h3>SAFe Program Consultant (v6)</h3>
-                        <p>Scaled Agile, Inc. — authorized to lead SAFe transformations, train SAFe courses, and coach enterprise Agile Rollout efforts.</p>
-                    </div>
-                </div>
-                <div class="credential-item">
-                    <div class="credential-badge-lg">MS</div>
-                    <div class="credential-detail">
-                        <h3>Master of Science</h3>
-                        <p>Graduate-level academic foundation supporting analytical rigor and systems thinking in coaching and leadership development.</p>
-                    </div>
-                </div>
-            </div>
+          </div>
+          <div class="credential-item">
+            <div class="credential-label">Agile</div>
+            <div class="credential-value">SPC6 — SAFe Program Consultant (v6)</div>
+          </div>
+          <div class="credential-item">
+            <div class="credential-label">Education</div>
+            <div class="credential-value">Master of Science</div>
+          </div>
+          <div class="credential-item">
+            <div class="credential-label">Specialization</div>
+            <div class="credential-value">Agile Transformation · Team Coaching · Aerospace &amp; Defense</div>
+          </div>
+          <div class="credential-item">
+            <div class="credential-label">Experience</div>
+            <div class="credential-value">10+ years · Aerospace software &amp; enterprise Agile</div>
+          </div>
+          <div class="credential-item">
+            <div class="credential-label">Frameworks</div>
+            <div class="credential-value"><a href="../framework.html" style="color:var(--gold); font-weight:500;">Ubuntu Roots Framework →</a></div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ===== EXPERIENCE HIGHLIGHTS ===== -->
-    <section class="section section-white">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Selected Experience</h2>
-            </div>
-            <div class="experience-timeline">
-                <div class="experience-item">
-                    <div class="experience-marker"></div>
-                    <div class="experience-content">
-                        <h3 class="experience-role">Agile & Leadership Coach</h3>
-                        <p class="experience-org">Northrop Grumman</p>
-                        <p class="experience-desc">
-                            Coached software engineering teams and leadership through large-scale Agile transformations
-                            in the aerospace and defense sector. Facilitated PI Planning events, launched Agile Release
-                            Trains, and mentored Scrum Masters and RTEs.
-                        </p>
-                    </div>
-                </div>
-                <div class="experience-item">
-                    <div class="experience-marker"></div>
-                    <div class="experience-content">
-                        <h3 class="experience-role">Agile Coach & Transformation Lead</h3>
-                        <p class="experience-org">Aerospace Industry</p>
-                        <p class="experience-desc">
-                            Over 10 years coaching and leading software teams across multiple aerospace programs,
-                            bridging the gap between compliance-heavy waterfall traditions and modern Agile delivery practices.
-                        </p>
-                    </div>
-                </div>
-                <div class="experience-item">
-                    <div class="experience-marker"></div>
-                    <div class="experience-content">
-                        <h3 class="experience-role">Executive & Leadership Coach</h3>
-                        <p class="experience-org">Independent Practice</p>
-                        <p class="experience-desc">
-                            Provides one-on-one and team coaching to leaders seeking to navigate complexity, develop
-                            emotional intelligence, and create cultures of trust and psychological safety.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ═══════════════ EXPERTISE ═══════════════ -->
+<section class="expertise-section">
+  <div class="container">
+    <div class="text-center fade-up">
+      <div class="section-label" style="justify-content:center;">Areas of Expertise</div>
+      <h2 class="display-3" style="margin-bottom:20px;">How Gary works with teams</h2>
+      <p class="body-md text-muted" style="max-width:600px; margin:0 auto;">
+        From pilot teams to full enterprise rollouts — every engagement shaped to your delivery context and maturity level.
+      </p>
+    </div>
+    <div class="expertise-grid">
+      <div class="expertise-card fade-up">
+        <div class="expertise-icon">🔺</div>
+        <h3 class="expertise-title">Agile Transformations</h3>
+        <p class="expertise-text">Guiding organizations through enterprise-scale Agile adoptions, from pilot teams to full SAFe rollouts.</p>
+      </div>
+      <div class="expertise-card fade-up">
+        <div class="expertise-icon">🧭</div>
+        <h3 class="expertise-title">Leadership Coaching</h3>
+        <p class="expertise-text">One-on-one and group coaching for leaders seeking to amplify their influence and build empowered teams.</p>
+      </div>
+      <div class="expertise-card fade-up">
+        <div class="expertise-icon">✅</div>
+        <h3 class="expertise-title">Team Performance</h3>
+        <p class="expertise-text">Coaching cross-functional software teams to self-organize, deliver continuously, and continuously improve.</p>
+      </div>
+      <div class="expertise-card fade-up">
+        <div class="expertise-icon">🛡️</div>
+        <h3 class="expertise-title">Aerospace &amp; Defense</h3>
+        <p class="expertise-text">Deep domain expertise in aerospace software development, compliance-driven environments, and large systems integration.</p>
+      </div>
+      <div class="expertise-card fade-up">
+        <div class="expertise-icon">⚡</div>
+        <h3 class="expertise-title">Scaled Agile (SAFe)</h3>
+        <p class="expertise-text">SPC6-certified delivery of SAFe implementations, including PI Planning, ART launches, and Lean Portfolio Management.</p>
+      </div>
+      <div class="expertise-card fade-up">
+        <div class="expertise-icon">📈</div>
+        <h3 class="expertise-title">Continuous Improvement</h3>
+        <p class="expertise-text">Establishing feedback loops, metrics, and retrospection practices that make improvement a habit, not an event.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ===== CTA SECTION ===== -->
-    <section class="section section-cta">
-        <div class="container cta-container">
-            <h2 class="cta-title">Ready to Work with Gary?</h2>
-            <p class="cta-text">
-                Whether your organization is beginning its Agile journey or looking to level up existing
-                practices, Gary can help you get there. Start with a confidential conversation.
-            </p>
-            <a href="contact.html?coach=gary" class="btn btn-primary btn-large">
-                Take a 2-Minute Maturity Assessment
-            </a>
-        </div>
-    </section>
+<!-- ═══════════════ CREDENTIALS DETAIL ═══════════════ -->
+<section class="values-section">
+  <div class="container">
+    <div class="text-center fade-up">
+      <div class="section-label" style="justify-content:center; color:var(--gold);">Certifications</div>
+      <h2 class="display-3 text-white">What the credentials mean</h2>
+    </div>
+    <div class="values-grid" style="margin-top:56px;">
+      <div class="value-card fade-up">
+        <div class="value-number">PCC</div>
+        <div class="value-title">Professional Certified Coach</div>
+        <p class="value-text">International Coaching Federation — demonstrates advanced coaching competency, ethics, and logged coaching hours.</p>
+      </div>
+      <div class="value-card fade-up">
+        <div class="value-number">CPCC</div>
+        <div class="value-title">Certified Professional Co-Active Coach</div>
+        <p class="value-text">The Co-Active Training Institute — rigorous experiential training in the Co-Active model, emphasizing relationship-forward coaching.</p>
+      </div>
+      <div class="value-card fade-up">
+        <div class="value-number">SPC6</div>
+        <div class="value-title">SAFe Program Consultant (v6)</div>
+        <p class="value-text">Scaled Agile, Inc. — authorized to lead SAFe transformations, train SAFe courses, and coach enterprise agile rollouts.</p>
+      </div>
+      <div class="value-card fade-up">
+        <div class="value-number">MS</div>
+        <div class="value-title">Master of Science</div>
+        <p class="value-text">Graduate-level academic foundation supporting analytical rigor and systems thinking in coaching and leadership development.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ===== FOOTER ===== -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-col">
-                <img src="assets/logo.svg" alt="Sophia Coaching" class="footer-logo">
-                <p class="footer-desc">Becoming whole through Belonging.</p>
+<!-- ═══════════════ EXPERIENCE ═══════════════ -->
+<section class="approach-section">
+  <div class="container">
+    <div class="grid-2" style="align-items:start;">
+      <div class="fade-up">
+        <div class="section-label">Selected Experience</div>
+        <h2 class="display-3" style="margin-bottom:20px;">Where Gary has done this work</h2>
+        <p class="body-md text-muted">
+          A decade of coaching engineering organizations where compliance, scale, and safety-critical delivery are the everyday constraints.
+        </p>
+      </div>
+      <div>
+        <div class="timeline">
+          <div class="timeline-item fade-up">
+            <div class="timeline-dot">🚀</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Agile &amp; Leadership Coach</div>
+              <div class="timeline-org">Northrop Grumman</div>
+              <p class="timeline-text">Coached software engineering teams and leadership through large-scale Agile transformations in aerospace and defense. Facilitated PI Planning events, launched Agile Release Trains, and mentored Scrum Masters and RTEs.</p>
             </div>
-            <div class="footer-col">
-                <h4 class="footer-heading">Our Coaches</h4>
-                <ul class="footer-links">
-                    <li><a href="cindy.html">Cindy McCown</a></li>
-                    <li><a href="grace.html">Grace Adele Boyle</a></li>
-                    <li><a href="safia.html">Safia Abji</a></li>
-                    <li><a href="catherine.html">Catherine Nkomba</a></li>
-                    <li><a href="gary.html">Gary Luehr</a></li>
-                    <li><a href="eugene.html">Eugene Nkomba</a></li>
-                </ul>
+          </div>
+          <div class="timeline-item fade-up">
+            <div class="timeline-dot">✈️</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Agile Coach &amp; Transformation Lead</div>
+              <div class="timeline-org">Aerospace Industry</div>
+              <p class="timeline-text">Over ten years coaching and leading software teams across multiple aerospace programs, bridging compliance-heavy waterfall traditions and modern Agile delivery practices.</p>
             </div>
-            <div class="footer-col">
-                <h4 class="footer-heading">Explore</h4>
-                <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="assessment.html">Maturity Assessment</a></li>
-                    <li><a href="perspectives.html">Perspectives</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+          </div>
+          <div class="timeline-item fade-up">
+            <div class="timeline-dot">🤝</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Executive &amp; Leadership Coach</div>
+              <div class="timeline-org">Independent Practice</div>
+              <p class="timeline-text">One-on-one and team coaching for leaders navigating complexity, developing emotional intelligence, and creating cultures of trust and psychological safety.</p>
             </div>
+          </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Sophia Coaching. All rights reserved.</p>
-        </div>
-    </footer>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ===== SCRIPTS ===== -->
-    <script src="js/nav.js"></script>
-    <script src="js/main.js"></script>
+<!-- ═══════════════ CTA ═══════════════ -->
+<section class="profile-cta">
+  <div class="container-sm">
+    <div class="gold-line" style="margin-bottom:48px;"></div>
+    <div class="section-label" style="justify-content:center;">Next Step</div>
+    <h2 class="display-3 fade-up" style="margin-bottom:20px;">Ready to work with Gary?</h2>
+    <p class="body-lg text-muted fade-up" style="margin-bottom:44px;">
+      Whether your organization is beginning its Agile journey or looking to level up existing practices — start with an honest conversation about where things stand today.
+    </p>
+    <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;" class="fade-up">
+      <a href="../contact.html" class="btn btn-primary btn-lg">Request a Consultation</a>
+      <a href="../services.html" class="btn btn-outline">Explore Our Services →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <div class="footer-logo">M</div>
+          <div class="footer-brand-name">Maturity<span>Coach</span></div>
+        </div>
+        <p class="footer-desc">Ancient wisdom, modern intelligence, and the courage to live fully — while building something extraordinary.</p>
+        <div class="footer-social">
+          <a href="#" title="LinkedIn">in</a>
+          <a href="#" title="Twitter/X">𝕏</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../philosophy.html">Philosophy</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../about.html">Our Coaches</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="../services.html">Executive Mastery</a></li>
+          <li><a href="../services.html">Agile Transformation</a></li>
+          <li><a href="../services.html">Leadership Culture</a></li>
+          <li><a href="../services.html">Speaking</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="/app/">Get the App</a></li>
+          <li><a href="../contact.html">Request a Consultation</a></li>
+          <!-- TODO: confirm Gary's email address -->
+          <li><a href="mailto:gary@maturity.coach">Email Gary</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Maturity Coach. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
 </body>
 </html>

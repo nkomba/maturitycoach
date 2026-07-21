@@ -1,322 +1,394 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cindy McCown — Executive & Communications Coach | Sophia Coaching</title>
-    <meta name="description" content="Cindy McCown is a CPCC-certified Executive Coach with expertise in communications, storytelling, and leadership development.">
-
-    <!-- Using site-wide stylesheet -->
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/components.css">
-
-    <!-- Favicon -->
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cindy McCown — Executive &amp; Communications Coach | Maturity Coach</title>
+  <meta name="description" content="Cindy McCown is an executive and communications coach at Maturity Coach — helping leaders craft their next chapter with clarity, authenticity, and purpose." />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../components.css" />
+  <link rel="stylesheet" href="../css/profile.css" />
 </head>
 <body>
 
-    <!-- ===== NAVIGATION ===== -->
-    <nav id="mainNav" class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <img src="assets/logo.svg" alt="Sophia Coaching Logo">
-            </a>
-            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="coaches.html" class="nav-link active">Our Coaches</a></li>
-                <li><a href="assessment.html" class="nav-link">Assessment</a></li>
-                <li><a href="perspectives.html" class="nav-link">Perspectives</a></li>
-                <li><a href="contact.html" class="nav-link">Take a 2-minute Maturity Assessment</a></li>
-            </ul>
+<!-- ═══════════════ NAVIGATION ═══════════════ -->
+<nav class="nav scrolled" id="mainNav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <div class="logo-mark">M</div>
+      <span class="logo-text">Maturity<span>Coach</span></span>
+    </a>
+    <div class="nav-links">
+      <div class="nav-group">
+        <a href="../philosophy.html" class="nav-group-trigger">Approach
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="../philosophy.html">Philosophy<span class="dropdown-desc">The Maturity Method &mdash; wisdom, neuroscience &amp; AI</span></a>
+          <a href="../framework.html">Ubuntu Roots Coaching&trade;<span class="dropdown-desc">The proprietary coaching framework</span></a>
         </div>
-    </nav>
+      </div>
+      <div class="nav-group">
+        <a href="../services.html" class="nav-group-trigger">Services
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="../services.html">All Services<span class="dropdown-desc">1:1, cohorts, teams &amp; keynotes</span></a>
+          <a href="../coaching-for-technical-leaders.html">Coaching for Technical Leaders<span class="dropdown-desc">CISOs, CIOs, CTOs &amp; federal tech leaders</span></a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <a href="../perspectives.html" class="nav-group-trigger">Insights
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="../perspectives.html">Perspectives<span class="dropdown-desc">Essays on leadership &amp; maturity</span></a>
+          <a href="../blog.html">From the Blog<span class="dropdown-desc">Latest notes &amp; articles</span></a>
+        </div>
+      </div>
+      <div class="nav-group active">
+        <a href="../about.html" class="nav-group-trigger">Our Coaches
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <!-- COACHES:START -->
+          <a href="../about.html">All Coaches<span class="dropdown-desc">Filter by specialization</span></a>
+          <a href="../profiles/eugene.html">Eugene Nkomba<span class="dropdown-desc">Founder &amp; Managing Partner</span></a>
+          <a href="../profiles/catherine.html">Catherine Nkomba<span class="dropdown-desc">Partner Coach &amp; Agile Transformation Lead</span></a>
+          <a href="../profiles/gary.html">Gary Luehr<span class="dropdown-desc">Agile &amp; Leadership Coach</span></a>
+          <a href="../profiles/cindy.html">Cindy McCown<span class="dropdown-desc">Executive &amp; Communications Coach</span></a>
+          <a href="../profiles/grace.html">Grace Adele Boyle<span class="dropdown-desc">Executive &amp; Creative Coach</span></a>
+          <a href="../profiles/safia.html">Safia Abji<span class="dropdown-desc">Human Development Consultant &amp; Keynote Speaker</span></a>
+          <!-- COACHES:END -->
+        </div>
+      </div>
+      <div class="nav-group featured">
+        <a href="../assessment-teaser.html" class="nav-group-trigger">Free Resources
+          <svg class="nav-caret" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 1l4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <div class="nav-dropdown">
+          <a href="../assessment-teaser.html">Quick Leadership Check<span class="tag">2 min</span><span class="dropdown-desc">Instant snapshot</span></a>
+          <a href="../assessment.html">Full Maturity Assessment<span class="dropdown-desc">The complete self-assessment</span></a>
+          <a href="/app/">Get the App<span class="dropdown-desc">Daily practice on iPhone &amp; Android</span></a>
+        </div>
+      </div>
+      <a href="../contact.html" class="nav-cta">Request a Consultation</a>
+    </div>
+    <div class="nav-hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
 
-    <!-- ===== COACH PROFILE HERO ===== -->
-    <section class="coach-hero">
-        <div class="coach-hero-container">
-            <div class="coach-photo-wrapper">
-                <!-- TODO: Replace with Cindy's actual headshot -->
-                <img src="assets/coaches/cindy-mccown.jpg"
-                     alt="Cindy McCown, Executive Coach"
-                     class="coach-photo"
-                     loading="lazy">
-            </div>
-            <div class="coach-hero-info">
-                <span class="coach-tag">Executive & Communications Coach</span>
-                <h1 class="coach-name">Cindy McCown</h1>
-                <p class="coach-tagline">Helping leaders craft their next chapter with clarity, authenticity, and purpose.</p>
-                <div class="coach-credentials-bar">
-                    <span class="credential-badge">CPCC</span>
-                </div>
-                <a href="contact.html?coach=cindy" class="btn btn-primary coach-cta">
-                    Request a Confidential Conversation with Cindy
-                </a>
-            </div>
-        </div>
-    </section>
+<div class="mobile-menu" id="mobileMenu">
+  <span class="m-label">Approach</span>
+  <a href="../philosophy.html" onclick="toggleMenu()">Philosophy</a>
+  <a href="../framework.html" onclick="toggleMenu()">Ubuntu Roots Coaching&trade;</a>
+  <span class="m-label">Services</span>
+  <a href="../services.html" onclick="toggleMenu()">All Services</a>
+  <span class="m-label">Insights</span>
+  <a href="../perspectives.html" onclick="toggleMenu()">Perspectives</a>
+  <a href="../blog.html" onclick="toggleMenu()">From the Blog</a>
+  <span class="m-label">Our Coaches</span>
+  <!-- COACHES-MOBILE:START -->
+  <a href="../about.html" onclick="toggleMenu()">All Coaches</a>
+  <a href="../profiles/eugene.html" onclick="toggleMenu()">Eugene Nkomba</a>
+  <a href="../profiles/catherine.html" onclick="toggleMenu()">Catherine Nkomba</a>
+  <a href="../profiles/gary.html" onclick="toggleMenu()">Gary Luehr</a>
+  <a href="../profiles/cindy.html" onclick="toggleMenu()">Cindy McCown</a>
+  <a href="../profiles/grace.html" onclick="toggleMenu()">Grace Adele Boyle</a>
+  <a href="../profiles/safia.html" onclick="toggleMenu()">Safia Abji</a>
+  <!-- COACHES-MOBILE:END -->
+  <span class="m-label">Free Resources</span>
+  <a href="../assessment-teaser.html" class="m-assess" onclick="toggleMenu()">Quick Leadership Check</a>
+  <a href="../assessment.html" onclick="toggleMenu()">Full Maturity Assessment</a>
+  <span class="m-label">More</span>
+  <a href="../contact.html" class="m-cta" onclick="toggleMenu()">Request a Consultation</a>
+</div>
 
-    <!-- ===== ABOUT SECTION ===== -->
-    <section class="section section-light">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">About Cindy</h2>
-            </div>
-            <div class="coach-bio">
-                <p>
-                    Cindy McCown believes that we constantly write our stories—regardless of what events came before,
-                    or possibly because of them. Each of us has the extraordinary opportunity, every day and in each
-                    moment, to repair relationships, learn from failure, celebrate success, and envision and craft
-                    the next chapter. This philosophy anchors her coaching practice and resonates deeply with leaders
-                    navigating transitions, reinvention, or periods of rapid change.
-                </p>
-                <p>
-                    Her proudest professional accomplishment was redirecting her journey to become a certified coach.
-                    Taking on that challenge and stepping into the unknown has brought vivid color and rich texture
-                    to her life in fascinating ways—and it's the same transformative energy she helps unlock in her
-                    clients. As a <strong>Certified Professional Co-Active Coach (CPCC)</strong> through The Co-Active
-                    Training Institute, Cindy combines rigorous coaching methodology with a storyteller's intuition
-                    and communicator's precision.
-                </p>
-                <p>
-                    Before coaching, Cindy built a substantial career as a <strong>copywriter, editor, and media producer</strong>,
-                    working with diverse clients across marketing, communications, promotions, and advertising. With
-                    a degree in broadcast journalism and extensive experience in video production, television, film,
-                    and digital media, she developed an exceptional ability to create engaging content that is
-                    brand-relevant and meets client business needs. Today, she applies those same skills to helping
-                    leaders find their voice, clarify their message, and communicate with impact.
-                </p>
-                <p>
-                    In her own words, Cindy was "most likely to get in trouble at school for too much chit-chat"—she's
-                    inquisitive and loves to talk, listen, and ask questions. The only adjustment was learning her timing.
-                    That same curiosity now serves her coaching practice: asking powerful questions that surface insights,
-                    creating space for reflection, and partnering with clients to discover answers that are uniquely their own.
-                </p>
-            </div>
-        </div>
-    </section>
+<!-- ═══════════════ PROFILE HERO ═══════════════ -->
+<header class="profile-hero">
+  <div class="profile-container">
+    <a href="../about.html" class="back-link">← Back to All Coaches</a>
+    <div class="profile-hero-content">
+      <div>
+        <div class="profile-hero-credentials">CPCC · BA Broadcast Journalism</div>
+        <h1 class="profile-hero-title">Cindy McCown</h1>
+        <p class="profile-hero-text">
+          Helping leaders craft their next chapter with clarity, authenticity, and purpose.
+        </p>
+        <a href="../contact.html" class="btn btn-gold btn-lg">Book Session With Cindy</a>
+      </div>
+      <div class="profile-image-frame">
+        <img src="../assets/coaches/cindy.jpg" alt="Cindy McCown — Executive &amp; Communications Coach" loading="lazy" />
+        <div class="profile-deco-ring"></div>
+      </div>
+    </div>
+  </div>
+</header>
 
-    <!-- ===== SPECIALTIES / EXPERTISE ===== -->
-    <section class="section section-white">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Areas of Expertise</h2>
-                <p class="section-subtitle">Where Cindy drives measurable impact</p>
-            </div>
-            <div class="expertise-grid">
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="12" cy="12" r="10"/>
-                            <line x1="12" y1="16" x2="12" y2="12"/>
-                            <line x1="12" y1="8" x2="12.01" y2="8"/>
-                        </svg>
-                    </div>
-                    <h3 class="expertise-title">Executive Communication</h3>
-                    <p class="expertise-desc">Helping leaders articulate vision, craft compelling narratives, and communicate with authenticity and influence.</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-                        </svg>
-                    </div>
-                    <h3 class="expertise-title">Career Transition & Reinvention</h3>
-                    <p class="expertise-desc">Partnering with professionals navigating pivots, helping them design their next chapter with intention and confidence.</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-                        </svg>
-                    </div>
-                    <h3 class="expertise-title">Relationship Repair & Reconnection</h3>
-                    <p class="expertise-desc">Guiding leaders and teams through conflict resolution, trust-building, and restoring productive working relationships.</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                        </svg>
-                    </div>
-                    <h3 class="expertise-title">Personal Branding & Storytelling</h3>
-                    <p class="expertise-desc">Developing leaders' personal brands and narrative presence for LinkedIn, speaking engagements, and organizational visibility.</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-                        </svg>
-                    </div>
-                    <h3 class="expertise-title">Content Strategy & Messaging</h3>
-                    <p class="expertise-desc">Coaching leaders on content creation, thought leadership positioning, and strategic communication for business objectives.</p>
-                </div>
-                <div class="expertise-card">
-                    <div class="expertise-icon">
-                        <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                        </svg>
-                    </div>
-                    <h3 class="expertise-title">Leadership Presence & Influence</h3>
-                    <p class="expertise-desc">Building executive presence, amplifying influence within organizations, and leading with authentic authority.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ═══════════════ BIO ═══════════════ -->
+<section class="bio-section">
+  <div class="container">
+    <div class="bio-lead fade-up">
+      "We constantly write our stories — regardless of what events came before, or possibly because of them."
+    </div>
+    <div class="bio-body">
+      <div>
+        <p>
+          Cindy McCown believes that each of us has the extraordinary opportunity, every day and in each moment, to repair relationships, learn from failure, celebrate success, and envision and craft the next chapter. This philosophy anchors her coaching practice and resonates deeply with leaders navigating transitions, reinvention, or periods of rapid change.
+        </p>
+        <p>
+          Her proudest professional accomplishment was redirecting her journey to become a certified coach. Taking on that challenge and stepping into the unknown brought vivid color and rich texture to her life — and it is the same transformative energy she helps unlock in her clients. As a <strong>Certified Professional Co-Active Coach (CPCC)</strong> through The Co-Active Training Institute, Cindy combines rigorous coaching methodology with a storyteller's intuition and a communicator's precision.
+        </p>
+        <p>
+          Before coaching, Cindy built a substantial career as a <strong>copywriter, editor, and media producer</strong>, working with diverse clients across marketing, communications, promotions, and advertising. With a degree in broadcast journalism and extensive experience in video production, television, film, and digital media, she developed an exceptional ability to create engaging content that is brand-relevant and meets client business needs. Today she applies those same skills to helping leaders find their voice, clarify their message, and communicate with impact.
+        </p>
 
-    <!-- ===== CERTIFICATIONS ===== -->
-    <section class="section section-light">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Certifications & Credentials</h2>
-            </div>
-            <div class="credentials-list">
-                <div class="credential-item">
-                    <div class="credential-badge-lg">CPCC</div>
-                    <div class="credential-detail">
-                        <h3>Certified Professional Co-Active Coach</h3>
-                        <p>The Co-Active Training Institute — rigorous experiential training in the Co-Active coaching model, emphasizing relationship-forward coaching and holistic development.</p>
-                    </div>
-                </div>
-                <div class="credential-item">
-                    <div class="credential-badge-lg">BA</div>
-                    <div class="credential-detail">
-                        <h3>Bachelor of Arts in Broadcast Journalism</h3>
-                        <p>Academic foundation in media production, storytelling, and communication principles that inform her coaching and messaging work.</p>
-                    </div>
-                </div>
-            </div>
+        <div style="margin-top:40px; padding-top:40px; border-top:1px solid var(--border);">
+          <div class="section-label">A Personal Word</div>
+          <p>
+            In school I was most likely to get in trouble for too much chit-chat. I'm inquisitive and I love to talk, listen, and ask questions — the only adjustment was learning my timing. That same curiosity now serves my coaching: asking powerful questions that surface insight, creating space for reflection, and partnering with clients to discover answers that are uniquely their own.
+          </p>
         </div>
-    </section>
+      </div>
 
-    <!-- ===== PROFESSIONAL BACKGROUND ===== -->
-    <section class="section section-white">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Professional Background</h2>
-            </div>
-            <div class="experience-timeline">
-                <div class="experience-item">
-                    <div class="experience-marker"></div>
-                    <div class="experience-content">
-                        <h3 class="experience-role">Executive & Communications Coach</h3>
-                        <p class="experience-org">Sophia Coaching</p>
-                        <p class="experience-desc">
-                            Partnering with leaders and organizations to develop communication fluency, craft authentic personal narratives,
-                            and navigate career transitions with clarity and confidence. Specializing in executive presence, relationship
-                            dynamics, and content strategy.
-                        </p>
-                    </div>
-                </div>
-                <div class="experience-item">
-                    <div class="experience-marker"></div>
-                    <div class="experience-content">
-                        <h3 class="experience-role">Copywriter & Editor</h3>
-                        <p class="experience-org">Marketing, Communications & Advertising</p>
-                        <p class="experience-desc">
-                            Extensive experience working with diverse clients across marketing, communications, promotions, and advertising.
-                            Skilled in creating brand-relevant content that meets client business needs and drives engagement.
-                        </p>
-                    </div>
-                </div>
-                <div class="experience-item">
-                    <div class="experience-marker"></div>
-                    <div class="experience-content">
-                        <h3 class="experience-role">Media Producer</h3>
-                        <p class="experience-org">Television, Film & Digital Media</p>
-                        <p class="experience-desc">
-                            Video production specialist with expertise across television, film, and digital platforms. Developed
-                            multimedia content strategies and led production initiatives for varied audiences and purposes.
-                        </p>
-                    </div>
-                </div>
-            </div>
+      <div>
+        <div class="credentials-panel fade-up">
+          <div class="section-label" style="margin-bottom:24px;">Credentials</div>
+          <div class="credential-item">
+            <div class="credential-label">Current Role</div>
+            <div class="credential-value">Executive &amp; Communications Coach, Maturity Coach</div>
+          </div>
+          <div class="credential-item">
+            <div class="credential-label">Coaching Certification</div>
+            <div class="credential-value">CPCC — Certified Professional Co-Active Coach<br><span style="color:var(--text-muted); font-size:13px;">The Co-Active Training Institute</span></div>
+          </div>
+          <div class="credential-item">
+            <div class="credential-label">Education</div>
+            <div class="credential-value">BA, Broadcast Journalism</div>
+          </div>
+          <div class="credential-item">
+            <div class="credential-label">Specialization</div>
+            <div class="credential-value">Executive Communication · Career Transition · Personal Branding</div>
+          </div>
+          <div class="credential-item">
+            <div class="credential-label">Background</div>
+            <div class="credential-value">Copywriting · Editing · Television, film &amp; digital media production</div>
+          </div>
+          <div class="credential-item">
+            <div class="credential-label">Frameworks</div>
+            <div class="credential-value"><a href="../framework.html" style="color:var(--gold); font-weight:500;">Ubuntu Roots Framework →</a></div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ===== CLIENT PROFILES ===== -->
-    <section class="section section-light">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Who Cindy Works With</h2>
-            </div>
-            <div class="client-profiles">
-                <div class="client-profile-card">
-                    <h3 class="profile-title">The Career Pivoter</h3>
-                    <p class="profile-desc">Professionals considering or actively making a significant career transition who want to design their next chapter intentionally.</p>
-                </div>
-                <div class="client-profile-card">
-                    <h3 class="profile-title">The Emerging Leader</h3>
-                    <p class="profile-desc">Individuals newly promoted to leadership roles seeking to build authentic executive presence and communication fluency.</p>
-                </div>
-                <div class="client-profile-card">
-                    <h3 class="profile-title">The Thought Leader</h3>
-                    <p class="profile-desc">Experts and practitioners looking to amplify their voice, build personal brand, and establish thought leadership in their field.</p>
-                </div>
-                <div class="client-profile-card">
-                    <h3 class="profile-title">The Relationship Navigator</h3>
-                    <p class="profile-desc">Leaders working through complex team dynamics, conflict situations, or trust challenges in collaborative environments.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ═══════════════ EXPERTISE ═══════════════ -->
+<section class="expertise-section">
+  <div class="container">
+    <div class="text-center fade-up">
+      <div class="section-label" style="justify-content:center;">Areas of Expertise</div>
+      <h2 class="display-3" style="margin-bottom:20px;">How Cindy works with leaders</h2>
+      <p class="body-md text-muted" style="max-width:600px; margin:0 auto;">
+        Communication fluency, authentic narrative, and the confidence to name what comes next.
+      </p>
+    </div>
+    <div class="expertise-grid">
+      <div class="expertise-card fade-up">
+        <div class="expertise-icon">🎙️</div>
+        <h3 class="expertise-title">Executive Communication</h3>
+        <p class="expertise-text">Helping leaders articulate vision, craft compelling narratives, and communicate with authenticity and influence.</p>
+      </div>
+      <div class="expertise-card fade-up">
+        <div class="expertise-icon">🔗</div>
+        <h3 class="expertise-title">Career Transition &amp; Reinvention</h3>
+        <p class="expertise-text">Partnering with professionals navigating pivots, helping them design their next chapter with intention and confidence.</p>
+      </div>
+      <div class="expertise-card fade-up">
+        <div class="expertise-icon">🤍</div>
+        <h3 class="expertise-title">Relationship Repair</h3>
+        <p class="expertise-text">Guiding leaders and teams through conflict resolution, trust-building, and restoring productive working relationships.</p>
+      </div>
+      <div class="expertise-card fade-up">
+        <div class="expertise-icon">⭐</div>
+        <h3 class="expertise-title">Personal Branding &amp; Storytelling</h3>
+        <p class="expertise-text">Developing leaders' personal brands and narrative presence for LinkedIn, speaking engagements, and organizational visibility.</p>
+      </div>
+      <div class="expertise-card fade-up">
+        <div class="expertise-icon">💬</div>
+        <h3 class="expertise-title">Content Strategy &amp; Messaging</h3>
+        <p class="expertise-text">Coaching leaders on content creation, thought leadership positioning, and strategic communication for business objectives.</p>
+      </div>
+      <div class="expertise-card fade-up">
+        <div class="expertise-icon">👥</div>
+        <h3 class="expertise-title">Leadership Presence</h3>
+        <p class="expertise-text">Building executive presence, amplifying influence within organizations, and leading with authentic authority.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ===== CTA SECTION ===== -->
-    <section class="section section-cta">
-        <div class="container cta-container">
-            <h2 class="cta-title">Ready to Craft Your Next Chapter?</h2>
-            <p class="cta-text">
-                Whether you're navigating a transition, refining your voice, or reconnecting with your purpose,
-                Cindy can help you write the story you want to live. Start with a confidential conversation.
-            </p>
-            <a href="contact.html?coach=cindy" class="btn btn-primary btn-large">
-                Take a 2-Minute Maturity Assessment
-            </a>
-        </div>
-    </section>
+<!-- ═══════════════ WHO CINDY WORKS WITH ═══════════════ -->
+<section class="values-section">
+  <div class="container">
+    <div class="text-center fade-up">
+      <div class="section-label" style="justify-content:center; color:var(--gold);">Who She Works With</div>
+      <h2 class="display-3 text-white">Leaders at a turning point</h2>
+    </div>
+    <div class="values-grid" style="margin-top:56px;">
+      <div class="value-card fade-up">
+        <div class="value-number">01</div>
+        <div class="value-title">The Career Pivoter</div>
+        <p class="value-text">Professionals considering or actively making a significant career transition who want to design their next chapter intentionally.</p>
+      </div>
+      <div class="value-card fade-up">
+        <div class="value-number">02</div>
+        <div class="value-title">The Emerging Leader</div>
+        <p class="value-text">Individuals newly promoted to leadership roles seeking to build authentic executive presence and communication fluency.</p>
+      </div>
+      <div class="value-card fade-up">
+        <div class="value-number">03</div>
+        <div class="value-title">The Thought Leader</div>
+        <p class="value-text">Experts and practitioners looking to amplify their voice, build personal brand, and establish thought leadership in their field.</p>
+      </div>
+      <div class="value-card fade-up">
+        <div class="value-number">04</div>
+        <div class="value-title">The Relationship Navigator</div>
+        <p class="value-text">Leaders working through complex team dynamics, conflict situations, or trust challenges in collaborative environments.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ===== FOOTER ===== -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-col">
-                <img src="assets/logo.svg" alt="Sophia Coaching" class="footer-logo">
-                <p class="footer-desc">Becoming whole through Belonging.</p>
+<!-- ═══════════════ BACKGROUND ═══════════════ -->
+<section class="approach-section">
+  <div class="container">
+    <div class="grid-2" style="align-items:start;">
+      <div class="fade-up">
+        <div class="section-label">Professional Background</div>
+        <h2 class="display-3" style="margin-bottom:20px;">A communicator before a coach</h2>
+        <p class="body-md text-muted">
+          Two decades of shaping messages for other people, now turned toward helping leaders shape their own.
+        </p>
+      </div>
+      <div>
+        <div class="timeline">
+          <div class="timeline-item fade-up">
+            <div class="timeline-dot">🎯</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Executive &amp; Communications Coach</div>
+              <div class="timeline-org">Maturity Coach</div>
+              <p class="timeline-text">Partnering with leaders and organizations to develop communication fluency, craft authentic personal narratives, and navigate career transitions with clarity and confidence.</p>
             </div>
-            <div class="footer-col">
-                <h4 class="footer-heading">Our Coaches</h4>
-                <ul class="footer-links">
-                    <li><a href="grace.html">Grace Adele Boyle</a></li>
-                    <li><a href="catherine.html">Catherine Nkomba</a></li>
-                    <li><a href="gary.html">Gary Luehr</a></li>
-                    <li><a href="eugene.html">Eugene Nkomba</a></li>
-                    <li><a href="safia.html">Safia Abji</a></li>
-                    <li><a href="cindy.html">Cindy McCown</a></li>
-                </ul>
+          </div>
+          <div class="timeline-item fade-up">
+            <div class="timeline-dot">✍️</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Copywriter &amp; Editor</div>
+              <div class="timeline-org">Marketing, Communications &amp; Advertising</div>
+              <p class="timeline-text">Extensive experience across marketing, communications, promotions, and advertising — creating brand-relevant content that meets client business needs and drives engagement.</p>
             </div>
-            <div class="footer-col">
-                <h4 class="footer-heading">Explore</h4>
-                <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="assessment.html">Maturity Assessment</a></li>
-                    <li><a href="perspectives.html">Perspectives</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+          </div>
+          <div class="timeline-item fade-up">
+            <div class="timeline-dot">🎬</div>
+            <div class="timeline-content">
+              <div class="timeline-title">Media Producer</div>
+              <div class="timeline-org">Television, Film &amp; Digital Media</div>
+              <p class="timeline-text">Video production specialist across television, film, and digital platforms. Developed multimedia content strategies and led production initiatives for varied audiences.</p>
             </div>
+          </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Sophia Coaching. All rights reserved.</p>
-        </div>
-    </footer>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ===== SCRIPTS ===== -->
-    <script src="js/nav.js"></script>
-    <script src="js/main.js"></script>
+<!-- ═══════════════ CTA ═══════════════ -->
+<section class="profile-cta">
+  <div class="container-sm">
+    <div class="gold-line" style="margin-bottom:48px;"></div>
+    <div class="section-label" style="justify-content:center;">Next Step</div>
+    <h2 class="display-3 fade-up" style="margin-bottom:20px;">Ready to craft your next chapter?</h2>
+    <p class="body-lg text-muted fade-up" style="margin-bottom:44px;">
+      Whether you're navigating a transition, refining your voice, or reconnecting with your purpose — start with an honest conversation.
+    </p>
+    <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;" class="fade-up">
+      <a href="../contact.html" class="btn btn-primary btn-lg">Request a Consultation</a>
+      <a href="../services.html" class="btn btn-outline">Explore Our Services →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <div class="footer-logo">M</div>
+          <div class="footer-brand-name">Maturity<span>Coach</span></div>
+        </div>
+        <p class="footer-desc">Ancient wisdom, modern intelligence, and the courage to live fully — while building something extraordinary.</p>
+        <div class="footer-social">
+          <a href="#" title="LinkedIn">in</a>
+          <a href="#" title="Twitter/X">𝕏</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../philosophy.html">Philosophy</a></li>
+          <li><a href="../services.html">Services</a></li>
+          <li><a href="../about.html">Our Coaches</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="../services.html">Executive Mastery</a></li>
+          <li><a href="../services.html">Maturity Circle</a></li>
+          <li><a href="../services.html">Leadership Culture</a></li>
+          <li><a href="../services.html">Speaking</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="/app/">Get the App</a></li>
+          <li><a href="../contact.html">Request a Consultation</a></li>
+          <!-- TODO: confirm Cindy's email address -->
+          <li><a href="mailto:cindy@maturity.coach">Email Cindy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Maturity Coach. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="../privacy.html">Privacy</a>
+        <a href="../terms.html">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  });
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
 </body>
 </html>
