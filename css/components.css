@@ -491,3 +491,477 @@
   .filter-chip { padding: 8px 14px; font-size: 13px; }
   .coach-results { grid-template-columns: 1fr; }
 }
+/* ===== COACH PROFILE PAGE ===== */
+
+/* Hero */
+.coach-hero {
+    background: var(--primary-gradient, linear-gradient(135deg, #6d4aff 0%, #4a2fc7 100%));
+    color: #fff;
+    padding: 4rem 2rem;
+}
+
+.coach-hero-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.coach-photo-wrapper {
+    flex-shrink: 0;
+}
+
+.coach-photo {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.coach-hero-info {
+    flex: 1;
+    min-width: 280px;
+}
+
+.coach-tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 0.35rem 1rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+}
+
+.coach-name {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.1;
+}
+
+.coach-tagline {
+    font-size: 1.15rem;
+    opacity: 0.9;
+    margin: 0 0 1.25rem 0;
+    font-style: italic;
+}
+
+.coach-credentials-bar {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.credential-badge {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 0.3rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.coach-cta {
+    margin-top: 0.5rem;
+}
+
+/* Bio */
+.coach-bio p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+    color: var(--text-body, #333);
+}
+
+/* Expertise Grid */
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.expertise-card {
+    background: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.expertise-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(109, 74, 255, 0.12);
+}
+
+.expertise-icon {
+    color: #6d4aff;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.expertise-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    color: #222;
+}
+
+.expertise-desc {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+}
+
+/* Credentials List */
+.credentials-list {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.credential-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.credential-item:last-child {
+    border-bottom: none;
+}
+
+.credential-badge-lg {
+    flex-shrink: 0;
+    background: #6d4aff;
+    color: #fff;
+    width: 72px;
+    height: 72px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.credential-detail h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 0.35rem 0;
+    color: #222;
+}
+
+.credential-detail p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+}
+
+/* Experience Timeline */
+.experience-timeline {
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.experience-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #e0e0e0;
+}
+
+.experience-item {
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+.experience-item:last-child {
+    padding-bottom: 0;
+}
+
+.experience-marker {
+    position: absolute;
+    left: -2.4rem;
+    top: 0.3rem;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #6d4aff;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px #6d4aff;
+}
+
+.experience-role {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 0 0 0.25rem 0;
+    color: #222;
+}
+
+.experience-org {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #6d4aff;
+    margin: 0 0 0.5rem 0;
+}
+
+.experience-desc {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #666;
+    margin: 0;
+}
+
+/* CTA Section */
+.section-cta {
+    background: #f5f3ff;
+    text-align: center;
+}
+
+.cta-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cta-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    color: #222;
+}
+
+.cta-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #555;
+    margin: 0 0 1.5rem 0;
+}
+
+.btn-large {
+    font-size: 1.05rem;
+    padding: 0.85rem 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .coach-hero-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .coach-photo {
+        width: 180px;
+        height: 180px;
+    }
+
+    .coach-credentials-bar {
+        justify-content: center;
+    }
+
+    .expertise-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .credential-item {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .credential-badge-lg {
+        width: 60px;
+        height: 60px;
+        font-size: 0.85rem;
+    }
+}
+/* ===== ORGANIZATIONS GRID ===== */
+
+.organizations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.org-card {
+    background: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    padding: 1.75rem 1.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+}
+
+.org-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(109, 74, 255, 0.12);
+}
+
+.org-name {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    color: #6d4aff;
+}
+
+.org-desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+}
+/* ===== QUOTE SECTION ===== */
+
+.section-quote {
+    background: linear-gradient(135deg, #f5f3ff 0%, #ede7fe 100%);
+    padding: 4rem 2rem;
+}
+
+.quote-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.quote-block {
+    text-align: center;
+}
+
+.quote-text {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    font-style: italic;
+    color: #4a3ab0;
+    margin: 0 0 1.5rem 0;
+    position: relative;
+    padding: 0 2rem;
+}
+
+.quote-text::before {
+    content: '"';
+    font-size: 4rem;
+    color: #6d4aff;
+    position: absolute;
+    top: -1.5rem;
+    left: 0;
+    opacity: 0.3;
+}
+
+.quote-author {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #6d4aff;
+    margin: 0;
+}
+
+/* ===== HIGHLIGHT SECTION ===== */
+
+.section-highlight {
+    background: #fff;
+    padding: 3rem 2rem;
+}
+
+.highlight-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.highlight-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.highlight-number {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #6d4aff;
+    line-height: 1;
+}
+
+.highlight-text h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    color: #222;
+}
+
+.highlight-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #666;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .highlight-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .quote-text {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+    }
+
+    .quote-text::before {
+        font-size: 3rem;
+        top: -1rem;
+    }
+}
+/* ===== CLIENT PROFILES (for Cindy's page) ===== */
+
+.client-profiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.client-profile-card {
+    background: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    padding: 1.75rem 1.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.client-profile-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(109, 74, 255, 0.12);
+}
+
+.profile-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 0 0 0.75rem 0;
+    color: #6d4aff;
+}
+
+.profile-desc {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #666;
+    margin: 0;
+}

@@ -13,6 +13,42 @@
       "featured": true
     },
     {
+      "id": "cindy",
+      "name": "Cindy McCown",
+      "title": "Partner Coach & Life Coach",
+      "photo": "assets/coaches/cindy.jpg",
+      "specializations": ["life-coaching", "team-coaching"],
+      "credentials": "CPCC · ACC",
+      "shortBio": "Transforming lives.",
+      "profilePage": "profiles/cindy.html",
+      "availability": "available",
+      "featured": true
+    },
+    {
+      "id": "gary",
+      "name": "Gary Luehr",
+      "title": "Partner Coach & Agile Transformation Lead",
+      "photo": "assets/coaches/gary.jpg",
+      "specializations": ["agile-transformation", "team-coaching", "governance-compliance"],
+      "credentials": "PMP · SPC6 · ICP-AC · PSPO II",
+      "shortBio": "Transforming how technical teams deliver value — combining agile excellence with leadership maturity.",
+      "profilePage": "profiles/gary.html",
+      "availability": "available",
+      "featured": true
+    },
+    {
+      "id": "grace",
+      "name": "Grace Allison",
+      "title": "Partner Coach & Life Coach",
+      "photo": "assets/coaches/grace.jpg",
+      "specializations": ["life-coaching", "team-coaching"],
+      "credentials": "CPCC",
+      "shortBio": "Transforming lives with leadership maturity.",
+      "profilePage": "profiles/grace.html",
+      "availability": "available",
+      "featured": true
+    },        
+    {
       "id": "catherine",
       "name": "Catherine Nkomba",
       "title": "Partner Coach & Agile Transformation Lead",
@@ -25,14 +61,14 @@
       "featured": true
     },
     {
-      "id": "patrice",
-      "name": "Patrice Nkomba",
+      "id": "safia",
+      "name": "Safia Gupta",
       "title": "Partner Coach & Technical Advisor",
-      "photo": "assets/coaches/patrice.jpg",
+      "photo": "assets/coaches/safia.jpg",
       "specializations": ["executive-mastery", "agile-transformation", "team-coaching"],
       "credentials": "PCC · CPCC · Six Sigma Master Black Belt",
       "shortBio": "30+ years coaching leaders through technical and organizational transformation with an emphasis on agile and DevSecOps.",
-      "profilePage": "profiles/patrice.html",
+      "profilePage": "profiles/safia.html",
       "availability": "available",
       "featured": true
     }
