@@ -212,8 +212,8 @@
     /* Grid layouts */
     .lp-grid-3 {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
       margin-top: 48px;
     }
 
@@ -521,11 +521,11 @@ document.addEventListener('DOMContentLoaded', function () {
           Our coaches speak both languages fluently. Let's talk.
         </p>
         <div style="display:flex; gap:16px; flex-wrap:wrap;">
-          <a href="contact.html" class="btn btn-gold">
-            Book Your 30-Minute Exploratory Call
-          </a>
-          <a href="assessment.html" class="btn btn-outline" style="color:#b8a0ff; border-color:#b8a0ff;">
-            Take the Self-Assessment
+            <a href="contact.html?intent=technical-leader" class="btn btn-gold">
+              Book Your 30-Minute Exploratory Call
+            </a>
+          <a href="assessment-teaser.html" class="btn btn-outline" style="color:#b8a0ff; border-color:#b8a0ff;">
+            Take the 2-minute Quick Check
           </a>
         </div>
       </div>
@@ -627,9 +627,13 @@ document.addEventListener('DOMContentLoaded', function () {
         <p style="color:rgba(255,255,255,0.7);">You delegate tasks but not decisions. Everything flows through you. The bus factor is 1. This is where most plateau.</p>
       </div>
       <div class="lp-card" style="background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.15);">
-        <h3 style="color:white;">3. Architect → Strategist</h3>
-        <p style="color:rgba(255,255,255,0.7);">You design systems and decision rights. The team operates without you. Coaching gets you here.</p>
+        <h3 style="color:white;">3. Architect</h3>
+        <p style="color:rgba(255,255,255,0.7);">You design systems and decision rights. The team operates without your presence in every room.</p>
       </div>
+      <div class="lp-card" style="background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.15);">
+        <h3 style="color:white;">4. Strategist</h3>
+        <p style="color:rgba(255,255,255,0.7);">You lead whether you are in the room or not. The organization scales beyond you. Coaching gets you here.</p>
+      </div>      
     </div>
   </div>
 </section>
@@ -639,9 +643,9 @@ document.addEventListener('DOMContentLoaded', function () {
   <div class="container">
     <h2>Let's Have an Honest Conversation</h2>
     <p>Thirty minutes. No pitch. Just clarity about where you are, where you want to be, and whether coaching can bridge the gap.</p>
-    <a href="contact.html" class="btn btn-primary" style="background:white; color:var(--gold); border-color:white;">
-      Book Your 30-Minute Exploratory Call
-    </a>
+      <a href="contact.html?intent=technical-leader" class="btn btn-primary" style="background:white; color:var(--gold); border-color:white;">
+        Book Your 30-Minute Exploratory Call
+      </a>
   </div>
 </section>
 

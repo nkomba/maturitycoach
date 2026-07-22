@@ -412,24 +412,7 @@ document.addEventListener('DOMContentLoaded', function () {
       </div>
 
             <!-- EMAIL GATE -->
-      <div id="teaserEmailGate" style="display:none;" class="teaser-result">
-        <div class="email-gate-icon">✉</div>
-        <h2 class="teaser-result-label" style="margin-bottom: 12px;">Your Snapshot Is Ready</h2>
-        <p class="teaser-result-desc" style="margin-bottom: 28px;">
-          Enter your email to see your leadership maturity snapshot — plus get access to the full 15-question assessment.
-        </p>
-        <div style="max-width: 400px; margin: 0 auto;">
-          <div class="form-group" style="text-align: left;">
-            <label for="teaserEmail">Email Address</label>
-            <input type="email" id="teaserEmail" placeholder="you@example.com" style="background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.15); color: var(--white);" />
-          </div>
-          <p id="teaserEmailError" style="color: #c64949; font-size: 13px; display: none; margin-bottom: 12px;">Please enter a valid email address.</p>
-          <button id="teaserRevealBtn" class="btn btn-gold btn-lg" style="width: 100%; margin-bottom: 16px;">Reveal My Snapshot</button>
-          <p style="font-size: 12px; color: rgba(255,255,255,0.4); line-height: 1.5;">
-            We respect your privacy. Your email will never be shared. Unsubscribe anytime.
-          </p>
-        </div>
-      </div>
+
 
       <!-- RESULTS -->
       <div id="teaserResults" style="display:none;" class="teaser-result">
@@ -627,10 +610,7 @@ document.addEventListener('DOMContentLoaded', function () {
         bandLabel: document.getElementById('teaserBandLabel'),
         bandDesc: document.getElementById('teaserBandDesc'),
             // Add to els object:
-        emailGate: document.getElementById('teaserEmailGate'),
-        revealBtn: document.getElementById('teaserRevealBtn'),
-        userEmail: document.getElementById('teaserEmail'),
-        emailError: document.getElementById('teaserEmailError'),
+
 
         dimensions: document.getElementById('teaserDimensions')
     };
@@ -646,20 +626,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (els.next) els.next.addEventListener('click', goNext);
     if (els.submit) els.submit.addEventListener('click', submitQuiz);
         // Add event binding after existing bindings:
-    if (els.revealBtn) {
-        els.revealBtn.addEventListener('click', function(e) {
-            if (e) e.preventDefault();
-            revealResults();
-        });
-    }
-    if (els.userEmail) {
-        els.userEmail.addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                e.preventDefault();
-                revealResults();
-            }
-        });
-    }
 
 
     // ── FUNCTIONS ──
@@ -754,65 +720,74 @@ document.addEventListener('DOMContentLoaded', function () {
         var score = 0;
         questions.forEach(function(q) { score += answers[q.id] || 0; });
 
-        // Show email gate instead of results
-        if (els.interface) els.interface.style.display = 'none';
-        if (els.emailGate) els.emailGate.style.display = 'block';
-
-        if (els.emailGate) {
-            els.emailGate.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-        if (els.userEmail) {
-            setTimeout(function() { els.userEmail.focus(); }, 600);
-        }
-    }
-
-    function validateEmail(email) {
-        var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
-    }
-
-    function revealResults() {
-        var email = els.userEmail ? els.userEmail.value.trim() : '';
-
-        if (!validateEmail(email)) {
-            if (els.emailError) els.emailError.style.display = 'block';
-            if (els.userEmail) {
-                els.userEmail.style.borderColor = '#c64949';
-                setTimeout(function() {
-                    els.userEmail.style.borderColor = '';
-                }, 2000);
-            }
-            return;
-        }
-
-        if (els.emailError) els.emailError.style.display = 'none';
-
-        // Track with email
-        var score = 0;
-        questions.forEach(function(q) { score += answers[q.id] || 0; });
-
         if (window.AssessmentTracking) {
-            AssessmentTracking.complete('teaser', score, email);
+            AssessmentTracking.complete('teaser', score);
         }
 
-        // Store email as lead
-        var leads = JSON.parse(localStorage.getItem('maturity_leads') || '[]');
-        leads.push({
-            email: email,
-            type: 'teaser',
-            score: score,
-            date: new Date().toISOString()
-        });
-        localStorage.setItem('maturity_leads', JSON.stringify(leads));
-
-        // Hide gate, show results
-        if (els.emailGate) els.emailGate.style.display = 'none';
+        if (els.interface) els.interface.style.display = 'none';
         if (els.results) els.results.style.display = 'block';
         if (els.results) els.results.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
         showResults(score);
     }
 
+    function showResults(score) {
+        // Update score number
+        if (els.score) els.score.textContent = score + '/20';
+
+        // Animate score ring
+        var ring = document.querySelector('.teaser-score-ring');
+        if (ring) {
+            var deg = (score / 20) * 360;
+            ring.style.background =
+                'conic-gradient(var(--gold) ' + deg + 'deg, rgba(255,255,255,0.10) ' + deg + 'deg)';
+        }
+
+        // Find matching band and update label + description
+        var band = TEASER_BANDS.find(function(b) {
+            return score >= b.min && score <= b.max;
+        });
+        if (band) {
+            if (els.bandLabel) els.bandLabel.textContent = band.label;
+            if (els.bandDesc) els.bandDesc.textContent = band.desc;
+        }
+
+        // Render per-dimension breakdown bars
+        if (els.dimensions) {
+            els.dimensions.innerHTML = '';
+
+            var dimTitle = document.createElement('div');
+            dimTitle.className = 'teaser-dim-title';
+            dimTitle.textContent = 'Dimension Breakdown';
+            els.dimensions.appendChild(dimTitle);
+
+            questions.forEach(function(q) {
+                var val = answers[q.id] || 0;
+                var pct = (val / 4) * 100;
+
+                var row = document.createElement('div');
+                row.className = 'teaser-dim-row';
+
+                var info = document.createElement('div');
+                info.className = 'teaser-dim-info';
+                info.innerHTML =
+                    '<span class="teaser-dim-name">' + q.dimension + '</span>' +
+                    '<span class="teaser-dim-score">' + val + '/4</span>';
+
+                var track = document.createElement('div');
+                track.className = 'teaser-dim-track';
+
+                var fill = document.createElement('div');
+                fill.className = 'teaser-dim-fill';
+                fill.style.width = pct + '%';
+
+                track.appendChild(fill);
+                row.appendChild(info);
+                row.appendChild(track);
+                els.dimensions.appendChild(row);
+            });
+        }
+    }
 })();
 
 // Mobile menu

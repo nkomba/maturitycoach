@@ -437,9 +437,9 @@ document.addEventListener('DOMContentLoaded', function () {
 <section class="contact-hero">
   <div class="contact-hero-inner">
     <div>
-      <div class="section-label" style="color:var(--gold); margin-bottom:20px;">Start Here</div>
-      <h1 class="display-2">Begin with a conversation</h1>
-      <p>No pitch. No pressure. Just 30 minutes of honest dialogue to explore what's possible — for you, your leadership, and the life you want to build.</p>
+<div class="section-label" id="heroLabel" style="color:var(--gold); margin-bottom:20px;">Start Here</div>
+<h1 class="display-2">Begin with a conversation</h1>
+<p id="heroSubtext">No pitch. No pressure. Just 30 minutes of honest dialogue to explore what's possible — for you, your leadership, and the life you want to build.</p>
     </div>
     <div class="contact-hero-right">
       <div class="hero-detail-card">
@@ -483,7 +483,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="contact-form-card fade-up">
         <div id="formContent">
           <div class="form-title">Tell us about yourself</div>
-          <p class="form-subtitle">Share a little about where you are and what you're looking for.</p>
+              <p class="form-subtitle" id="formSubtitle">Share a little about where you are and what you're looking for.</p>
 
           <form id="contactForm" class="contact-form" onsubmit="handleSubmit(event)">
             <div class="form-row">
@@ -511,11 +511,12 @@ document.addEventListener('DOMContentLoaded', function () {
               <label for="interest">What brings you here?</label>
               <select id="interest">
                 <option value="" disabled selected>Select the best description...</option>
-                <option>I want 1:1 executive coaching</option>
-                <option>I'm interested in the Maturity Circle cohort</option>
-                <option>I want leadership coaching for my team/organization</option>
-                <option>I want to book a speaker for an event</option>
-                <option>I'm just exploring — not sure yet</option>
+                <option value="executive">I want 1:1 executive coaching</option>
+                <option value="circle">I'm interested in the Maturity Circle cohort</option>
+                <option value="technical-leader">I want coaching for technical leaders (CISO / CIO / CTO)</option>
+                <option value="team">I want leadership coaching for my team / organization</option>
+                <option value="speaker">I want to book a speaker for an event</option>
+                <option value="exploring">I'm just exploring — not sure yet</option>
               </select>
             </div>
 
@@ -534,7 +535,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="form-success" id="formSuccess">
           <div class="success-icon">✉️</div>
           <h3>Thank you for reaching out</h3>
-          <p>We read every message personally and will be in touch within one business day. In the meantime, you're welcome to explore the <a href="philosophy.html" style="color:var(--gold);">philosophy</a> behind the work.</p>
+            <p>We read every message and respond within one business day. In the meantime, you're welcome to explore the <a href="philosophy.html" style="color:var(--gold);">philosophy</a> behind the work.</p>
         </div>
       </div>
 
@@ -619,7 +620,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="expect-card fade-up">
         <div class="expect-step">2</div>
         <div class="expect-title">We respond</div>
-        <p class="expect-text">You'll hear back personally within one business day to schedule your 30-minute exploratory conversation.</p>
+        <p class="expect-text">You'll hear back within one business day to schedule your 30-minute exploratory conversation.</p>
       </div>
       <div class="expect-card fade-up">
         <div class="expect-step">3</div>
@@ -691,6 +692,42 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('formContent').style.display = 'none';
     document.getElementById('formSuccess').style.display = 'block';
   }
+
+  // ── URL INTENT: pre-select dropdown + contextualize copy ──
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var intent = params.get('intent');
+    if (!intent) return;
+
+    var select = document.getElementById('interest');
+    if (select) {
+      for (var i = 0; i < select.options.length; i++) {
+        if (select.options[i].value === intent) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+    }
+
+    if (intent === 'technical-leader') {
+      var subtitle = document.getElementById('formSubtitle');
+      if (subtitle) {
+        subtitle.textContent = 'You\u2019re coming from our technical leaders page \u2014 tell us where your leadership is hitting a ceiling.';
+      }
+      var roleField = document.getElementById('role');
+      if (roleField) {
+        roleField.placeholder = 'e.g. CISO, CIO, CTO, Technical Director';
+      }
+      var heroLabel = document.getElementById('heroLabel');
+      if (heroLabel) {
+        heroLabel.textContent = 'For Technical Leaders';
+      }
+      var heroSubtext = document.getElementById('heroSubtext');
+      if (heroSubtext) {
+        heroSubtext.textContent = 'You\u2019ve mastered the technology. Now master the leadership. Thirty minutes \u2014 no pitch, no pressure \u2014 to explore whether coaching can help you break through the wall between technical excellence and strategic influence.';
+      }
+    }
+  })();
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
