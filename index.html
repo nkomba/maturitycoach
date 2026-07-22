@@ -412,10 +412,99 @@
       text-align: center;
     }
 
-    .stat-divider {
-      width: 1px;
-      background: var(--border);
-      margin: 0;
+    .stat-detail {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+
+    /* ── SECTORS STRIP ── */
+    .sectors-section {
+      background: var(--cream);
+      padding: 80px 0;
+    }
+
+    .sectors-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .sectors-header .section-label {
+      justify-content: center;
+    }
+
+    .sectors-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    .sector-card {
+      background: var(--white);
+      padding: 40px 28px;
+      text-align: center;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .sector-card:hover {
+      background: var(--charcoal);
+    }
+
+    .sector-card:hover .sector-icon {
+      background: rgba(184,151,90,0.2);
+    }
+
+    .sector-card:hover .sector-name {
+      color: var(--white);
+    }
+
+    .sector-card:hover .sector-clients {
+      color: rgba(255,255,255,0.55);
+    }
+
+    .sector-icon {
+      font-size: 36px;
+      margin-bottom: 20px;
+      width: 64px;
+      height: 64px;
+      background: rgba(184,151,90,0.1);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+      transition: var(--transition);
+    }
+
+    .sector-name {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      transition: var(--transition);
+    }
+
+    .sector-clients {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      transition: var(--transition);
+    }
+
+    .sectors-disclaimer {
+      text-align: center;
+      margin-top: 32px;
+    }
+
+    .sectors-disclaimer small {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.6;
     }
 
     /* Testimonials */
@@ -541,6 +630,105 @@
       margin: 0;
     }
 
+    /* ── COACH CARDS ── */
+    .tl-coaches {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 64px;
+    }
+
+    .tl-coach-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tl-coach-card:hover {
+      border-color: rgba(184,151,90,0.25);
+      background: rgba(255,255,255,0.05);
+    }
+
+    .tl-coach-photo {
+      width: 100%;
+      aspect-ratio: 3/2;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .tl-coach-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .tl-coach-body {
+      padding: 32px 28px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tl-coach-name {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .tl-coach-role {
+      font-size: 12px;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .tl-coach-creds {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .tl-coach-cred {
+      display: inline-block;
+      padding: 3px 10px;
+      background: rgba(184,151,90,0.12);
+      color: rgba(184,151,90,0.9);
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+    }
+
+    .tl-coach-bio {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .tl-coach-link {
+      margin-top: 20px;
+      font-size: 13px;
+      color: var(--gold);
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition);
+    }
+
+    .tl-coach-link:hover { gap: 10px; }
+
+    /* ── TL ADVANTAGE ── */
     .tl-advantage {
       margin-top: 64px;
       padding: 48px;
@@ -563,17 +751,51 @@
       margin: 0;
     }
 
+    /* ── TL CTA BLOCK ── */
     .tl-cta-block {
       margin-top: 48px;
       text-align: center;
     }
 
-    .tl-cta-block .btn {
-      margin: 0 8px;
+    .tl-cta-options {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: stretch;
+    }
+
+    .tl-cta-option {
+      flex: 1;
+      min-width: 280px;
+      max-width: 380px;
+      text-align: center;
+    }
+
+    .tl-cta-option-label {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 12px;
+    }
+
+    .tl-cta-divider {
+      display: flex;
+      align-items: center;
+      color: rgba(255,255,255,0.2);
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0 8px;
+    }
+
+    .tl-cta-option .btn {
+      width: 100%;
     }
 
     .tl-cta-note {
-      margin-top: 20px;
+      margin-top: 24px;
       font-size: 13px;
       color: rgba(255,255,255,0.5);
     }
@@ -589,9 +811,15 @@
       .philosophy-pillars { grid-template-columns: 1fr; }
       .services-grid { grid-template-columns: 1fr; }
       .stats-grid { grid-template-columns: 1fr 1fr; }
+      .sectors-grid { grid-template-columns: 1fr; }
       .testimonials-grid { grid-template-columns: 1fr; }
       .wisdom-bar-inner { gap: 40px; }
       .tl-pain-points { grid-template-columns: 1fr; }
+      .tl-coaches { grid-template-columns: 1fr; }
+      .tl-cta-options { flex-direction: column; }
+      .tl-cta-divider { display: none; }
+      .tl-cta-option { max-width: 100%; }
+      .tl-advantage { padding: 32px 24px; }
     }
     /* Override for pages with dark heroes */
 @media (max-width: 768px) {
@@ -840,7 +1068,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <em>Live</em> Fully.
       </h1>
       <p class="body-lg hero-subtitle">
-        Ancient wisdom and modern intelligence, united to help leaders build extraordinary businesses — without sacrificing the life they most want to live.
+        Ancient wisdom and modern intelligence, united to help leaders — whether you built the company or are climbing to lead it — build extraordinary outcomes without sacrificing the life they most want to live.
       </p>
       <div class="hero-actions">
         <a href="contact.html" class="btn btn-gold btn-lg">
@@ -874,6 +1102,141 @@ document.addEventListener('DOMContentLoaded', function () {
   </div>
 </section>
 
+<!-- ═══════════════ TECHNICAL LEADERS SECTION ═══════════════ -->
+<section class="technical-leaders-section">
+  <div class="container">
+    <div class="tl-header fade-up">
+      <div class="section-label">For Technical Leaders</div>
+      <h2 class="tl-headline">
+        You mastered the technology.<br>
+        Now master the <strong>leadership</strong>.
+      </h2>
+    </div>
+
+    <div class="tl-wall-banner fade-up">
+      <div class="banner-text">
+        Every CISO, CTO, and technical director faces the same wall:<br>
+        <strong style="color:var(--gold);">the skills that got you here are not the ones that get you further.</strong>
+      </div>
+    </div>
+
+    <div class="tl-pain-points">
+      <div class="tl-pain-card fade-up">
+        <div class="tl-pain-icon">🎯</div>
+        <h3 class="tl-pain-title">The Competence Trap</h3>
+        <p class="tl-pain-text">You're the smartest person in the room. So you solve the problems yourself. Your team escalates everything. You become the bottleneck.</p>
+      </div>
+      <div class="tl-pain-card fade-up">
+        <div class="tl-pain-icon">📢</div>
+        <h3 class="tl-pain-title">Influence Without Authority</h3>
+        <p class="tl-pain-text">Logic isn't persuasion. And no RFC will fix why the board or CFO doesn't see your recommendation the way you do.</p>
+      </div>
+      <div class="tl-pain-card fade-up">
+        <div class="tl-pain-icon">🔄</div>
+        <h3 class="tl-pain-title">Delegation Feels Like Risk</h3>
+        <p class="tl-pain-text">When you delegate, quality might drop. When the breach hits, it's your name. So you hold on. The team doesn't grow.</p>
+      </div>
+    </div>
+
+    <!-- ── COACH CARDS ── -->
+    <div class="tl-coaches">
+      <!-- Eugene Nkomba -->
+      <div class="tl-coach-card fade-up">
+        <div class="tl-coach-photo">
+          <img src="assets/coaches/eugene.jpg" alt="Eugene Nkomba" loading="lazy" />
+        </div>
+        <div class="tl-coach-body">
+          <div class="tl-coach-name">Eugene Nkomba</div>
+          <div class="tl-coach-role">Managing Partner &amp; Executive Coach</div>
+          <div class="tl-coach-creds">
+            <span class="tl-coach-cred">MBA</span>
+            <span class="tl-coach-cred">PCC</span>
+            <span class="tl-coach-cred">CPCC</span>
+            <span class="tl-coach-cred">CTCC</span>
+            <span class="tl-coach-cred">Six Sigma MBB</span>
+            <span class="tl-coach-cred">CISA</span>
+            <span class="tl-coach-cred">CISM</span>
+            <span class="tl-coach-cred">CRISC</span>
+            <span class="tl-coach-cred">PMP</span>
+          </div>
+          <p class="tl-coach-bio">
+            30+ years across federal IT, cybersecurity, and audit/risk management — coaching CIOs, CISOs, and
+            technical directors at Treasury, Commerce, USPTO, and DHS. He's held the clearances, sat in the
+            war rooms, and translated compliance language into boardroom strategy. Now he helps technical
+            leaders make the same transition he did: from technical expert to strategic leader.
+          </p>
+          <a href="profiles/eugene.html" class="tl-coach-link">Read Eugene's full profile →</a>
+        </div>
+      </div>
+
+      <!-- Gary Luehr -->
+      <div class="tl-coach-card fade-up">
+        <div class="tl-coach-photo">
+          <img src="assets/coaches/gary.jpg" alt="Gary Luehr" loading="lazy" />
+        </div>
+        <div class="tl-coach-body">
+          <div class="tl-coach-name">Gary Luehr</div>
+          <div class="tl-coach-role">Agile &amp; Leadership Coach</div>
+          <div class="tl-coach-creds">
+            <span class="tl-coach-cred">PMP</span>
+            <span class="tl-coach-cred">PMI-ACP</span>
+            <span class="tl-coach-cred">PSM III</span>
+            <span class="tl-coach-cred">SPC6</span>
+            <span class="tl-coach-cred">ICP-ACC</span>
+          </div>
+          <p class="tl-coach-bio">
+            Decades inside enterprise IT and defense environments — leading agile transformations at
+            Northrop Grumman, IBM, and AT&amp;T. Gary knows what happens when brilliant engineers collide
+            with organizational politics. His coaching bridges the gap between technical execution and
+            strategic influence, helping leaders delegate without fear and communicate upward with authority.
+          </p>
+          <a href="profiles/gary.html" class="tl-coach-link">Read Gary's full profile →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-advantage fade-up">
+      <h3>Two coaches who've walked both paths</h3>
+      <p>
+        Most coaches understand leadership but not your world. Most consultants understand your world but not leadership.
+        Eugene and Gary have held technical leadership roles inside the same environments you operate in —
+        federal agencies, defense contractors, Fortune 500 enterprises — and then became ICF-certified coaches.
+        They speak both languages fluently.
+      </p>
+    </div>
+
+    <!-- ── CTA BLOCK ── -->
+    <div class="tl-cta-block fade-up">
+      <div class="tl-cta-options">
+        <!-- Self-diagnose path -->
+        <div class="tl-cta-option">
+          <div class="tl-cta-option-label">Not ready to talk yet?</div>
+          <a href="assessment-teaser.html" class="btn btn-outline btn-lg" style="color:rgba(255,255,255,0.85); border-color:rgba(255,255,255,0.35);">
+            Take the 2-Minute Quick Check
+          </a>
+        </div>
+
+        <div class="tl-cta-divider">— or —</div>
+
+        <!-- Direct conversation path -->
+        <div class="tl-cta-option">
+          <div class="tl-cta-option-label">Ready to talk?</div>
+          <a href="contact.html?intent=technical-leader" class="btn btn-gold btn-lg">
+            Start a Conversation
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="tl-cta-note">
+        The Quick Check is free, private, and takes two minutes — you'll get an instant snapshot
+        of where your leadership maturity stands. Or <a href="coaching-for-technical-leaders.html">explore our full approach</a>
+        to coaching for technical leaders.
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════════ WISDOM MARQUEE ═══════════════ -->
 <div class="wisdom-bar">
   <div class="wisdom-bar-inner">
@@ -890,26 +1253,82 @@ document.addEventListener('DOMContentLoaded', function () {
   </div>
 </div>
 
-<!-- ═══════════════ STATS ═══════════════ -->
+<!-- ═══════════════ CREDENTIAL STATS (Option D) ═══════════════ -->
 <section class="stats-section">
   <div class="container">
     <div class="stats-grid">
       <div class="text-center fade-up">
-        <div class="stat-number">15+</div>
-        <div class="stat-label">Years of Leadership Experience</div>
-      </div>
-      <div class="text-center fade-up">
-        <div class="stat-number">300+</div>
-        <div class="stat-label">Leaders Coached</div>
-      </div>
-      <div class="text-center fade-up">
         <div class="stat-number">6</div>
-        <div class="stat-label">Continents Served</div>
+        <div class="stat-label">ICF-Certified Executive Coaches</div>
+        <div class="stat-detail">PCC &amp; CPCC credentialed team</div>
       </div>
       <div class="text-center fade-up">
-        <div class="stat-number">∞</div>
-        <div class="stat-label">Wisdom Traditions Integrated</div>
+        <div class="stat-number">17+</div>
+        <div class="stat-label">Security &amp; Compliance Certifications</div>
+        <div class="stat-detail">CISA · CISM · CRISC · PMP · PMI-ACP · Six Sigma MBB</div>
       </div>
+      <div class="text-center fade-up">
+        <div class="stat-number">30+</div>
+        <div class="stat-label">Years Federal IT &amp; Audit Experience</div>
+        <div class="stat-detail">Eugene Nkomba, Managing Partner</div>
+      </div>
+      <div class="text-center fade-up">
+        <div class="stat-number">4</div>
+        <div class="stat-label">Wisdom Traditions Integrated</div>
+        <div class="stat-detail">Stoicism · Ubuntu · Eastern Contemplative · Biblical</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ SECTORS WE SERVE (Option C) ═══════════════ -->
+<section class="sectors-section">
+  <div class="container">
+    <div class="sectors-header fade-up">
+      <div class="section-label">Trusted By</div>
+      <h2 class="display-3">Sectors We Serve</h2>
+    </div>
+
+    <div class="sectors-grid">
+      <div class="sector-card fade-up">
+        <div class="sector-icon">🏛️</div>
+        <div class="sector-name">Federal Government</div>
+        <div class="sector-clients">
+          Treasury · Commerce · USPTO<br>
+          DHS · Dept. of Interior (KSA)
+        </div>
+      </div>
+      <div class="sector-card fade-up">
+        <div class="sector-icon">✈️</div>
+        <div class="sector-name">Defense &amp; Aerospace</div>
+        <div class="sector-clients">
+          Northrop Grumman<br>
+          Cleared consultants (Secret/TS)
+        </div>
+      </div>
+      <div class="sector-card fade-up">
+        <div class="sector-icon">💻</div>
+        <div class="sector-name">Enterprise Technology</div>
+        <div class="sector-clients">
+          IBM · AT&amp;T<br>
+          Xerox Business Services
+        </div>
+      </div>
+      <div class="sector-card fade-up">
+        <div class="sector-icon">🏦</div>
+        <div class="sector-name">Financial Services</div>
+        <div class="sector-clients">
+          Banco Do Brasil · BNP France<br>
+          Grant Thornton LLP
+        </div>
+      </div>
+    </div>
+
+    <div class="sectors-disclaimer fade-up">
+      <small>
+        Client names disclosed only where contractually permitted. Government engagement details
+        generalized to comply with federal acquisition regulations and confidentiality agreements.
+      </small>
     </div>
   </div>
 </section>
@@ -951,62 +1370,6 @@ document.addEventListener('DOMContentLoaded', function () {
   </div>
 </section>
 
-<!-- ═══════════════ TECHNICAL LEADERS SECTION ═══════════════ -->
-<section class="technical-leaders-section">
-  <div class="container">
-    <div class="tl-header fade-up">
-      <div class="section-label">For Technical Leaders</div>
-      <h2 class="tl-headline">
-        You mastered the technology.<br>
-        Now master the <strong>leadership</strong>.
-      </h2>
-    </div>
-
-    <div class="tl-wall-banner fade-up">
-      <div class="banner-text">
-        Every CISO, CTO, and technical director faces the same wall:<br>
-        <strong style="color:var(--gold);">the skills that got you here are not the ones that get you further.</strong>
-      </div>
-    </div>
-
-    <div class="tl-pain-points">
-      <div class="tl-pain-card fade-up">
-        <div class="tl-pain-icon">🎯</div>
-        <h3 class="tl-pain-title">The Competence Trap</h3>
-        <p class="tl-pain-text">You're the smartest person in the room. So you solve the problems yourself. Your team escalates everything. You become the bottleneck.</p>
-      </div>
-      <div class="tl-pain-card fade-up">
-        <div class="tl-pain-icon">📢</div>
-        <h3 class="tl-pain-title">Influence Without Authority</h3>
-        <p class="tl-pain-text">Logic isn't persuasion. And no RFC will fix why the board or CFO doesn't see your recommendation the way you do.</p>
-      </div>
-      <div class="tl-pain-card fade-up">
-        <div class="tl-pain-icon">🔄</div>
-        <h3 class="tl-pain-title">Delegation Feels Like Risk</h3>
-        <p class="tl-pain-text">When you delegate, quality might drop. When the breach hits, it's your name. So you hold on. The team doesn't grow.</p>
-      </div>
-    </div>
-
-    <div class="tl-advantage fade-up">
-      <h3>A Coach Who Speaks Both Languages Fluently</h3>
-      <p>Most coaches understand leadership but not your world. Most consultants understand your world but not leadership. We've walked both paths.</p>
-    </div>
-
-    <div class="tl-cta-block fade-up">
-      <a href="coaching-for-technical-leaders.html" class="btn btn-gold btn-lg">
-        Read Our Approach
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-      </a>
-      <a href="contact.html?intent=technical-leader" class="btn btn-outline btn-lg" style="color:rgba(255,255,255,0.85); border-color:rgba(255,255,255,0.35);">
-        Start a Conversation
-      </a>
-      <div class="tl-cta-note">
-        30 minutes. No pitch. Just clarity about where you are, where you want to be, and whether coaching can bridge the gap.
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ═══════════════ SERVICES ═══════════════ -->
 <section class="section">
   <div class="container">
@@ -1016,9 +1379,9 @@ document.addEventListener('DOMContentLoaded', function () {
         <h2 class="display-3" style="margin-bottom:20px;">
           Coaching shaped around your whole life
         </h2>
-        <p class="body-md text-muted" style="margin-bottom:32px; max-width:440px;">
-          You didn't build a successful business just to feel trapped by it. Every engagement begins with a single question: what does the life you want to live actually look like?
-        </p>
+          <p class="body-md text-muted" style="margin-bottom:32px; max-width:440px;">
+            Whether you built the company or are rising through its ranks, the question is the same: what does the life you want to live actually look like? Every engagement begins there.
+          </p>
         <a href="services.html" class="btn btn-primary">View All Services</a>
       </div>
       <div>
