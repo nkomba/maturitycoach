@@ -1,0 +1,49 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="glow" cx="70%" cy="36%" r="62%">
+      <stop offset="0%" stop-color="#b8975a" stop-opacity="0.18"/>
+      <stop offset="55%" stop-color="#b8975a" stop-opacity="0.03"/>
+      <stop offset="100%" stop-color="#b8975a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="goldbar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c9a866"/>
+      <stop offset="1" stop-color="#8b6e3a"/>
+    </linearGradient>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M60 0H0V60" fill="none" stroke="#ffffff" stroke-opacity="0.025" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="#1c1c1e"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect x="0" y="626" width="1200" height="4" fill="#b8975a"/>
+
+  <!-- Logo lockup -->
+  <g transform="translate(80,60)">
+    <rect width="48" height="48" rx="13" fill="#b8975a"/>
+    <text x="24" y="34" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700" fill="#1c1c1e">M</text>
+    <text x="64" y="32" font-family="Georgia, 'Times New Roman', serif" font-size="25" font-weight="600" fill="#ffffff">Maturity<tspan fill="#b8975a">Coach</tspan></text>
+  </g>
+
+  <!-- Section tag -->
+  <g transform="translate(82,250)">
+    <rect x="0" y="-7" width="38" height="2" fill="#b8975a"/>
+    <text x="54" y="0" font-family="Arial, Helvetica, sans-serif" font-size="18" letter-spacing="3.5" font-weight="700" fill="#b8975a">AI &amp; LEADERSHIP</text>
+  </g>
+
+  <!-- Title with gold accent bar -->
+  <rect x="80" y="292" width="5" height="152" fill="url(#goldbar)"/>
+  <g font-family="Georgia, 'Times New Roman', serif" fill="#ffffff" font-size="66">
+    <text x="114" y="346">Why AI Raises the Premium</text>
+    <text x="114" y="422">on Human Maturity</text>
+  </g>
+
+  <!-- Byline -->
+  <g transform="translate(82,558)">
+    <circle cx="4" cy="-7" r="4" fill="#b8975a"/>
+    <text x="24" y="0" font-family="Georgia, 'Times New Roman', serif" font-size="24" fill="#ffffff">Eugene Nkomba</text>
+    <text x="24" y="30" font-family="Arial, Helvetica, sans-serif" font-size="17" fill="#9a9aa0">Executive Coach &amp; Managing Partner</text>
+  </g>
+  <text x="1120" y="556" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="18" letter-spacing="1" fill="#b8975a">maturity.coach</text>
+</svg>
